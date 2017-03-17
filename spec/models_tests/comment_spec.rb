@@ -3,7 +3,6 @@ require 'rails_helper'
 RSpec.describe Comment, type: :model do
 
 	  context "#validations" do
-			# Test
 			it { should validate_presence_of(:body) }
 			it { should validate_presence_of(:commentor_id) }
 			it { should validate_presence_of(:commentable_type) }
