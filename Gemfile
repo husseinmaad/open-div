@@ -22,6 +22,8 @@ gem 'json'
 # gem 'therubyracer', platforms: :ruby
 gem 'devise'
 
+#github omniauth
+gem 'omniauth-github'
 
 gem 'omniauth'
 # Use jquery as the JavaScript library

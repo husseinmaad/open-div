@@ -248,9 +248,10 @@ Devise.setup do |config|
   config.sign_out_via = :delete
 
   # ==> OmniAuth
+
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
-  # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
+   config.omniauth :github, 'GITHUB_KEY', 'GITHUB_SECRET', scope: 'user,public_repo' , callback_url: "user_github_omniauth_callback_path"
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
