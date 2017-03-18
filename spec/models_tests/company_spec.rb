@@ -7,7 +7,11 @@ RSpec.describe Company, type: :model do
 			it { should validate_presence_of(:city_name) }
 			it { should validate_presence_of(:region_name) }
 			it { should validate_presence_of(:country_code) }
-			it { should belong_to(:creator_id)}
+	  end
+
+		context "#associations" do
+			it { should have_many(:reviews) }
+			it { should belong_to(:creator) }
 	  end
 
 end
