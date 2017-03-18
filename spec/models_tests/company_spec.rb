@@ -10,5 +10,5 @@ RSpec.describe Company, type: :model do
 			it { should validate_presence_of(:logo) }
 			it { should belong_to(:creator_id)}
 	  end
-	  
+
 end
