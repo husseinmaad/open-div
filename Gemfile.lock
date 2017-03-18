@@ -81,6 +81,8 @@ GEM
     globalid (0.3.7)
       activesupport (>= 4.1.0)
     hashie (3.5.5)
+    httparty (0.14.0)
+      multi_xml (>= 0.5.2)
     i18n (0.8.1)
     jbuilder (2.6.3)
       activesupport (>= 3.0.0, < 5.2)
@@ -242,6 +244,7 @@ DEPENDENCIES
   capybara
   devise
   factory_girl
+  httparty
   jbuilder (~> 2.5)
   jquery-rails
   json
