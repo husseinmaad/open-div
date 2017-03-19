@@ -1,0 +1,9 @@
+<div class="row">
+  <%= form_tag(search_path, :method => "get", id: "search-form") do %>
+  <div class="input-field">
+    <%= text_field_tag :search, params[:search], type:"search" ,placeholder: "Search Companies" %>
+    <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+    <!-- <%= submit_tag "Search" %> -->
+  </div>
+  <% end %>
+</div>

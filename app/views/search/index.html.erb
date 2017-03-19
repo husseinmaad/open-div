@@ -1,3 +1,12 @@
+<%= render 'search/form' %>
+
+<div class="row">
+  <div class="col m12">
+    <p class="no-results">
+      <%= @results_message %>
+    </p>
+  </div>
+</div>
 <% @companies.each do |company| %>
   <div class="row">
     <div class="col m3">
@@ -7,6 +16,5 @@
       <h5><%= link_to  company.name , company_path(company)%></h5>
       <div class="rating"><%= company.avg_rating %></div>
     </div>
-
   </div>
 <% end %>

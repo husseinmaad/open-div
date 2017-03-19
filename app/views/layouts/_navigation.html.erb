@@ -1,0 +1,17 @@
+<nav>
+  <div class="nav-wrapper">
+    <a href="<%= root_path %>" class="brand-logo">Opendiv</a>
+    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+    <ul class="right hide-on-med-and-down">
+      <li><%= link_to "Home", root_path %></li>
+      <li><%= link_to "Sign Up", new_user_registration_path %></li>
+      <li><%= link_to "Log in", new_user_session_path %></li>
+      <li><%= link_to "Sign Out", destroy_user_session_path , method: "delete" %></li>
+    </ul>
+    <ul class="side-nav" id="mobile-demo">
+      <li><%= link_to "Sign Up", new_user_registration_path %></li>
+      <li><%= link_to "Log in", new_user_session_path %></li>
+      <li><%= link_to "Sign Out", destroy_user_session_path , method: "delete" %></li>
+    </ul>
+  </div>
+</nav>
