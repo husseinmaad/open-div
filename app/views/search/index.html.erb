@@ -1,0 +1,12 @@
+<% @companies.each do |company| %>
+  <div class="row">
+    <div class="col m3">
+      <img class="company-img" src="<%= company.profile_image_url %>" alt="<%= company.name %>" />
+    </div>
+    <div class="col m9">
+      <h5><%= link_to  company.name , company_path(company)%></h5>
+      <div class="rating"><%= company.avg_rating %></div>
+    </div>
+
+  </div>
+<% end %>

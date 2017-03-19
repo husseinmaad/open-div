@@ -1,10 +1,12 @@
-<h1>Open /div</h1>
-<!-- <div class="row">
+<!-- <h1>Open /div</h1>
+<div class="row">
     <div class="col s12">
       <div class="row">
-        <div class="input-field col s12">
+        <div class="input-field col s1">
           <i class="material-icons prefix">search</i>
-          <form action="/companies/<% 150 %>" method="get">
+        </div>
+        <div class="input-field col s11">
+          <form action="companies/search" method="get">
           <input type="text" id="autocomplete-input" class="autocomplete">
           <label for="autocomplete-input">Search</label>
           </form>
@@ -13,11 +15,11 @@
     </div>
   </div> -->
 
- 
 
-<%= form_tag(companies_path, :method => "get", id: "search-form") do %>
-<%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
-<%= submit_tag "Search" %>
+
+<%= form_tag(search_path, :method => "get", id: "search-form") do %>
+  <%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
+  <%= submit_tag "Search" %>
 <% end %>
 
 <div class="row">
