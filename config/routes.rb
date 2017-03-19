@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   resources :companies
 
 
-  get '/companies/search', to: 'search#index', as: 'search'
+  get '/search', to: 'search#index', as: 'search'
 end
