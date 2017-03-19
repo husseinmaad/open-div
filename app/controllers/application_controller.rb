@@ -5,9 +5,11 @@ class ApplicationController < ActionController::Base
 
  	protected
 
+ 	def after_sign_in_path_for(resource_or_scope)
+ 		user_profile_path(current_user)
+	end
+
   def configure_permitted_parameters
-
-
   	attr = [:first_name,:last_name]
     devise_parameter_sanitizer.permit(:sign_up, keys: attr)
   end
