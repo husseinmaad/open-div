@@ -1,0 +1,31 @@
+<h1>Open /div</h1>
+<!-- <div class="row">
+    <div class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">search</i>
+          <form action="/companies/<% 150 %>" method="get">
+          <input type="text" id="autocomplete-input" class="autocomplete">
+          <label for="autocomplete-input">Search</label>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+ 
+
+<%= form_tag(companies_path, :method => "get", id: "search-form") do %>
+<%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
+<%= submit_tag "Search" %>
+<% end %>
+
+<div class="row">
+  <% @companies.each do |company| %>
+    <div class="col m3 top-company">
+      <h5><%= link_to  company.name , company_path(company)%></h5>
+      <img class="company-img" src="<%= company.profile_image_url %>" alt="<%= company.name %>" />
+      <span class="rating"><%= company.avg_rating %></span>
+    </div>
+  <% end %>
+</div>
