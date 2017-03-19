@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
 	get 'users/:id', to: 'users#show', as: 'user_profile'
 	root 'companies#index'
-  resources :companies
+  resources :companies do
+  	resources :review , only: [:create, :new , :edit, :update]
+  end
   
 end
