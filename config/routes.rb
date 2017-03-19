@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
   devise_for :users, :controllers => { registrations: 'registrations', :omniauth_callbacks => "callbacks"}
   
-	root 'companies#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  resources :companies
+
+	get 'users/:id', to: 'users#show', as: 'user_profile'
+	root 'companies#index'
+  resources :companies do
+  	resources :reviews , only: [:create, :new , :edit, :update]
+  end
+  
 end
