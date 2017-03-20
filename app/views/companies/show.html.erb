@@ -10,9 +10,7 @@ Likes: <%= @company.likes.length %>
 <h3>
 	Reviews
 </h3>
-<% binding.pry %>
 <% if current_user && !@company.reviewed?(current_user) %>
-<% binding.pry %>
 <%= button_to "Review", new_company_review_path(@company), method: "get"  %>
 <% end %>
 <div class=" container">
