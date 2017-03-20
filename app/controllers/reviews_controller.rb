@@ -20,7 +20,10 @@ class ReviewsController < ApplicationController
 		@review = Review.find(params[:id])
 	end 
 
-	def patch
+	def edit
+	end 
+
+	def update
 	end 
 
 	def like
