@@ -32,7 +32,7 @@ class ReviewsController < ApplicationController
 		@company = @review.company 
 		@review.update(review_params)
 		if @review.save
-			redirect_to @company
+			redirect_to review_show_path(@review)
 		else 
 			render :edit
 		end 
@@ -54,7 +54,7 @@ class ReviewsController < ApplicationController
 	def destroy
 		@review = Review.find(params[:id])
 		@comany = @review.company 
-		@review.delete
+		@review.destroy
 		redirect_to @comany 
 	end 
 
