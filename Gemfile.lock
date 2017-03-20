@@ -55,6 +55,10 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    carrierwave (1.0.0)
+      activemodel (>= 4.0.0)
+      activesupport (>= 4.0.0)
+      mime-types (>= 1.16)
     coderay (1.1.1)
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
@@ -110,6 +114,7 @@ GEM
     mime-types (3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
+    mini_magick (4.6.1)
     mini_portile2 (2.1.0)
     minitest (5.10.1)
     multi_json (1.12.1)
@@ -256,6 +261,7 @@ PLATFORMS
 DEPENDENCIES
   byebug
   capybara
+  carrierwave (~> 1.0)
   devise
   dotenv-rails
   factory_girl
@@ -267,6 +273,7 @@ DEPENDENCIES
   json
   listen (~> 3.0.5)
   materialize-sass
+  mini_magick
   omniauth
   omniauth-github
   pg (~> 0.18)
