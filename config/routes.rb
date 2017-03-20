@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
 	get 'users/:id', to: 'users#show', as: 'user_profile'
 	get 'reviews/:id', to: 'reviews#show', as: 'review_show'
+	get 'reviews/:id/likes', to: 'reviews#like', as: 'review_like'
 	root 'companies#index'
   resources :companies do
   	resources :reviews , only: [:create, :new , :edit, :update]

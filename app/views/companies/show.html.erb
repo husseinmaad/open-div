@@ -22,8 +22,8 @@ Likes: <%= @company.likes.length %>
 		<%= current_user.first_name%>
 		<% end %>
 		<%= link_to("#{review.body}", review_show_path(review) ) %>
-		<% if current_user && !@company.reviewed?(current_user) %>
-		<%= button_to "Like", new_company_review_path(@company), method: "get"  %>
+		<% if current_user && !review.liked?(current_user) %>
+		<%= button_to "Like", review_like_path(review), method: "get"  %>
 		<% end %>
 		<br>
 		Likes: <%= review.likes.length %>
