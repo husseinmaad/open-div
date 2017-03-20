@@ -762,3 +762,15 @@ Processing by CompaniesController#show as HTML
 Completed 200 OK in 6290ms (Views: 6258.3ms | ActiveRecord: 15.2ms)
 
 
+Started GET "/companies/3/reviews/new" for 127.0.0.1 at 2017-03-19 20:08:57 -0700
+Processing by ReviewsController#new as HTML
+  Parameters: {"company_id"=>"3"}
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/new.html.erb within layouts/application (241.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_navigation.html.erb (2.7ms)
+  Rendered layouts/_alerts.html.erb (0.2ms)
+Completed 200 OK in 303ms (Views: 300.9ms | ActiveRecord: 0.6ms)
+
+
