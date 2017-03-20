@@ -6,7 +6,6 @@ Rails.application.routes.draw do
 	get 'users/:id', to: 'users#show', as: 'user_profile'
 	get 'reviews/:id', to: 'reviews#show', as: 'review_show'
 	get 'reviews/:id/likes', to: 'reviews#like', as: 'review_like'
-	get 'companys/:id/likes', to: 'companies#like', as: 'company_like'
 	get 'reviews/:id/comments/new', to: 'comments#new', as: 'new_review_comment'
 	root 'companies#index'
   resources :companies do

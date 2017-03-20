@@ -1,8 +1,7 @@
 class Company < ApplicationRecord
   belongs_to :creator, class_name: "User"
   has_many :reviews
-  has_many :likes, as: :likeable
-
+ 
 
   ratyrate_rateable "culture", "inclusion", "diversity"
   validates :name, :city_name, :region_name, :country_code, presence: true

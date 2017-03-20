@@ -1,0 +1,6 @@
+<h1>Review</h1>
+<div class="container">
+
+<h5><%= @review.body %></h5>
+<%= button_to "+Add Comment", new_review_comment_path(@review),method: "get" %>
+</div>

@@ -11,7 +11,7 @@ Likes: <%= @company.likes.length %>
 	Reviews
 </h3>
 <% if current_user && !@company.reviewed?(current_user) %>
-<%= button_to "Review", new_company_review_path(@company), method: "get"  %>
+<%= button_to "+Review", new_company_review_path(@company), method: "get"  %>
 <% end %>
 
 <% if current_user && !@company.liked?(current_user) %>
