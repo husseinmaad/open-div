@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
 	get 'users/:id', to: 'users#show', as: 'user_profile'
+	get 'reviews/:id', to: 'reviews#show', as: 'review_show'
 	root 'companies#index'
   resources :companies do
   	resources :reviews , only: [:create, :new , :edit, :update]
