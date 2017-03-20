@@ -2,6 +2,7 @@ class Company < ApplicationRecord
   belongs_to :creator, class_name: "User"
   has_many :reviews
 
+  ratyrate_rateable "culture", "inclusion", "diversity"
   validates :name, :city_name, :region_name, :country_code, presence: true
 
   # Returns the average rating for the whole company
