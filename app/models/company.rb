@@ -6,17 +6,25 @@ class Company < ApplicationRecord
   validates :name, :city_name, :region_name, :country_code, presence: true
 
   # Returns the average rating for the whole company
+  # def avg_rating
+  #   if self.reviews.any?
+  #     sum = self.reviews.reduce(0){|sum,review| sum + review.culture_rating.to_f } / self.reviews.length
+  #     sum += self.reviews.reduce(0){|sum,review| sum + review.inclusion_rating.to_f } / self.reviews.length
+  #     sum += self.reviews.reduce(0){|sum,review| sum + review.diversity_rating.to_f } / self.reviews.length
+  #     return sum / 3
+  #   else
+  #     return 0
+  #   end
+  # end
   def avg_rating
-    if self.reviews.any?
-      sum = self.reviews.reduce(0){|sum,review| sum + review.culture_rating.to_f } / self.reviews.length
-      sum += self.reviews.reduce(0){|sum,review| sum + review.inclusion_rating.to_f } / self.reviews.length
-      sum += self.reviews.reduce(0){|sum,review| sum + review.diversity_rating.to_f } / self.reviews.length
+    if self.diversity_average && self.inclusion_average && self.inclusion_average
+      sum =self.diversity_average.avg
+      sum += self.inclusion_average.avg
+      sum += self.inclusion_average.avg
       return sum / 3
-    else
-      return 0
-    end
-  end
-  
+    end 
+    return 0
+  end 
   # Takes in search team and finds relevant companies in database
   def self.search(search)
     where("name LIKE ?", "%#{search}%")
