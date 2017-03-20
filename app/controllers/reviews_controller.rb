@@ -8,7 +8,6 @@ class ReviewsController < ApplicationController
 		@company = Company.find(params[:company_id])
 		@review = @company.reviews.new (review_params)
 		@review.reviewer = current_user	
-		binding.pry
 		if @review.save
 			redirect_to @company
 		else
