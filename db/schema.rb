@@ -36,13 +36,15 @@ ActiveRecord::Schema.define(version: 20170320000953) do
 
   create_table "companies", force: :cascade do |t|
     t.string   "name"
-    t.string   "website"
-    t.string   "industry"
-    t.string   "location"
-    t.string   "logo"
+    t.text     "short_description"
+    t.string   "domain"
+    t.string   "city_name"
+    t.string   "region_name"
+    t.string   "country_code"
+    t.string   "profile_image_url"
     t.integer  "creator_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
   end
 
   create_table "controllers", force: :cascade do |t|
