@@ -26,6 +26,13 @@ class ReviewsController < ApplicationController
 		redirect_back(fallback_location: root_path)
 	end
 
+	def unlike
+		@review = Review.find(params[:id])
+		@like = @review.likes.find_by(liker_id: current_user.id)
+		@like.delete
+		redirect_back(fallback_location: root_path)
+	end
+
 
 private
 
