@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 	get 'reviews/:id/likes', to: 'reviews#like', as: 'review_like'
 	get 'reviews/:id/comments/new', to: 'comments#new', as: 'review_comments'
 	post 'reviews/:id/comments/new' , to: 'comments#create', as: 'new_review_comments'
+  get 'reviews/:id/comments/edit', to: 'comments#edit', as: 'edit_comment'
   root 'companies#index'
   # resources :comments , only: [:create,:edit,:update,:destroy]
   resources :companies do
