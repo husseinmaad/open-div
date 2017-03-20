@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 	delete 'reviews/:id/likes', to: 'reviews#unlike' , as:'review_unlike'
 	root 'companies#index'
   resources :companies do
-  	resources :reviews , only: [:create, :new , :edit, :update]
+  	resources :reviews , only: [:create, :new , :edit, :update, :destroy]
   end
   get '/search', to: 'search#index', as: 'search'
 end
