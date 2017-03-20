@@ -21,7 +21,7 @@
 		<% if review.anonymous %>
 		<%= "Anonymous" %> <br>
 		<% else %>
-		<%= review.reveiwer.first_name%>
+		<%= review.reviewer.first_name%>
 		<% end %>
 		<%= link_to("#{review.body}", review_show_path(review) ) %>
 		<% if (current_user && !review.liked?(current_user) ) %>
