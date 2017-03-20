@@ -4,4 +4,10 @@ class Comment < ApplicationRecord
   has_many :likes , as: :likeables
 
   validates :body, :commentor_id, :commentable_type, :commentable_id, presence: true
+
+
+  def liked?(user)
+    return self.likes.find_by(liker_id: user.id )
+  end
+
 end

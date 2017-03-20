@@ -7,9 +7,11 @@ Rails.application.routes.draw do
 	get 'reviews/:id', to: 'reviews#show', as: 'review_show'
 	get 'reviews/:id/likes', to: 'reviews#like', as: 'review_like'
 	get 'reviews/:id/comments/new', to: 'comments#new', as: 'new_review_comment'
+
+	delete 'reviews/:id/likes', to: 'reviews#unlike' , as:'review_unlike'
 	root 'companies#index'
   resources :companies do
-  	resources :reviews , only: [:create, :new , :edit, :update]
+  	resources :reviews , only: [:create, :new , :edit, :update, :destroy]
   end
   get '/search', to: 'search#index', as: 'search'
 end
