@@ -6,8 +6,10 @@ Rails.application.routes.draw do
 	get 'users/:id', to: 'users#show', as: 'user_profile'
 	get 'reviews/:id', to: 'reviews#show', as: 'review_show'
 	get 'reviews/:id/likes', to: 'reviews#like', as: 'review_like'
-	get 'reviews/:id/comments/new', to: 'comments#new', as: 'new_review_comment'
-	root 'companies#index'
+	get 'reviews/:id/comments/new', to: 'comments#new', as: 'review_comments'
+	post 'reviews/:id/comments/new' , to: 'comments#create', as: 'new_review_comments'
+  root 'companies#index'
+  # resources :comments , only: [:create,:edit,:update,:destroy]
   resources :companies do
   	resources :reviews , only: [:create, :new , :edit, :update]
   end
