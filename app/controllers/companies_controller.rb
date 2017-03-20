@@ -1,4 +1,5 @@
 class CompaniesController < ApplicationController
+  layout "home", only: [:index]
   def index
     #@companies = sorted_companies # helper method
     # @companies = Company.all
@@ -8,9 +9,9 @@ class CompaniesController < ApplicationController
     else
       @companies
     end
-  end 
+  end
 
   def show
     @company = Company.find(params[:id])
-  end 
+  end
 end

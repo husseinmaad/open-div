@@ -5,14 +5,25 @@
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
         <li><%= link_to "Home", root_path %></li>
-        <li><%= link_to "Sign Up", new_user_registration_path %></li>
-        <li><%= link_to "Log in", new_user_session_path %></li>
-        <li><%= link_to "Sign Out", destroy_user_session_path , method: "delete" %></li>
+        <li><%= link_to "Search", search_path %>
+        <% if current_user %>
+          <li><%= link_to "Profile", user_profile_path(current_user) %></li>
+          <li><%= link_to "Sign Out", destroy_user_session_path , method: "delete" %></li>
+        <% else %>
+          <li><%= link_to "Log in", new_user_session_path %></li>
+          <li><%= link_to "Sign Up", new_user_registration_path %></li>
+        <% end %>
       </ul>
       <ul class="side-nav" id="mobile-demo">
-        <li><%= link_to "Sign Up", new_user_registration_path %></li>
-        <li><%= link_to "Log in", new_user_session_path %></li>
-        <li><%= link_to "Sign Out", destroy_user_session_path , method: "delete" %></li>
+        <li><%= link_to "Home", root_path %></li>
+        <li><%= link_to "Search", search_path %>
+        <% if current_user %>
+          <li><%= link_to "Profile", user_profile_path(current_user) %></li>
+          <li><%= link_to "Sign Out", destroy_user_session_path , method: "delete" %></li>
+        <% else %>
+          <li><%= link_to "Log in", new_user_session_path %></li>
+          <li><%= link_to "Sign Up", new_user_registration_path %></li>
+        <% end %>
       </ul>
     </div>
   </div>
