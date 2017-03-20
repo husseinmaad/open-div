@@ -7,4 +7,5 @@ class CommentsController < ApplicationController
     @company.likes.create!(liker_id: current_user.id)
     redirect_back(fallback_location: root_path)
   end
+  
 end
