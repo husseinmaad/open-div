@@ -4,7 +4,8 @@ class Review < ApplicationRecord
   belongs_to :company
   has_many :likes, as: :likeable
 
-  validates :body, :company_id, :reviewer_id, :anonymous, presence: true
+  validates :body, :company_id, :reviewer_id, presence: true
+  validates :anonymous, acceptance: true
 
   def liked?(user)
   	return self.likes.find_by(liker_id: user.id )
