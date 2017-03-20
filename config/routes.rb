@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   root 'companies#index'
   # resources :comments , only: [:create,:edit,:update,:destroy]
   resources :companies do
-  	resources :reviews , only: [:create, :new , :edit, :update]
+  	resources :reviews , only: [:create, :new , :edit, :update, :destroy]
   end
   get '/search', to: 'search#index', as: 'search'
 end

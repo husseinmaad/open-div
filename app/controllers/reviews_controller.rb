@@ -18,6 +18,24 @@ class ReviewsController < ApplicationController
 
 	def show
 		@review = Review.find(params[:id])
+		@company = @review.company
+		@user = @review.reviewer 
+	end 
+
+	def edit
+		@review = Review.find(params[:id])
+		@company = @review.company
+	end 
+
+	def update
+		@review = Review.find(params[:id])
+		@company = @review.company 
+		@review.update(review_params)
+		if @review.save
+			redirect_to @company
+		else 
+			render :edit
+		end 
 	end 
 
 	def like
@@ -25,6 +43,13 @@ class ReviewsController < ApplicationController
 		@review.likes.create!(liker_id: current_user.id)
 		redirect_back(fallback_location: root_path)
 	end
+
+	def destroy
+		@review = Review.find(params[:id])
+		@comany = @review.company 
+		@review.delete
+		redirect_to @comany 
+	end 
 
 
 private
