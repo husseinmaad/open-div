@@ -13,6 +13,11 @@ Likes: <%= @company.likes.length %>
 <% if current_user && !@company.reviewed?(current_user) %>
 <%= button_to "Review", new_company_review_path(@company), method: "get"  %>
 <% end %>
+
+<% if current_user && !@company.liked?(current_user) %>
+	<%= button_to "Like", company_like_path(@company), method: "get"  %>
+<% end %>
+
 <div class=" container">
 	<% @company.reviews.each do |review|%>
 		<div>
@@ -22,8 +27,8 @@ Likes: <%= @company.likes.length %>
 		<%= current_user.first_name%>
 		<% end %>
 		<%= link_to("#{review.body}", review_show_path(review) ) %>
-		<% if current_user && !@company.reviewed?(current_user) %>
-		<%= button_to "Like", new_company_review_path(@company), method: "get"  %>
+		<% if current_user && !review.liked?(current_user) %>
+		<%= button_to "Like", review_like_path(review), method: "get"  %>
 		<% end %>
 		<br>
 		Likes: <%= review.likes.length %>

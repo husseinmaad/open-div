@@ -8,12 +8,17 @@ class ReviewsController < ApplicationController
 		@company = Company.find(params[:company_id])
 		@review = @company.reviews.new (review_params)
 		@review.reviewer = current_user	
-		binding.pry
 		if @review.save
 			redirect_to @company
 		else
 			redirect_back(fallback_location: root_path)
 		end
+	end
+
+	def like
+		@review = Review.find(params[:id])
+		@review.likes.create!(liker_id: current_user.id)
+		redirect_back(fallback_location: root_path)
 	end
 
 private
