@@ -1,9 +1,9 @@
 // $( document ).ready(function() {
 $( document ).on('turbolinks:load', function() {
-  autoComplete();
+  autoCompleteListener();
 });
 
-var autoComplete = function(){
+var autoCompleteListener = function(){
 
   // var $project = $('input.autocomplete');
   //
@@ -255,7 +255,9 @@ var autoComplete = function(){
     'SpiritualVR, Inc.': 'http://public.crunchbase.com/t_api_images/v1479503788/d1uuctfmihtwptrslgpy.png'
 
   };
-  $('input.autocomplete').autocomplete({
+
+  // Event listener for form on homepage header
+  $('.home-search-form input.autocomplete').autocomplete({
     data: companies,
     limit: 20,
   }).keyup(function (e) {
@@ -271,4 +273,27 @@ var autoComplete = function(){
            })
         }
     });
+  // end of event listener
+
+  // Event listener for search form on search results page
+  $('.search-results-page-form input.autocomplete').autocomplete({
+    data: companies,
+    limit: 20,
+  })
+  // .keyup(function (e) {
+  //       event.preventDefault();
+  //       var $query = $(this);
+  //       if(e.which === 13) { // on enter
+  //           console.log($query.val())
+  //          $.ajax({
+  //           type: "GET",
+  //           url: "/search",
+  //           success: (console.log("success"))
+  //         }).done(function(r){
+  //           $('.search-results').append(r);
+  //           console.log(r);
+  //          })
+  //       }
+  //   })
+  // end of event listener
 };

@@ -7,10 +7,9 @@ class SearchController < ApplicationController
       if @companies.length <= 0
         @results_message = "No results found."
       end
-      respond_to do |format|
-          format.html { render 'search/index'}
-          format.js   { redirect_to search_path }
-      end
+      # if request.xhr?
+      #   render :layout => false
+      # end
     else
       @companies = Company.all
     end
