@@ -10,8 +10,9 @@ Likes: <%= @company.likes.length %>
 <h3>
 	Reviews
 </h3>
-<%= button_to "Comment" ,  %>
-
+<% if current_user && @company.reviewed?(current_user) %>
+<%= button_to "Review", new_company_review_path(@company), method: "get"  %>
+<% end %>
 <div class=" container">
 	<% @company.reviews.each do |review|%>
 		<div>
@@ -19,6 +20,7 @@ Likes: <%= @company.likes.length %>
 		<%= "Anonymous" %> <br>
 		<% end %>
 		<%= review.body  %>
+		<%= button_to "Like", new_company_review_path(@company), method: "get"  %>
 		<br>
 		Likes: <%= review.likes.length %>
 		</div>

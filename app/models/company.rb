@@ -21,4 +21,10 @@ class Company < ApplicationRecord
     where("name LIKE ?", "%#{search}%")
   end
 
+  def reviewed?(user)
+    if self.reviews.find_by(reviewer_id: user.id )
+      return false
+    end
+  end
+
 end
