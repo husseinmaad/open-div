@@ -10,9 +10,7 @@ Likes: <%= @company.likes.length %>
 <h3>
 	Reviews
 </h3>
-<% binding.pry %>
 <% if current_user && !@company.reviewed?(current_user) %>
-<% binding.pry %>
 <%= button_to "Review", new_company_review_path(@company), method: "get"  %>
 <% end %>
 <div class=" container">
@@ -20,8 +18,10 @@ Likes: <%= @company.likes.length %>
 		<div>
 		<% if review.anonymous %>
 		<%= "Anonymous" %> <br>
+		<% else %>
+		<%= current_user.first_name%>
 		<% end %>
-		<%= review.body  %>
+		<%= link_to("#{review.body}", review_show_path(review) ) %>
 		<% if current_user && !@company.reviewed?(current_user) %>
 		<%= button_to "Like", new_company_review_path(@company), method: "get"  %>
 		<% end %>
