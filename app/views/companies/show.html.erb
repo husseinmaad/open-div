@@ -7,22 +7,27 @@
 
 <hr>
 
-<h3>
-	Reviews
-</h3>
+<!-- <div data-dimension="inclusion" class="star" data-rating="<%= @company.culture_average.avg %>" data-id="99" data-classname="Company" data-disable-after-rate="true" data-readonly="true" data-enable-half="false" data-half-show="true" data-star-count="5" data-star-path="/assets" data-star-on="star-on.png" data-star-off="star-off.png" data-star-half="star-half.png" data-cancel="false" data-cancel-place="left" data-cancel-hint="Cancel current rating!" data-cancel-on="cancel-on.png" data-cancel-off="cancel-off.png" data-no-rated-message="I'am readOnly and I haven't rated yet!" data-space="false" data-single="false" data-target="" data-target-text="" data-target-type="hint" data-target-format="{score}" data-target-score="" title="regular"><img title="Cancel current rating!" class="raty-cancel" src="/assets/cancel-off.png" alt="x" style="display: none;">&nbsp;<img alt="1" src="/assets/star-on.png" title="regular">&nbsp;<img alt="2" src="/assets/star-on.png" title="regular">&nbsp;<img alt="3" src="/assets/star-on.png" title="regular">&nbsp;<img alt="4" src="/assets/star-off.png" title="regular">&nbsp;<img alt="5" src="/assets/star-off.png" title="regular"><input name="score" type="hidden" value="3" readonly=""></div> -->
+
+<h3>Average Rating</h3>
+Culture  : <%= @company.culture_average.avg %>
+Inclusion : <%= @company.inclusion_average.avg %>
+Diversity : <%= @company.diversity_average.avg %>
+<hr>
+
+<h3>Reviews</h3>
 <% if current_user && !@company.reviewed?(current_user) %>
 <%= button_to "+Review", new_company_review_path(@company), method: "get"  %>
 <% end %>
 
-
 <div class=" container">
 	<% @company.reviews.each do |review|%>
 		<div>
-		<% if review.anonymous %>
-		<%= "Anonymous" %> <br>
-		<% else %>
-		<%= review.reviewer.first_name%>
-		<% end %>
+			<% if review.anonymous %>
+				<%= "Anonymous" %> <br>
+			<% else %>
+				<%= review.reviewer.first_name%>
+			<% end %>
 		<%= link_to("#{review.body}", review_show_path(review) ) %>
 		<% if (current_user && !review.liked?(current_user) ) %>
 		<%= button_to "Like", review_like_path(review), method: "get"  %>
@@ -36,9 +41,7 @@
 </div>
 
 
-Culture  : <%= rating_for @company, 'culture' %>
-Inclusion : <%= rating_for @company, 'inclusion' %>
-Diversity : <%= rating_for @company, 'diversity' %>
+
 
 
 
