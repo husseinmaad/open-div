@@ -4,10 +4,26 @@
 <h4><%= @company.city_name %></h4>
 <h4><%= @company.region_name %></h4>
 <h4><%= @company.country_code %></h4>
+Likes: <%= @company.likes.length %>
 <hr>
 
+<h3>
+	Reviews
+</h3>
+<%= button_to "Comment" %>
 
- 
+<div class=" container">
+	<% @company.reviews.each do |review|%>
+		<div>
+		<% if review.anonymous %>
+		<%= "Anonymous" %> <br>
+		<% end %>
+		<%= review.body  %>
+		<br>
+		Likes: <%= review.likes.length %>
+		</div>
+	<% end %>
+</div>
 
 
 
