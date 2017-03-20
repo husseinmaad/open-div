@@ -7,12 +7,19 @@
 <div> 
   <% if @review.comments.any? %>
     <% @review.comments.each do |comment| %>
-      <li><%= comment.body %></li> <h5><%=link_to  "Edit", edit_comment_path(comment) %></h5> 
+      <li><%= comment.body %></li> 
+      <% if (current_user && (comment.commentor_id==current_user.id) )  %>
+        <%=link_to  "Edit", edit_comment_path(@review,comment) %> 
+        <%=link_to  "Delete",[@review,comment], method: 'delete'%>
+      <% end %>
       <hr>
     <% end %>
   <% end %>
 </div>
-<%= button_to "+Add Comment", review_comments_path(@review),method: "get" %>
+<% if current_user %>
+  <%= button_to "+Add Comment", review_comments_path(@review),method: "get" %>
+<% end %>
+
 <% if @user == current_user %>
 	<%= button_to "+Edit Review", edit_company_review_path(@company, @review), method: "get" %>
 	<%= button_to "Delete Review", [@company, @review], method: "delete" %>

@@ -1,0 +1,23 @@
+
+<div class = container>
+<%= form_for [@review,@comment], method: "put"  do |f|%>
+
+
+  <div class="field">
+    <%= f.label :body %><br />
+    <%= f.text_field :body %>
+  </div>
+
+  <div class="field">
+    <%= f.check_box :anonymous, {} %>
+    <%= f.label :anonymous  %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Update" %>
+  </div>
+
+
+<% end %> 
+
+</div>
