@@ -11,10 +11,10 @@
     <div class="col s12">
       <div class="row">
         <div class="input-field col s12">
-          <form action="/search" method="get" data-turbolinks="false">
-            <i class="material-icons prefix">search</i>
-            <input type="text" id="autocomplete" class="autocomplete">
-            <label for="autocomplete">Search for a company</label>
+          <form action="<%= search_path %>" method="get" data-turbolinks="false">
+            <!-- <i class="material-icons prefix">search</i> -->
+            <input type="search" name="search" id="autocomplete" class="autocomplete" autocomplete="off">
+            <label class="label-icon" for="autocomplete"><i class="material-icons">search</i></label>
           </form>
         </div>
       </div>
