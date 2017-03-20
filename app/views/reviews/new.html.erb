@@ -9,7 +9,7 @@
   </div>
 
   <div class="field">
-    <%= f.check_box :anonymous, {} %><br />
+    <%= f.check_box :anonymous,{:checked => 'checked'}, checked_value = true, unchecked_value = false  %>
     <%= f.label :anonymous  %>
   </div>
 
