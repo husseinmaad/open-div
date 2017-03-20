@@ -20,11 +20,17 @@ class ReviewsController < ApplicationController
 		@review = Review.find(params[:id])
 	end 
 
+	def patch
+	end 
+
 	def like
 		@review = Review.find(params[:id])
 		@review.likes.create!(liker_id: current_user.id)
 		redirect_back(fallback_location: root_path)
 	end
+
+	def destroy
+	end 
 
 
 private
