@@ -10,4 +10,6 @@ class Comment < ApplicationRecord
     return self.likes.find_by(liker_id: user.id )
   end
 
+
+
 end

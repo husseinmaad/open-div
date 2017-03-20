@@ -15,6 +15,29 @@ class CommentsController < ApplicationController
     end
   end
 
+  def edit
+    @comment = Comment.find(params[:id])
+    @review = Review.find(params[:review_id])
+  end 
+
+  def update
+    @comment = Comment.find(params[:id])
+    @review = Review.find(params[:review_id])
+    @comment.update(comments_params)
+    if @comment.save
+      redirect_to review_show_path(@review)
+    else 
+      render :edit
+    end 
+  end 
+  
+  def destroy
+    @comment = Comment.find(params[:id])
+    @review = Review.find(params[:review_id])
+    @comment.delete
+    redirect_to review_show_path(@review)
+  end 
+  
   def like
     @company = Company.find(params[:id])
     @company.likes.create!(liker_id: current_user.id)
