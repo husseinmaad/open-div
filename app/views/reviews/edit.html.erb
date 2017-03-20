@@ -1,6 +1,6 @@
 
 <div class = container>
-<%= form_for [ @company , @review]  do |f|%>
+<%= form_for [ @company , @review ], method: "put"  do |f|%>
 
 
   <div class="field">
@@ -9,12 +9,12 @@
   </div>
 
   <div class="field">
-    <%= f.check_box :anonymous,{:checked => 'checked'}, checked_value = true, unchecked_value = false  %>
+    <%= f.check_box :anonymous, {} %><br />
     <%= f.label :anonymous  %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Submit review" %>
+    <%= f.submit "Update Review" %>
   </div>
 
 

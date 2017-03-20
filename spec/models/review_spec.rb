@@ -5,9 +5,6 @@ RSpec.describe Review, type: :model do
 			it { should validate_presence_of(:body) }
 			it { should validate_presence_of(:company_id) }
 			it { should validate_presence_of(:reviewer_id) }
-			it { should validate_presence_of(:culture_rating) }
-			it { should validate_presence_of(:diversity_rating) }
-			it { should validate_presence_of(:inclusion_rating) }
 			it { should validate_presence_of(:anonymous) }
 	  end
 
