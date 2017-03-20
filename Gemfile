@@ -25,6 +25,10 @@ gem 'ratyrate'
 # gem 'therubyracer', platforms: :ruby
 gem 'devise'
 
+# Gem to add avatars to users
+gem 'carrierwave', '~> 1.0'
+gem 'mini_magick'
+
 #github omniauth
 gem 'omniauth-github'
 

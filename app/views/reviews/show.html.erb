@@ -21,7 +21,7 @@
 <% end %>
 
 <% if @user == current_user %>
-	<%= button_to "+Edit Comment", edit_company_review_path(@company, @review), method: "get" %>
-	<%= button_to "Delete Comment", [@company, @review], method: "delete" %>
+	<%= button_to "+Edit Review", edit_company_review_path(@company, @review), method: "get" %>
+	<%= button_to "Delete Review", [@company, @review], method: "delete" %>
 <% end %>
 </div>
