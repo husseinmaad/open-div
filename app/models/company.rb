@@ -33,9 +33,11 @@ class Company < ApplicationRecord
   end
 
   def reviewed?(user)
-    if self.reviews.find_by(reviewer_id: user.id )
-      return false
-    end
+    return self.reviews.find_by(reviewer_id: user.id )
+  end
+
+  def liked?(user)
+    return self.likes.find_by(liker_id: user.id )
   end
 
 end
