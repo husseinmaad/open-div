@@ -258,5 +258,17 @@ var autoComplete = function(){
   $('input.autocomplete').autocomplete({
     data: companies,
     limit: 20, // The max amount of results that can be shown at once. Default: Infinity.
-  });
+  }).keyup(function (e) {
+        if(e.which === 13) {
+            console.log($('input.autocomplete').val())
+           $.ajax({
+            type: "GET",
+            url: "/search",
+            success: (console.log("success"))
+           })
+           .done(function(r){
+            console.log(r);
+           })
+        }
+    });
 };
