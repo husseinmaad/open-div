@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170320181944) do
+ActiveRecord::Schema.define(version: 20170320215627) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,9 +29,9 @@ ActiveRecord::Schema.define(version: 20170320181944) do
     t.integer  "commentor_id"
     t.string   "commentable_type"
     t.integer  "commentable_id"
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
-    t.boolean  "anonymous",        default: true
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+    t.boolean  "anonymous",        default: false
     t.index ["commentable_type", "commentable_id"], name: "index_comments_on_commentable_type_and_commentable_id", using: :btree
   end
 
@@ -119,9 +119,9 @@ ActiveRecord::Schema.define(version: 20170320181944) do
     t.integer  "culture_rating"
     t.integer  "diversity_rating"
     t.integer  "inclusion_rating"
-    t.boolean  "anonymous"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.boolean  "anonymous",        default: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
   end
 
   create_table "users", force: :cascade do |t|
