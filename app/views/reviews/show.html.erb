@@ -7,7 +7,7 @@
 <div> 
   <% if @review.comments.any? %>
     <% @review.comments.each do |comment| %>
-      <li><%= comment.body %></li> <h5><%=link_to  "Edit", edit_comment_path(comment) %></h5> 
+      <li><%= comment.body %></li> <h5><%=link_to  "Edit", edit_comment_path(@review,comment) %></h5> 
       <hr>
     <% end %>
   <% end %>
