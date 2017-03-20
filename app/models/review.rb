@@ -5,7 +5,7 @@ class Review < ApplicationRecord
   has_many :likes, as: :likeable
 
   validates :body, :company_id, :reviewer_id, presence: true
-  validates :anonymous, acceptance: true
+  validates :anonymous, inclusion: { in: [ true, false ] }
 
   def liked?(user)
   	return self.likes.find_by(liker_id: user.id )
