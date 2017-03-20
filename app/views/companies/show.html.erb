@@ -4,8 +4,30 @@
 <h4><%= @company.city_name %></h4>
 <h4><%= @company.region_name %></h4>
 <h4><%= @company.country_code %></h4>
+Likes: <%= @company.likes.length %>
 <hr>
- 
+
+<h3>
+	Reviews
+</h3>
+<% if current_user && @company.reviewed?(current_user) %>
+<%= button_to "Review", new_company_review_path(@company), method: "get"  %>
+<% end %>
+<div class=" container">
+	<% @company.reviews.each do |review|%>
+		<div>
+		<% if review.anonymous %>
+		<%= "Anonymous" %> <br>
+		<% end %>
+		<%= review.body  %>
+		<%= button_to "Like", new_company_review_path(@company), method: "get"  %>
+		<br>
+		Likes: <%= review.likes.length %>
+		</div>
+	<% end %>
+</div>
+
+
 Culture  : <%= rating_for @company, 'culture' %>
 Inclusion : <%= rating_for @company, 'inclusion' %>
 Diversity : <%= rating_for @company, 'diversity' %>
