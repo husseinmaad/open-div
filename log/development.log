@@ -774,3 +774,335 @@ Processing by ReviewsController#new as HTML
 Completed 200 OK in 303ms (Views: 300.9ms | ActiveRecord: 0.6ms)
 
 
+Started GET "/companies/3" for 127.0.0.1 at 2017-03-19 20:15:36 -0700
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering companies/show.html.erb within layouts/application
+  [1m[36mLike Load (0.3ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 3], ["likeable_type", "Company"]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."company_id" = $1 AND "reviews"."reviewer_id" = $2 LIMIT $3[0m  [["company_id", 3], ["reviewer_id", 2], ["LIMIT", 1]]
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."company_id" = $1[0m  [["company_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."company_id" = $1 AND "reviews"."reviewer_id" = $2 LIMIT $3[0m  [["company_id", 3], ["reviewer_id", 2], ["LIMIT", 1]]
+  [1m[36mLike Load (0.3ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 3], ["likeable_type", "Review"]]
+  [1m[36mRatingCache Load (0.3ms)[0m  [1m[34mSELECT  "rating_caches".* FROM "rating_caches" WHERE "rating_caches"."cacheable_id" = $1 AND "rating_caches"."cacheable_type" = $2 AND "rating_caches"."dimension" = $3 LIMIT $4[0m  [["cacheable_id", 3], ["cacheable_type", "Company"], ["dimension", "culture"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "rates" WHERE "rates"."rater_id" = $1 AND "rates"."dimension" = $2 AND "rates"."rateable_id" = $3 AND "rates"."rateable_type" = $4[0m  [["rater_id", 2], ["dimension", "culture"], ["rateable_id", 3], ["rateable_type", "Company"]]
+  [1m[36mRatingCache Load (0.2ms)[0m  [1m[34mSELECT  "rating_caches".* FROM "rating_caches" WHERE "rating_caches"."cacheable_id" = $1 AND "rating_caches"."cacheable_type" = $2 AND "rating_caches"."dimension" = $3 LIMIT $4[0m  [["cacheable_id", 3], ["cacheable_type", "Company"], ["dimension", "inclusion"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "rates" WHERE "rates"."rater_id" = $1 AND "rates"."dimension" = $2 AND "rates"."rateable_id" = $3 AND "rates"."rateable_type" = $4[0m  [["rater_id", 2], ["dimension", "inclusion"], ["rateable_id", 3], ["rateable_type", "Company"]]
+  [1m[36mRatingCache Load (0.3ms)[0m  [1m[34mSELECT  "rating_caches".* FROM "rating_caches" WHERE "rating_caches"."cacheable_id" = $1 AND "rating_caches"."cacheable_type" = $2 AND "rating_caches"."dimension" = $3 LIMIT $4[0m  [["cacheable_id", 3], ["cacheable_type", "Company"], ["dimension", "diversity"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "rates" WHERE "rates"."rater_id" = $1 AND "rates"."dimension" = $2 AND "rates"."rateable_id" = $3 AND "rates"."rateable_type" = $4[0m  [["rater_id", 2], ["dimension", "diversity"], ["rateable_id", 3], ["rateable_type", "Company"]]
+  Rendered companies/show.html.erb within layouts/application (80428.0ms)
+  Rendered layouts/_navigation.html.erb (1.3ms)
+  Rendered layouts/_alerts.html.erb (0.2ms)
+Completed 200 OK in 80479ms (Views: 80474.7ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/companies/3" for 127.0.0.1 at 2017-03-19 20:18:13 -0700
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering companies/show.html.erb within layouts/application
+  [1m[36mLike Load (0.3ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 3], ["likeable_type", "Company"]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."company_id" = $1 AND "reviews"."reviewer_id" = $2 LIMIT $3[0m  [["company_id", 3], ["reviewer_id", 2], ["LIMIT", 1]]
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."company_id" = $1[0m  [["company_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."company_id" = $1 AND "reviews"."reviewer_id" = $2 LIMIT $3[0m  [["company_id", 3], ["reviewer_id", 2], ["LIMIT", 1]]
+  [1m[36mLike Load (0.1ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 3], ["likeable_type", "Review"]]
+  [1m[36mRatingCache Load (0.2ms)[0m  [1m[34mSELECT  "rating_caches".* FROM "rating_caches" WHERE "rating_caches"."cacheable_id" = $1 AND "rating_caches"."cacheable_type" = $2 AND "rating_caches"."dimension" = $3 LIMIT $4[0m  [["cacheable_id", 3], ["cacheable_type", "Company"], ["dimension", "culture"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "rates" WHERE "rates"."rater_id" = $1 AND "rates"."dimension" = $2 AND "rates"."rateable_id" = $3 AND "rates"."rateable_type" = $4[0m  [["rater_id", 2], ["dimension", "culture"], ["rateable_id", 3], ["rateable_type", "Company"]]
+  [1m[36mRatingCache Load (0.2ms)[0m  [1m[34mSELECT  "rating_caches".* FROM "rating_caches" WHERE "rating_caches"."cacheable_id" = $1 AND "rating_caches"."cacheable_type" = $2 AND "rating_caches"."dimension" = $3 LIMIT $4[0m  [["cacheable_id", 3], ["cacheable_type", "Company"], ["dimension", "inclusion"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "rates" WHERE "rates"."rater_id" = $1 AND "rates"."dimension" = $2 AND "rates"."rateable_id" = $3 AND "rates"."rateable_type" = $4[0m  [["rater_id", 2], ["dimension", "inclusion"], ["rateable_id", 3], ["rateable_type", "Company"]]
+  [1m[36mRatingCache Load (0.2ms)[0m  [1m[34mSELECT  "rating_caches".* FROM "rating_caches" WHERE "rating_caches"."cacheable_id" = $1 AND "rating_caches"."cacheable_type" = $2 AND "rating_caches"."dimension" = $3 LIMIT $4[0m  [["cacheable_id", 3], ["cacheable_type", "Company"], ["dimension", "diversity"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "rates" WHERE "rates"."rater_id" = $1 AND "rates"."dimension" = $2 AND "rates"."rateable_id" = $3 AND "rates"."rateable_type" = $4[0m  [["rater_id", 2], ["dimension", "diversity"], ["rateable_id", 3], ["rateable_type", "Company"]]
+  Rendered companies/show.html.erb within layouts/application (20.7ms)
+  Rendered layouts/_navigation.html.erb (1.1ms)
+  Rendered layouts/_alerts.html.erb (0.2ms)
+Completed 200 OK in 71ms (Views: 67.4ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/companies/3/reviews/new" for 127.0.0.1 at 2017-03-19 20:18:18 -0700
+Processing by ReviewsController#new as HTML
+  Parameters: {"company_id"=>"3"}
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/new.html.erb within layouts/application (1.9ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_navigation.html.erb (2.2ms)
+  Rendered layouts/_alerts.html.erb (0.3ms)
+Completed 200 OK in 56ms (Views: 53.9ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/companies/3/reviews" for 127.0.0.1 at 2017-03-19 20:18:24 -0700
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ewZEWxxjVxb9SvUFrKI/MXywzdYwxzhb7O749KqDLbglQw9wXzvzM0nHjWYGRHA1PZEqr/9qdQle+4YSCM0S6g==", "review"=>{"body"=>"test", "culture_rating"=>"3", "diversity_rating"=>"4", "inclusion_rating"=>"5", "anonymous"=>"0"}, "commit"=>"Submit review", "company_id"=>"3"}
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "reviews" ("body", "company_id", "reviewer_id", "culture_rating", "diversity_rating", "inclusion_rating", "anonymous", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["body", "test"], ["company_id", 3], ["reviewer_id", 2], ["culture_rating", 3], ["diversity_rating", 4], ["inclusion_rating", 5], ["anonymous", false], ["created_at", 2017-03-20 03:18:45 UTC], ["updated_at", 2017-03-20 03:18:45 UTC]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/companies/3
+Completed 302 Found in 20988ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/companies/3" for 127.0.0.1 at 2017-03-19 20:18:45 -0700
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering companies/show.html.erb within layouts/application
+  [1m[36mLike Load (0.2ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 3], ["likeable_type", "Company"]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."company_id" = $1 AND "reviews"."reviewer_id" = $2 LIMIT $3[0m  [["company_id", 3], ["reviewer_id", 2], ["LIMIT", 1]]
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."company_id" = $1[0m  [["company_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."company_id" = $1 AND "reviews"."reviewer_id" = $2 LIMIT $3[0m  [["company_id", 3], ["reviewer_id", 2], ["LIMIT", 1]]
+  [1m[36mLike Load (0.2ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 3], ["likeable_type", "Review"]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."company_id" = $1 AND "reviews"."reviewer_id" = $2 LIMIT $3[0m  [["company_id", 3], ["reviewer_id", 2], ["LIMIT", 1]]
+  [1m[36mLike Load (0.2ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 100], ["likeable_type", "Review"]]
+  [1m[36mRatingCache Load (0.3ms)[0m  [1m[34mSELECT  "rating_caches".* FROM "rating_caches" WHERE "rating_caches"."cacheable_id" = $1 AND "rating_caches"."cacheable_type" = $2 AND "rating_caches"."dimension" = $3 LIMIT $4[0m  [["cacheable_id", 3], ["cacheable_type", "Company"], ["dimension", "culture"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "rates" WHERE "rates"."rater_id" = $1 AND "rates"."dimension" = $2 AND "rates"."rateable_id" = $3 AND "rates"."rateable_type" = $4[0m  [["rater_id", 2], ["dimension", "culture"], ["rateable_id", 3], ["rateable_type", "Company"]]
+  [1m[36mRatingCache Load (0.3ms)[0m  [1m[34mSELECT  "rating_caches".* FROM "rating_caches" WHERE "rating_caches"."cacheable_id" = $1 AND "rating_caches"."cacheable_type" = $2 AND "rating_caches"."dimension" = $3 LIMIT $4[0m  [["cacheable_id", 3], ["cacheable_type", "Company"], ["dimension", "inclusion"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "rates" WHERE "rates"."rater_id" = $1 AND "rates"."dimension" = $2 AND "rates"."rateable_id" = $3 AND "rates"."rateable_type" = $4[0m  [["rater_id", 2], ["dimension", "inclusion"], ["rateable_id", 3], ["rateable_type", "Company"]]
+  [1m[36mRatingCache Load (0.2ms)[0m  [1m[34mSELECT  "rating_caches".* FROM "rating_caches" WHERE "rating_caches"."cacheable_id" = $1 AND "rating_caches"."cacheable_type" = $2 AND "rating_caches"."dimension" = $3 LIMIT $4[0m  [["cacheable_id", 3], ["cacheable_type", "Company"], ["dimension", "diversity"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "rates" WHERE "rates"."rater_id" = $1 AND "rates"."dimension" = $2 AND "rates"."rateable_id" = $3 AND "rates"."rateable_type" = $4[0m  [["rater_id", 2], ["dimension", "diversity"], ["rateable_id", 3], ["rateable_type", "Company"]]
+  Rendered companies/show.html.erb within layouts/application (16.0ms)
+  Rendered layouts/_navigation.html.erb (0.8ms)
+  Rendered layouts/_alerts.html.erb (0.2ms)
+Completed 200 OK in 68ms (Views: 64.0ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/companies/3" for 127.0.0.1 at 2017-03-19 20:23:10 -0700
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering companies/show.html.erb within layouts/application
+  [1m[36mLike Load (0.3ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 3], ["likeable_type", "Company"]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."company_id" = $1 AND "reviews"."reviewer_id" = $2 LIMIT $3[0m  [["company_id", 3], ["reviewer_id", 2], ["LIMIT", 1]]
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."company_id" = $1[0m  [["company_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."company_id" = $1 AND "reviews"."reviewer_id" = $2 LIMIT $3[0m  [["company_id", 3], ["reviewer_id", 2], ["LIMIT", 1]]
+  [1m[36mLike Load (0.2ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 3], ["likeable_type", "Review"]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."company_id" = $1 AND "reviews"."reviewer_id" = $2 LIMIT $3[0m  [["company_id", 3], ["reviewer_id", 2], ["LIMIT", 1]]
+  [1m[36mLike Load (0.2ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 100], ["likeable_type", "Review"]]
+  [1m[36mRatingCache Load (0.4ms)[0m  [1m[34mSELECT  "rating_caches".* FROM "rating_caches" WHERE "rating_caches"."cacheable_id" = $1 AND "rating_caches"."cacheable_type" = $2 AND "rating_caches"."dimension" = $3 LIMIT $4[0m  [["cacheable_id", 3], ["cacheable_type", "Company"], ["dimension", "culture"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "rates" WHERE "rates"."rater_id" = $1 AND "rates"."dimension" = $2 AND "rates"."rateable_id" = $3 AND "rates"."rateable_type" = $4[0m  [["rater_id", 2], ["dimension", "culture"], ["rateable_id", 3], ["rateable_type", "Company"]]
+  [1m[36mRatingCache Load (0.3ms)[0m  [1m[34mSELECT  "rating_caches".* FROM "rating_caches" WHERE "rating_caches"."cacheable_id" = $1 AND "rating_caches"."cacheable_type" = $2 AND "rating_caches"."dimension" = $3 LIMIT $4[0m  [["cacheable_id", 3], ["cacheable_type", "Company"], ["dimension", "inclusion"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "rates" WHERE "rates"."rater_id" = $1 AND "rates"."dimension" = $2 AND "rates"."rateable_id" = $3 AND "rates"."rateable_type" = $4[0m  [["rater_id", 2], ["dimension", "inclusion"], ["rateable_id", 3], ["rateable_type", "Company"]]
+  [1m[36mRatingCache Load (0.2ms)[0m  [1m[34mSELECT  "rating_caches".* FROM "rating_caches" WHERE "rating_caches"."cacheable_id" = $1 AND "rating_caches"."cacheable_type" = $2 AND "rating_caches"."dimension" = $3 LIMIT $4[0m  [["cacheable_id", 3], ["cacheable_type", "Company"], ["dimension", "diversity"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "rates" WHERE "rates"."rater_id" = $1 AND "rates"."dimension" = $2 AND "rates"."rateable_id" = $3 AND "rates"."rateable_type" = $4[0m  [["rater_id", 2], ["dimension", "diversity"], ["rateable_id", 3], ["rateable_type", "Company"]]
+  Rendered companies/show.html.erb within layouts/application (16.5ms)
+  Rendered layouts/_navigation.html.erb (1.0ms)
+  Rendered layouts/_alerts.html.erb (0.3ms)
+Completed 200 OK in 70ms (Views: 65.5ms | ActiveRecord: 3.4ms)
+
+
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+Started GET "/companies/3" for 127.0.0.1 at 2017-03-19 20:28:28 -0700
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering companies/show.html.erb within layouts/application
+  [1m[36mLike Load (0.2ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 3], ["likeable_type", "Company"]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."company_id" = $1 AND "reviews"."reviewer_id" = $2 LIMIT $3[0m  [["company_id", 3], ["reviewer_id", 2], ["LIMIT", 1]]
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."company_id" = $1[0m  [["company_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."company_id" = $1 AND "reviews"."reviewer_id" = $2 LIMIT $3[0m  [["company_id", 3], ["reviewer_id", 2], ["LIMIT", 1]]
+  [1m[36mLike Load (0.2ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 3], ["likeable_type", "Review"]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."company_id" = $1 AND "reviews"."reviewer_id" = $2 LIMIT $3[0m  [["company_id", 3], ["reviewer_id", 2], ["LIMIT", 1]]
+  [1m[36mLike Load (0.1ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 100], ["likeable_type", "Review"]]
+  [1m[36mRatingCache Load (0.2ms)[0m  [1m[34mSELECT  "rating_caches".* FROM "rating_caches" WHERE "rating_caches"."cacheable_id" = $1 AND "rating_caches"."cacheable_type" = $2 AND "rating_caches"."dimension" = $3 LIMIT $4[0m  [["cacheable_id", 3], ["cacheable_type", "Company"], ["dimension", "culture"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "rates" WHERE "rates"."rater_id" = $1 AND "rates"."dimension" = $2 AND "rates"."rateable_id" = $3 AND "rates"."rateable_type" = $4[0m  [["rater_id", 2], ["dimension", "culture"], ["rateable_id", 3], ["rateable_type", "Company"]]
+  [1m[36mRatingCache Load (0.2ms)[0m  [1m[34mSELECT  "rating_caches".* FROM "rating_caches" WHERE "rating_caches"."cacheable_id" = $1 AND "rating_caches"."cacheable_type" = $2 AND "rating_caches"."dimension" = $3 LIMIT $4[0m  [["cacheable_id", 3], ["cacheable_type", "Company"], ["dimension", "inclusion"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "rates" WHERE "rates"."rater_id" = $1 AND "rates"."dimension" = $2 AND "rates"."rateable_id" = $3 AND "rates"."rateable_type" = $4[0m  [["rater_id", 2], ["dimension", "inclusion"], ["rateable_id", 3], ["rateable_type", "Company"]]
+  [1m[36mRatingCache Load (0.2ms)[0m  [1m[34mSELECT  "rating_caches".* FROM "rating_caches" WHERE "rating_caches"."cacheable_id" = $1 AND "rating_caches"."cacheable_type" = $2 AND "rating_caches"."dimension" = $3 LIMIT $4[0m  [["cacheable_id", 3], ["cacheable_type", "Company"], ["dimension", "diversity"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "rates" WHERE "rates"."rater_id" = $1 AND "rates"."dimension" = $2 AND "rates"."rateable_id" = $3 AND "rates"."rateable_type" = $4[0m  [["rater_id", 2], ["dimension", "diversity"], ["rateable_id", 3], ["rateable_type", "Company"]]
+  Rendered companies/show.html.erb within layouts/application (40.2ms)
+  Rendered layouts/_navigation.html.erb (0.9ms)
+  Rendered layouts/_alerts.html.erb (0.2ms)
+Completed 200 OK in 103ms (Views: 85.2ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/companies/3" for 127.0.0.1 at 2017-03-19 20:29:06 -0700
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering companies/show.html.erb within layouts/application
+  [1m[36mLike Load (0.3ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 3], ["likeable_type", "Company"]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."company_id" = $1 AND "reviews"."reviewer_id" = $2 LIMIT $3[0m  [["company_id", 3], ["reviewer_id", 2], ["LIMIT", 1]]
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."company_id" = $1[0m  [["company_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."company_id" = $1 AND "reviews"."reviewer_id" = $2 LIMIT $3[0m  [["company_id", 3], ["reviewer_id", 2], ["LIMIT", 1]]
+  [1m[36mLike Load (0.1ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 3], ["likeable_type", "Review"]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."company_id" = $1 AND "reviews"."reviewer_id" = $2 LIMIT $3[0m  [["company_id", 3], ["reviewer_id", 2], ["LIMIT", 1]]
+  [1m[36mLike Load (0.2ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 100], ["likeable_type", "Review"]]
+  [1m[36mRatingCache Load (0.2ms)[0m  [1m[34mSELECT  "rating_caches".* FROM "rating_caches" WHERE "rating_caches"."cacheable_id" = $1 AND "rating_caches"."cacheable_type" = $2 AND "rating_caches"."dimension" = $3 LIMIT $4[0m  [["cacheable_id", 3], ["cacheable_type", "Company"], ["dimension", "culture"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "rates" WHERE "rates"."rater_id" = $1 AND "rates"."dimension" = $2 AND "rates"."rateable_id" = $3 AND "rates"."rateable_type" = $4[0m  [["rater_id", 2], ["dimension", "culture"], ["rateable_id", 3], ["rateable_type", "Company"]]
+  [1m[36mRatingCache Load (0.2ms)[0m  [1m[34mSELECT  "rating_caches".* FROM "rating_caches" WHERE "rating_caches"."cacheable_id" = $1 AND "rating_caches"."cacheable_type" = $2 AND "rating_caches"."dimension" = $3 LIMIT $4[0m  [["cacheable_id", 3], ["cacheable_type", "Company"], ["dimension", "inclusion"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "rates" WHERE "rates"."rater_id" = $1 AND "rates"."dimension" = $2 AND "rates"."rateable_id" = $3 AND "rates"."rateable_type" = $4[0m  [["rater_id", 2], ["dimension", "inclusion"], ["rateable_id", 3], ["rateable_type", "Company"]]
+  [1m[36mRatingCache Load (0.2ms)[0m  [1m[34mSELECT  "rating_caches".* FROM "rating_caches" WHERE "rating_caches"."cacheable_id" = $1 AND "rating_caches"."cacheable_type" = $2 AND "rating_caches"."dimension" = $3 LIMIT $4[0m  [["cacheable_id", 3], ["cacheable_type", "Company"], ["dimension", "diversity"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "rates" WHERE "rates"."rater_id" = $1 AND "rates"."dimension" = $2 AND "rates"."rateable_id" = $3 AND "rates"."rateable_type" = $4[0m  [["rater_id", 2], ["dimension", "diversity"], ["rateable_id", 3], ["rateable_type", "Company"]]
+  Rendered companies/show.html.erb within layouts/application (13.0ms)
+  Rendered layouts/_navigation.html.erb (0.8ms)
+  Rendered layouts/_alerts.html.erb (0.2ms)
+Completed 200 OK in 64ms (Views: 60.6ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/companies/3" for 127.0.0.1 at 2017-03-19 20:29:23 -0700
+Processing by CompaniesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering companies/show.html.erb within layouts/application
+  [1m[36mLike Load (0.2ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 3], ["likeable_type", "Company"]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."company_id" = $1 AND "reviews"."reviewer_id" = $2 LIMIT $3[0m  [["company_id", 3], ["reviewer_id", 2], ["LIMIT", 1]]
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."company_id" = $1[0m  [["company_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."company_id" = $1 AND "reviews"."reviewer_id" = $2 LIMIT $3[0m  [["company_id", 3], ["reviewer_id", 2], ["LIMIT", 1]]
+  [1m[36mLike Load (0.1ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 3], ["likeable_type", "Review"]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."company_id" = $1 AND "reviews"."reviewer_id" = $2 LIMIT $3[0m  [["company_id", 3], ["reviewer_id", 2], ["LIMIT", 1]]
+  [1m[36mLike Load (0.1ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 100], ["likeable_type", "Review"]]
+  [1m[36mRatingCache Load (0.2ms)[0m  [1m[34mSELECT  "rating_caches".* FROM "rating_caches" WHERE "rating_caches"."cacheable_id" = $1 AND "rating_caches"."cacheable_type" = $2 AND "rating_caches"."dimension" = $3 LIMIT $4[0m  [["cacheable_id", 3], ["cacheable_type", "Company"], ["dimension", "culture"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "rates" WHERE "rates"."rater_id" = $1 AND "rates"."dimension" = $2 AND "rates"."rateable_id" = $3 AND "rates"."rateable_type" = $4[0m  [["rater_id", 2], ["dimension", "culture"], ["rateable_id", 3], ["rateable_type", "Company"]]
+  [1m[36mRatingCache Load (0.1ms)[0m  [1m[34mSELECT  "rating_caches".* FROM "rating_caches" WHERE "rating_caches"."cacheable_id" = $1 AND "rating_caches"."cacheable_type" = $2 AND "rating_caches"."dimension" = $3 LIMIT $4[0m  [["cacheable_id", 3], ["cacheable_type", "Company"], ["dimension", "inclusion"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "rates" WHERE "rates"."rater_id" = $1 AND "rates"."dimension" = $2 AND "rates"."rateable_id" = $3 AND "rates"."rateable_type" = $4[0m  [["rater_id", 2], ["dimension", "inclusion"], ["rateable_id", 3], ["rateable_type", "Company"]]
+  [1m[36mRatingCache Load (0.2ms)[0m  [1m[34mSELECT  "rating_caches".* FROM "rating_caches" WHERE "rating_caches"."cacheable_id" = $1 AND "rating_caches"."cacheable_type" = $2 AND "rating_caches"."dimension" = $3 LIMIT $4[0m  [["cacheable_id", 3], ["cacheable_type", "Company"], ["dimension", "diversity"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "rates" WHERE "rates"."rater_id" = $1 AND "rates"."dimension" = $2 AND "rates"."rateable_id" = $3 AND "rates"."rateable_type" = $4[0m  [["rater_id", 2], ["dimension", "diversity"], ["rateable_id", 3], ["rateable_type", "Company"]]
+  Rendered companies/show.html.erb within layouts/application (13.9ms)
+  Rendered layouts/_navigation.html.erb (0.8ms)
+  Rendered layouts/_alerts.html.erb (0.2ms)
+Completed 200 OK in 74ms (Views: 70.2ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/companies/3?url=%2Freviews%2F3" for 127.0.0.1 at 2017-03-19 20:29:37 -0700
+Processing by CompaniesController#show as HTML
+  Parameters: {"url"=>"/reviews/3", "id"=>"3"}
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering companies/show.html.erb within layouts/application
+  [1m[36mLike Load (0.3ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 3], ["likeable_type", "Company"]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."company_id" = $1 AND "reviews"."reviewer_id" = $2 LIMIT $3[0m  [["company_id", 3], ["reviewer_id", 2], ["LIMIT", 1]]
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."company_id" = $1[0m  [["company_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."company_id" = $1 AND "reviews"."reviewer_id" = $2 LIMIT $3[0m  [["company_id", 3], ["reviewer_id", 2], ["LIMIT", 1]]
+  [1m[36mLike Load (0.2ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 3], ["likeable_type", "Review"]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."company_id" = $1 AND "reviews"."reviewer_id" = $2 LIMIT $3[0m  [["company_id", 3], ["reviewer_id", 2], ["LIMIT", 1]]
+  [1m[36mLike Load (0.2ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 100], ["likeable_type", "Review"]]
+  [1m[36mRatingCache Load (0.3ms)[0m  [1m[34mSELECT  "rating_caches".* FROM "rating_caches" WHERE "rating_caches"."cacheable_id" = $1 AND "rating_caches"."cacheable_type" = $2 AND "rating_caches"."dimension" = $3 LIMIT $4[0m  [["cacheable_id", 3], ["cacheable_type", "Company"], ["dimension", "culture"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "rates" WHERE "rates"."rater_id" = $1 AND "rates"."dimension" = $2 AND "rates"."rateable_id" = $3 AND "rates"."rateable_type" = $4[0m  [["rater_id", 2], ["dimension", "culture"], ["rateable_id", 3], ["rateable_type", "Company"]]
+  [1m[36mRatingCache Load (0.2ms)[0m  [1m[34mSELECT  "rating_caches".* FROM "rating_caches" WHERE "rating_caches"."cacheable_id" = $1 AND "rating_caches"."cacheable_type" = $2 AND "rating_caches"."dimension" = $3 LIMIT $4[0m  [["cacheable_id", 3], ["cacheable_type", "Company"], ["dimension", "inclusion"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "rates" WHERE "rates"."rater_id" = $1 AND "rates"."dimension" = $2 AND "rates"."rateable_id" = $3 AND "rates"."rateable_type" = $4[0m  [["rater_id", 2], ["dimension", "inclusion"], ["rateable_id", 3], ["rateable_type", "Company"]]
+  [1m[36mRatingCache Load (0.2ms)[0m  [1m[34mSELECT  "rating_caches".* FROM "rating_caches" WHERE "rating_caches"."cacheable_id" = $1 AND "rating_caches"."cacheable_type" = $2 AND "rating_caches"."dimension" = $3 LIMIT $4[0m  [["cacheable_id", 3], ["cacheable_type", "Company"], ["dimension", "diversity"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "rates" WHERE "rates"."rater_id" = $1 AND "rates"."dimension" = $2 AND "rates"."rateable_id" = $3 AND "rates"."rateable_type" = $4[0m  [["rater_id", 2], ["dimension", "diversity"], ["rateable_id", 3], ["rateable_type", "Company"]]
+  Rendered companies/show.html.erb within layouts/application (15.8ms)
+  Rendered layouts/_navigation.html.erb (0.9ms)
+  Rendered layouts/_alerts.html.erb (0.2ms)
+Completed 200 OK in 71ms (Views: 66.5ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/companies/3?url=%2Freviews%2F3" for 127.0.0.1 at 2017-03-19 20:29:40 -0700
+Processing by CompaniesController#show as HTML
+  Parameters: {"url"=>"/reviews/3", "id"=>"3"}
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering companies/show.html.erb within layouts/application
+  [1m[36mLike Load (0.2ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 3], ["likeable_type", "Company"]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."company_id" = $1 AND "reviews"."reviewer_id" = $2 LIMIT $3[0m  [["company_id", 3], ["reviewer_id", 2], ["LIMIT", 1]]
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."company_id" = $1[0m  [["company_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."company_id" = $1 AND "reviews"."reviewer_id" = $2 LIMIT $3[0m  [["company_id", 3], ["reviewer_id", 2], ["LIMIT", 1]]
+  [1m[36mLike Load (0.1ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 3], ["likeable_type", "Review"]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."company_id" = $1 AND "reviews"."reviewer_id" = $2 LIMIT $3[0m  [["company_id", 3], ["reviewer_id", 2], ["LIMIT", 1]]
+  [1m[36mLike Load (0.1ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 100], ["likeable_type", "Review"]]
+  [1m[36mRatingCache Load (0.2ms)[0m  [1m[34mSELECT  "rating_caches".* FROM "rating_caches" WHERE "rating_caches"."cacheable_id" = $1 AND "rating_caches"."cacheable_type" = $2 AND "rating_caches"."dimension" = $3 LIMIT $4[0m  [["cacheable_id", 3], ["cacheable_type", "Company"], ["dimension", "culture"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "rates" WHERE "rates"."rater_id" = $1 AND "rates"."dimension" = $2 AND "rates"."rateable_id" = $3 AND "rates"."rateable_type" = $4[0m  [["rater_id", 2], ["dimension", "culture"], ["rateable_id", 3], ["rateable_type", "Company"]]
+  [1m[36mRatingCache Load (0.2ms)[0m  [1m[34mSELECT  "rating_caches".* FROM "rating_caches" WHERE "rating_caches"."cacheable_id" = $1 AND "rating_caches"."cacheable_type" = $2 AND "rating_caches"."dimension" = $3 LIMIT $4[0m  [["cacheable_id", 3], ["cacheable_type", "Company"], ["dimension", "inclusion"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "rates" WHERE "rates"."rater_id" = $1 AND "rates"."dimension" = $2 AND "rates"."rateable_id" = $3 AND "rates"."rateable_type" = $4[0m  [["rater_id", 2], ["dimension", "inclusion"], ["rateable_id", 3], ["rateable_type", "Company"]]
+  [1m[36mRatingCache Load (0.2ms)[0m  [1m[34mSELECT  "rating_caches".* FROM "rating_caches" WHERE "rating_caches"."cacheable_id" = $1 AND "rating_caches"."cacheable_type" = $2 AND "rating_caches"."dimension" = $3 LIMIT $4[0m  [["cacheable_id", 3], ["cacheable_type", "Company"], ["dimension", "diversity"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "rates" WHERE "rates"."rater_id" = $1 AND "rates"."dimension" = $2 AND "rates"."rateable_id" = $3 AND "rates"."rateable_type" = $4[0m  [["rater_id", 2], ["dimension", "diversity"], ["rateable_id", 3], ["rateable_type", "Company"]]
+  Rendered companies/show.html.erb within layouts/application (13.4ms)
+  Rendered layouts/_navigation.html.erb (1.0ms)
+  Rendered layouts/_alerts.html.erb (0.4ms)
+Completed 200 OK in 80ms (Views: 67.8ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/companies/3?url=%2Freviews%2F3" for 127.0.0.1 at 2017-03-19 20:29:55 -0700
+Processing by CompaniesController#show as HTML
+  Parameters: {"url"=>"/reviews/3", "id"=>"3"}
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering companies/show.html.erb within layouts/application
+  [1m[36mLike Load (0.2ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 3], ["likeable_type", "Company"]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."company_id" = $1 AND "reviews"."reviewer_id" = $2 LIMIT $3[0m  [["company_id", 3], ["reviewer_id", 2], ["LIMIT", 1]]
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."company_id" = $1[0m  [["company_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."company_id" = $1 AND "reviews"."reviewer_id" = $2 LIMIT $3[0m  [["company_id", 3], ["reviewer_id", 2], ["LIMIT", 1]]
+  [1m[36mLike Load (0.1ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 3], ["likeable_type", "Review"]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."company_id" = $1 AND "reviews"."reviewer_id" = $2 LIMIT $3[0m  [["company_id", 3], ["reviewer_id", 2], ["LIMIT", 1]]
+  [1m[36mLike Load (0.1ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."likeable_id" = $1 AND "likes"."likeable_type" = $2[0m  [["likeable_id", 100], ["likeable_type", "Review"]]
+  [1m[36mRatingCache Load (0.2ms)[0m  [1m[34mSELECT  "rating_caches".* FROM "rating_caches" WHERE "rating_caches"."cacheable_id" = $1 AND "rating_caches"."cacheable_type" = $2 AND "rating_caches"."dimension" = $3 LIMIT $4[0m  [["cacheable_id", 3], ["cacheable_type", "Company"], ["dimension", "culture"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "rates" WHERE "rates"."rater_id" = $1 AND "rates"."dimension" = $2 AND "rates"."rateable_id" = $3 AND "rates"."rateable_type" = $4[0m  [["rater_id", 2], ["dimension", "culture"], ["rateable_id", 3], ["rateable_type", "Company"]]
+  [1m[36mRatingCache Load (0.2ms)[0m  [1m[34mSELECT  "rating_caches".* FROM "rating_caches" WHERE "rating_caches"."cacheable_id" = $1 AND "rating_caches"."cacheable_type" = $2 AND "rating_caches"."dimension" = $3 LIMIT $4[0m  [["cacheable_id", 3], ["cacheable_type", "Company"], ["dimension", "inclusion"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "rates" WHERE "rates"."rater_id" = $1 AND "rates"."dimension" = $2 AND "rates"."rateable_id" = $3 AND "rates"."rateable_type" = $4[0m  [["rater_id", 2], ["dimension", "inclusion"], ["rateable_id", 3], ["rateable_type", "Company"]]
+  [1m[36mRatingCache Load (0.2ms)[0m  [1m[34mSELECT  "rating_caches".* FROM "rating_caches" WHERE "rating_caches"."cacheable_id" = $1 AND "rating_caches"."cacheable_type" = $2 AND "rating_caches"."dimension" = $3 LIMIT $4[0m  [["cacheable_id", 3], ["cacheable_type", "Company"], ["dimension", "diversity"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "rates" WHERE "rates"."rater_id" = $1 AND "rates"."dimension" = $2 AND "rates"."rateable_id" = $3 AND "rates"."rateable_type" = $4[0m  [["rater_id", 2], ["dimension", "diversity"], ["rateable_id", 3], ["rateable_type", "Company"]]
+  Rendered companies/show.html.erb within layouts/application (14.5ms)
+  Rendered layouts/_navigation.html.erb (1.0ms)
+  Rendered layouts/_alerts.html.erb (0.2ms)
+Completed 200 OK in 98ms (Views: 94.1ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/reviews/3" for 127.0.0.1 at 2017-03-19 20:29:58 -0700
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for ReviewsController):
+  
+actionpack (5.0.2) lib/abstract_controller/base.rb:121:in `process'
+actionview (5.0.2) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.0.2) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (5.0.2) lib/action_controller/metal.rb:262:in `dispatch'
+actionpack (5.0.2) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (5.0.2) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.0.2) lib/action_dispatch/journey/router.rb:39:in `block in serve'
+actionpack (5.0.2) lib/action_dispatch/journey/router.rb:26:in `each'
+actionpack (5.0.2) lib/action_dispatch/journey/router.rb:26:in `serve'
+actionpack (5.0.2) lib/action_dispatch/routing/route_set.rb:725:in `call'
+omniauth (1.6.1) lib/omniauth/strategy.rb:189:in `call!'
+omniauth (1.6.1) lib/omniauth/strategy.rb:167:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.1) lib/rack/etag.rb:25:in `call'
+rack (2.0.1) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.1) lib/rack/head.rb:12:in `call'
+rack (2.0.1) lib/rack/session/abstract/id.rb:222:in `context'
+rack (2.0.1) lib/rack/session/abstract/id.rb:216:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.0.2) lib/active_record/migration.rb:553:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.2) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.2) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.2) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.2) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (0.3ms)
