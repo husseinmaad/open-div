@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 	get 'reviews/:id/comments/new', to: 'comments#new', as: 'new_review_comment'
 	root 'companies#index'
   resources :companies do
-  	resources :reviews , only: [:create, :new , :edit, :update]
+  	resources :reviews , only: [:create, :new , :edit, :update, :destroy]
   end
   get '/search', to: 'search#index', as: 'search'
 end
