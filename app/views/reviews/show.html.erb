@@ -2,7 +2,7 @@
 <div class="container">
 
 <h5><%= @review.body %></h5>
-<%= button_to "+Add Comment", new_review_comment_path(@review),method: "get" %>
+<%= button_to "+Add Comment", review_comments_path(@review),method: "get" %>
 <% if @user == current_user %>
 	<%= button_to "+Edit Comment", edit_company_review_path(@company, @review), method: "get" %>
 	<%= button_to "Delete Comment", [@company, @review], method: "delete" %>

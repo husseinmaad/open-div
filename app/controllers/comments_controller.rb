@@ -6,7 +6,8 @@ class CommentsController < ApplicationController
 
   def create    
     @review = Review.find(params[:id])
-    @comment = Comment.new (comments_params)
+    @comment = @review.comments.new (comments_params)
+    @comment.commentor_id = current_user.id
     if @comment.save
       redirect_to review_show_path(@review)
     else
