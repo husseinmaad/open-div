@@ -257,9 +257,9 @@ var autoComplete = function(){
   };
   $('input.autocomplete').autocomplete({
     data: companies,
-    limit: 20, // The max amount of results that can be shown at once. Default: Infinity.
+    limit: 20,
   }).keyup(function (e) {
-        if(e.which === 13) {
+        if(e.which === 13) { // on enter
             console.log($('input.autocomplete').val())
            $.ajax({
             type: "GET",
