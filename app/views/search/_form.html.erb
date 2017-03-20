@@ -1,18 +1,8 @@
-<!-- <div class="row">
-  <%= form_tag(search_path, :method => "get", id: "search-form") do %>
-  <div class="input-field">
-    <%= text_field_tag :search, params[:search], type:"search" ,placeholder: "Search for a Company" %>
-    <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-  </div>
-  <% end %>
-</div> -->
-
 <div class="row">
     <div class="col s12">
       <div class="row">
         <div class="input-field col s12">
           <form action="<%= search_path %>" method="get" data-turbolinks="false">
-            <!-- <i class="material-icons prefix">search</i> -->
             <input type="search" name="search" id="autocomplete" class="autocomplete" autocomplete="off">
             <label class="label-icon" for="autocomplete"><i class="material-icons">search</i></label>
           </form>
