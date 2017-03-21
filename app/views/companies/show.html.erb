@@ -17,15 +17,21 @@
 
 		<!-- Company rating -->
 		<div class="row">
-			<h3>Overall Rating</h3>
-			<% if @company.avg_rating %>
-				Culture  : <%= custom_rating_generator @company.culture_rating %>
-				Inclusion : <%= custom_rating_generator @company.inclusion_rating %>
-				Diversity : <%= custom_rating_generator @company.diversity_rating %>
-				Overall: <%= custom_rating_generator @company.avg_rating %>
-			<% else %>
-				  <p>No ratings have been made yet.</p>
-			<% end %>
+			<h3>Ratings</h3>
+			<!-- Chart JS -->
+			<div class="col m6">
+				<div class="company-chart-ratings" inclusion="<%= @company.inclusion_rating %>" diversity="<%= @company.diversity_rating %>" culture="<%= @company.culture_rating %>"></div>
+				<canvas id="canvas"></canvas>
+			</div>
+			<!-- Overall Rating -->
+			<div class="col m6">
+				<% if @company.avg_rating %>
+					Overall: <%= custom_rating_generator @company.avg_rating %>
+				<% else %>
+					  <p>No ratings have been made yet.</p>
+				<% end %>
+			</div>
+			<!-- End of Rating -->
 		</div>
 	</div>
 
