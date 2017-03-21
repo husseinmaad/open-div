@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   get 'reviews/:review_id/comments/:id/edit', to: 'comments#edit', as: 'edit_comment'
   put 'reviews/:review_id/comments/:id', to: 'comments#update', as: 'review_comment'
   delete 'reviews/:review_id/comments/:id', to: 'comments#destroy'
+  get 'comments/:id/likes', to: 'comments#like', as: 'comment_like'
+  delete 'comments/:id/likes', to: 'comments#unlike' , as:'comment_unlike'
   root 'companies#index'
   # resources :comments , only: [:create,:edit,:update,:destroy]
   get '/search', to: 'search#index', as: 'search'

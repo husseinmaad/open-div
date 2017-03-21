@@ -18,23 +18,24 @@
 
 <hr>
 
-<h3>
-	Reviews
-</h3>
+
+<h3>Reviews</h3>
 <% if current_user && !@company.reviewed?(current_user) %>
 <%= button_to "+Review", new_company_review_path(@company), method: "get"  %>
 <% end %>
 
-
 <div class=" container">
 	<% @company.reviews.each do |review|%>
 		<div>
-		<% if review.anonymous %>
-		<%= "Anonymous" %> <br>
-		<% else %>
-		<%= review.reviewer.first_name%>
-		<% end %>
+			<% if review.anonymous %>
+				<%= "Anonymous" %> <br>
+			<% else %>
+				<%= review.reviewer.first_name%>
+			<% end %>
 		<%= link_to("#{review.body}", review_show_path(review) ) %>
+		Culture: <%= review.rating_for_user("culture" , {star: 5 , readonly: true })  %>
+		Inclusion: <%= review.rating_for_user( "inclusion", {star: 5 , readonly: true }) %>
+		Diversity: <%= review.rating_for_user( "diversity", {star: 5 , readonly: true}) %>
 		<% if (current_user && !review.liked?(current_user) ) %>
 		<%= button_to "Like", review_like_path(review), method: "get"  %>
 		<% elsif ( current_user && review.liked?(current_user) ) %>
@@ -45,8 +46,6 @@
 		</div>
 	<% end %>
 </div>
-
-
 
 
 
