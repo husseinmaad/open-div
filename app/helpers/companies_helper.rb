@@ -7,5 +7,5 @@ module CompaniesHelper
 
   def top_four
     sorted_companies[0..3]
-  end 
+  end
 end

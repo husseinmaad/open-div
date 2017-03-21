@@ -18,11 +18,9 @@
 		<!-- Company rating -->
 		<div class="row">
 			<h3>Overall Rating</h3>
+			<div class="company-chart-ratings" inclusion="<%= @company.inclusion_rating %>" diversity="<%= @company.diversity_rating %>" culture="<%= @company.culture_rating %>"></div>
 			<canvas id="canvas"></canvas>
 			<% if @company.avg_rating %>
-				Culture  : <%= custom_rating_generator @company.culture_rating %>
-				Inclusion : <%= custom_rating_generator @company.inclusion_rating %>
-				Diversity : <%= custom_rating_generator @company.diversity_rating %>
 				Overall: <%= custom_rating_generator @company.avg_rating %>
 			<% else %>
 				  <p>No ratings have been made yet.</p>
