@@ -160,13 +160,13 @@
       <%= f.text_area :body, :class => "materialize-textarea" %>
     </div>
 
-    <div class="input-field">
+    <div class="input-field section">
       <%= f.check_box :anonymous,{:checked => 'checked'}, checked_value = true, unchecked_value = false  %>
-      <%= f.label :anonymous  %>
+      <%= f.label :anonymous, "Make your review anonymous?"  %>
     </div>
 
-    <div class="input-field actions">
-      <%= f.submit "Submit review" %>
+    <div class="input-field section">
+      <%= f.submit "Submit review" , :class => "btn btn-primary" %>
     </div>
   <% end %>
 </div>
