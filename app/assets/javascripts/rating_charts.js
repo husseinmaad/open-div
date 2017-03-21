@@ -2,9 +2,9 @@ $(document).on('turbolinks:load', function() {
   var ctx = document.getElementById("canvas")
 
   // Grab ratings from view
-  var diversity_rating = parseInt($('.company-chart-ratings').attr('diversity'));
-  var inclusion_rating = parseInt($('.company-chart-ratings').attr('inclusion'));
-  var culture_rating = parseInt($('.company-chart-ratings').attr('culture'));
+  var diversity_rating = parseFloat($('.company-chart-ratings').attr('diversity'));
+  var inclusion_rating = parseFloat($('.company-chart-ratings').attr('inclusion'));
+  var culture_rating = parseFloat($('.company-chart-ratings').attr('culture'));
 
   // Apply ratings to data set
   var data = {
@@ -30,7 +30,7 @@ $(document).on('turbolinks:load', function() {
 
   // Create chart
   var myBarChart = new Chart(ctx, {
-      type: 'bar',
+      type: 'horizontalBar',
       data: data,
       responsive: true,
       barValueSpacing: 1
