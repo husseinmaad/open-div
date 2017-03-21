@@ -29,6 +29,9 @@ gem 'devise'
 gem 'carrierwave', '~> 1.0'
 gem 'mini_magick'
 
+# Chart JS
+gem 'chart-js-rails'
+
 #github omniauth
 gem 'omniauth-github'
 
