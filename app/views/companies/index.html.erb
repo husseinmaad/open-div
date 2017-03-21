@@ -16,11 +16,19 @@
 
 <div class="row">
   <h2>Featured Companies</h2>
-  <% @companies.each do |company| %>
-    <div class="col m3 top-company">
-      <h5><%= link_to  company.name , company_path(company)%></h5>
-      <img class="company-img" src="<%= company.profile_image_url %>" alt="<%= company.name %>" />
-      <span class="rating"><%= company.avg_rating %></span>
-    </div>
+  <% if @companies.any? %>
+    <% @companies.each do |company| %>
+      <div class="col m3 top-company">
+        <h5><%= link_to  company.name , company_path(company)%></h5>
+        <img class="company-img" src="<%= company.profile_image_url %>" alt="<%= company.name %>" />
+        <span class="rating"><%= company.avg_rating %></span>
+      </div>
+    <% end %>
   <% end %>
+</div>
+
+<div>
+  <% if current_user && current_user.admin == true %>
+    <%= link_to "Create Company", new_company_path %>
+  <% end %> 
 </div>
