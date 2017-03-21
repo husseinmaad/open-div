@@ -1,8 +1,33 @@
+<h1>Your Ratings for <%= @company.name %></h1>
 
-<div class = container>
-Culture  : <%= rating_for @company, 'culture', disable_after_rate: false %>
-Inclusion : <%= rating_for @company, 'inclusion', disable_after_rate: false %>
-Diversity : <%= rating_for @company, 'diversity', disable_after_rate: false %>
+<h2>Inclusiveness</h2>
+<div class="row divider"></div>
+<div class="row">
+  <!-- Questions -->
+  <div class="col m9">
+    <h3>Gender</h3>
+    <p>How inclusive is your company across ability, gender identity, age, sexual preference?</p>
+  </div>
+  <!-- Stars -->
+  <div class="star-ratings col m3">
+    <%= rating_for @company, 'gender', disable_after_rate: false %>
+  </div>
+</div>
+<div class="row divider"></div>
+
+<div class="row">
+  <!-- Questions -->
+  <div class="col m9">
+    <h3>Gender</h3>
+    <p>How inclusive is your company across ability, gender identity, age, sexual preference?</p>
+  </div>
+  <!-- Stars -->
+  <div class="star-ratings col m3">
+    <%= rating_for @company, 'culture', disable_after_rate: false %>
+  </div>
+</div>
+<div class="row divider"></div>
+
 
 
 <%= form_for [ @company , @review]  do |f|%>
@@ -23,5 +48,3 @@ Diversity : <%= rating_for @company, 'diversity', disable_after_rate: false %>
 
 
 <% end %>
-
-</div>
