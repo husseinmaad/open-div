@@ -54,7 +54,7 @@ class Company < ApplicationRecord
       sum/3
     end
   end
-  
+
   # Takes in search team and finds relevant companies in database
   def self.search(search)
     where("name LIKE ?", "%#{search}%")

@@ -17,11 +17,12 @@
 
 		<!-- Company rating -->
 		<div class="row">
-			<h3>Average Rating</h3>
-			<% if (@company.culture_average && @company.inclusion_average && @company.diversity_average)%>
-				Culture  : <%= custom_rating_generator @company.culture_average.avg %>
-				Inclusion : <%= custom_rating_generator @company.inclusion_average.avg %>
-				Diversity : <%= custom_rating_generator @company.diversity_average.avg %>
+			<h3>Overall Rating</h3>
+			<% if @company.avg_rating %>
+				Culture  : <%= custom_rating_generator @company.culture_rating %>
+				Inclusion : <%= custom_rating_generator @company.inclusion_rating %>
+				Diversity : <%= custom_rating_generator @company.diversity_rating %>
+				Overall: <%= custom_rating_generator @company.avg_rating %>
 			<% else %>
 				  <p>No ratings have been made yet.</p>
 			<% end %>
