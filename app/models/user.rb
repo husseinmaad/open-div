@@ -30,9 +30,5 @@ class User < ApplicationRecord
       user.password = Devise.friendly_token[0,20]
     end
   end
-  after_create :welcome_send
-  def welcome_send
-    WelcomeMailer.welcome_send(self).deliver
-    redirect_to root_path, alert: "Thank you for register"
-  end
+ 
 end
