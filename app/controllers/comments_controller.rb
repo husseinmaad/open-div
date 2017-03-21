@@ -39,10 +39,18 @@ class CommentsController < ApplicationController
   end 
   
   def like
-    @company = Company.find(params[:id])
-    @company.likes.create!(liker_id: current_user.id)
+    @comment = Comment.find(params[:id])
+    @comment.likes.create!(liker_id: current_user.id)
     redirect_back(fallback_location: root_path)
   end
+
+  def unlike
+    @comment = Comment.find(params[:id])
+    @like = @comment.likes.find_by(liker_id: current_user.id)
+    @like.delete
+    redirect_back(fallback_location: root_path)
+  end
+
 
   private
 
