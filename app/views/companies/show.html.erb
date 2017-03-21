@@ -22,6 +22,8 @@
 				Culture  : <%= custom_rating_generator @company.culture_average.avg %>
 				Inclusion : <%= custom_rating_generator @company.inclusion_average.avg %>
 				Diversity : <%= custom_rating_generator @company.diversity_average.avg %>
+			<% else %>
+				  <p>No ratings have been made yet.</p>
 			<% end %>
 		</div>
 	</div>
@@ -49,9 +51,8 @@
 			<div class="col m3">
 				<!-- Review Ratings -->
 				<div class="review-ratings">
-					<p>Culture: <%= custom_rating_for_review( review, "culture" ) %> </p>
-					<p>Inclusion: <%= custom_rating_for_review( review, "inclusion" )%></p>
-					<p>Diversity: <%= custom_rating_for_review( review, "diversity" ) %></p>
+					<p>Overall Rating</p>
+					<p><%= custom_rating_for_review( review, "overall" ) %></p>
 				</div>
 			</div>
 			<!-- End of review details -->
@@ -64,7 +65,7 @@
 				<!-- Author Name  -->
 				<div class="row reviewed-by">
 					<% if review.anonymous %>
-						by <%= "Anonymous" %>
+						by <%= "Reviewer" %>
 					<% else %>
 						by <%= review.reviewer.first_name%>
 					<% end %>
@@ -97,11 +98,3 @@
 		<%= link_to "Delete Company", @company, method: "delete" %>
 	<% end %>
 </div>
-
-
-
-
-
-
-
-
