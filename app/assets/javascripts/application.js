@@ -19,10 +19,11 @@
 //= require ratyrate
 //= require_tree .
 $(document).on('turbolinks:load', function() {
-    likeButton()
+    reviewLikeButton()
+    commentLikeButton()
 });
 
-var likeButton = function() {
+var reviewLikeButton = function() {
         $(".review-like-buttons").on("submit", ".like-button", function(e) {
             e.preventDefault()
             console.log("Worked!")
@@ -51,8 +52,41 @@ var likeButton = function() {
                     })
             }
         })
+}
 
+var commentLikeButton = function(){
+	$(".container").on("submit", ".like-button", function(e){
+		e.preventDefault()
+		console.log("working")
+		$form = $(this)
+		var myAction = $form.find("form").attr("action")
+		var myMethod = $form.find("form").attr("method")
+		if (myMethod === "get"){
+			$.ajax({
+				url: myAction,
+				method: myMethod
+			})
+			.done(function(response){
+				console.log(response)
+				$form.parent().html(response)
+			})
+	}
+	else {
+			$.ajax({
+				url: myAction,
+				method: "delete"
+			})
+			.done(function(response){
+				console.log(response)
+				$form.parent().html(response)
+			})
+			.done(function(response){
+				console.log(response)
+				$form.parent().html(response)
+			})
 
+	}
+	})
 }
 
 

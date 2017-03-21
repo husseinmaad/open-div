@@ -41,14 +41,22 @@ class CommentsController < ApplicationController
   def like
     @comment = Comment.find(params[:id])
     @comment.likes.create!(liker_id: current_user.id)
-    redirect_back(fallback_location: root_path)
+    if request.xhr?
+      render partial: "reviews/show", layout: false, locals: {comment: @comment}
+    else 
+     redirect_back(fallback_location: root_path)
+    end
   end
 
   def unlike
     @comment = Comment.find(params[:id])
     @like = @comment.likes.find_by(liker_id: current_user.id)
     @like.delete
-    redirect_back(fallback_location: root_path)
+    if request.xhr? 
+      render partial: "reviews/show", layout: false, locals: {comment: @comment}
+    else 
+      redirect_back(fallback_location: root_path)
+    end 
   end
 
 
