@@ -1,14 +1,23 @@
-<h1><%= @company.name %></h1>
-<hr>
+<div class="row">
+	<!-- Company Profile Image -->
+	<div class="col m3">
+		<%= image_tag @company.profile_image_url %>
+	</div>
+	<!-- Company Information -->
+	<div class="col m9">
+		<h1><%= @company.name %></h1>
+		<!-- Company location -->
+		<div class="row company-location">
+			Located in <span class="location"><%= @company.city_name %>, <%= @company.region_name %>, <%= @company.country_code %></span>
+		</div>
+		<!-- Company description -->
+		<div class="row company-description">
+			<%= @company.short_description %>
+		</div>
+	</div>
+</div>
 
-<h4><%= @company.city_name %></h4>
-<h4><%= @company.region_name %></h4>
-<h4><%= @company.country_code %></h4>
-
-<hr>
-
-
-<h3>Average Rating</h3> 
+<h3>Average Rating</h3>
 <% if (@company.culture_average && @company.inclusion_average && @company.diversity_average)%>
 	Culture  : <%= @company.culture_average.avg %>
 	Inclusion : <%= @company.inclusion_average.avg %>
@@ -24,7 +33,7 @@
 <%= button_to "+Review", new_company_review_path(@company), method: "get"  %>
 <% end %>
 
-<div class=" container">
+<div class="row">
 	<% @company.reviews.each do |review|%>
 		<div>
 			<% if review.anonymous %>
@@ -46,9 +55,3 @@
 		</div>
 	<% end %>
 </div>
-
-
-
-
-
-
