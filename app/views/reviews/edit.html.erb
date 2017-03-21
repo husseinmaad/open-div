@@ -1,27 +1,3 @@
+<h1> Edit your review </h1>
 
-<div class = container>
-Culture  : <%= rating_for @company, 'culture', disable_after_rate: false %>
-Inclusion : <%= rating_for @company, 'inclusion', disable_after_rate: false %>
-Diversity : <%= rating_for @company, 'diversity', disable_after_rate: false %>
-
-
-<%= form_for [ @company , @review ], method: "put"  do |f|%>
-
-  <div class="field">
-    <%= f.label :body %>
-    <%= f.text_field :body %>
-  </div>
-
-  <div class="field">
-    <%= f.check_box :anonymous, {} %>
-    <%= f.label :anonymous  %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Update Review" %>
-  </div>
-
-
-<% end %>
-
-</div>
+<%= render 'form' %>
