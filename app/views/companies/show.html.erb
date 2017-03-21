@@ -19,9 +19,11 @@
 		<div class="row">
 			<h3>Average Rating</h3>
 			<% if (@company.culture_average && @company.inclusion_average && @company.diversity_average)%>
-				Culture  : <%= @company.culture_average.avg %>
-				Inclusion : <%= @company.inclusion_average.avg %>
-				Diversity : <%= @company.diversity_average.avg %>
+				Culture  : <%= custom_rating_generator @company.culture_average.avg %>
+				Inclusion : <%= custom_rating_generator @company.inclusion_average.avg %>
+				Diversity : <%= custom_rating_generator @company.diversity_average.avg %>
+			<% else %>
+				  <p>No ratings have been made yet.</p>
 			<% end %>
 		</div>
 	</div>
@@ -49,9 +51,8 @@
 			<div class="col m3">
 				<!-- Review Ratings -->
 				<div class="review-ratings">
-					<p>Culture: <%= review.rating_for_user("culture" , {star: 5 , readonly: true })  %></p>
-					<p>Inclusion: <%= review.rating_for_user( "inclusion", {star: 5 , readonly: true }) %></p>
-					<p>Diversity: <%= review.rating_for_user( "diversity", {star: 5 , readonly: true}) %></p>
+					<p>Overall Rating</p>
+					<p><%= custom_rating_for_review( review, "overall" ) %></p>
 				</div>
 			</div>
 			<!-- End of review details -->
@@ -64,7 +65,7 @@
 				<!-- Author Name  -->
 				<div class="row reviewed-by">
 					<% if review.anonymous %>
-						by <%= "Anonymous" %>
+						by <%= "Reviewer" %>
 					<% else %>
 						by <%= review.reviewer.first_name%>
 					<% end %>
@@ -85,11 +86,3 @@
 		<%= link_to "Delete Company", @company, method: "delete" %>
 	<% end %>
 </div>
-
-
-
-
-
-
-
-

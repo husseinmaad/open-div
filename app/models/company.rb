@@ -1,9 +1,13 @@
 class Company < ApplicationRecord
   belongs_to :creator, class_name: "User"
   has_many :reviews
- 
 
-  ratyrate_rateable "culture", "inclusion", "diversity"
+
+  ratyrate_rateable "gender","identity", "management","hr",
+  "whole_self","community","leadership","equal_opportunities",
+  "promotions","job_description","responsiveness","onsite","overall",
+  "culture", "inclusion", "diversity"
+  
   validates :name, :city_name, :region_name, :country_code, presence: true
 
   # Returns the average rating for the whole company
@@ -23,9 +27,9 @@ class Company < ApplicationRecord
       sum += self.inclusion_average.avg
       sum += self.inclusion_average.avg
       return sum / 3
-    end 
+    end
     return 0
-  end 
+  end
   # Takes in search team and finds relevant companies in database
   def self.search(search)
     where("name LIKE ?", "%#{search}%")
