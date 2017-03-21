@@ -70,19 +70,7 @@
 					<% end %>
 				</div>
 				<!-- Like Buttons -->
-				<div class="row review-like-buttons">
-					<div class="col m6">
-						<% if (current_user && !review.liked?(current_user) ) %>
-							<%= button_to "Like", review_like_path(review), method: "get"  %>
-						<% elsif ( current_user && review.liked?(current_user) ) %>
-							<%= button_to "Unlike", review_unlike_path(review), method: "delete"  %>
-						<% end %>
-					</div>
-					<div class="col m6">
-						Likes: <%= review.likes.length %>
-					</div>
-
-				</div>
+					<%= render partial: "show", locals: {review: review} %>
 			</div>
 			<!-- End of review body  -->
 		</div>
