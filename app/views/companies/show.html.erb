@@ -19,9 +19,9 @@
 		<div class="row">
 			<h3>Average Rating</h3>
 			<% if (@company.culture_average && @company.inclusion_average && @company.diversity_average)%>
-				Culture  : <%= @company.culture_average.avg %>
-				Inclusion : <%= @company.inclusion_average.avg %>
-				Diversity : <%= @company.diversity_average.avg %>
+				Culture  : <%= custom_rating_generator @company.culture_average.avg %>
+				Inclusion : <%= custom_rating_generator @company.inclusion_average.avg %>
+				Diversity : <%= custom_rating_generator @company.diversity_average.avg %>
 			<% end %>
 		</div>
 	</div>
@@ -49,9 +49,9 @@
 			<div class="col m3">
 				<!-- Review Ratings -->
 				<div class="review-ratings">
-					<p>Culture: <%= review.rating_for_user("culture" , {star: 5 , readonly: true })  %></p>
-					<p>Inclusion: <%= review.rating_for_user( "inclusion", {star: 5 , readonly: true }) %></p>
-					<p>Diversity: <%= review.rating_for_user( "diversity", {star: 5 , readonly: true}) %></p>
+					<p>Culture: <%= custom_rating_for_review( review, "culture" ) %> </p>
+					<p>Inclusion: <%= custom_rating_for_review( review, "inclusion" )%></p>
+					<p>Diversity: <%= custom_rating_for_review( review, "diversity" ) %></p>
 				</div>
 			</div>
 			<!-- End of review details -->
