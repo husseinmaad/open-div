@@ -46,3 +46,5 @@ build-iPhoneSimulator/
 # Gemfile.lock
 # .ruby-version
 # .ruby-gemset
+
+.env

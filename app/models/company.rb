@@ -35,8 +35,5 @@ class Company < ApplicationRecord
     return self.reviews.find_by(reviewer_id: user.id )
   end
 
-  def liked?(user)
-    return self.likes.find_by(liker_id: user.id )
-  end
 
 end
