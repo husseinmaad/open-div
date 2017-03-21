@@ -4,8 +4,8 @@ Culture  : <%= rating_for @company, 'culture', disable_after_rate: false %>
 Inclusion : <%= rating_for @company, 'inclusion', disable_after_rate: false %>
 Diversity : <%= rating_for @company, 'diversity', disable_after_rate: false %>
 
-<%= form_for [ @company , @review]  do |f|%>
 
+<%= form_for [ @company , @review]  do |f|%>
 
   <div class="field">
     <%= f.label :body %>
