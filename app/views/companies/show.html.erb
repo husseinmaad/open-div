@@ -90,3 +90,18 @@
 		<div class="row divider"></div>
 	<% end %>
 </div>
+
+<div>
+	<% if current_user && current_user.admin == true %>
+		<%= link_to "Update Company", edit_company_path(@company) %>
+		<%= link_to "Delete Company", @company, method: "delete" %>
+	<% end %>
+</div>
+
+
+
+
+
+
+
+
