@@ -1,57 +1,103 @@
-<h1><%= @company.name %></h1>
-<hr>
-
-<h4><%= @company.city_name %></h4>
-<h4><%= @company.region_name %></h4>
-<h4><%= @company.country_code %></h4>
-
-<hr>
-
-
-<h3>Average Rating</h3> 
-<% if (@company.culture_average && @company.inclusion_average && @company.diversity_average)%>
-	Culture  : <%= @company.culture_average.avg %>
-	Inclusion : <%= @company.inclusion_average.avg %>
-	Diversity : <%= @company.diversity_average.avg %>
-<% end %>
-
-
-<hr>
-
-
-<h3>Reviews</h3>
-<% if current_user && !@company.reviewed?(current_user) %>
-<%= button_to "+Review", new_company_review_path(@company), method: "get"  %>
-<% end %>
-
-<div class=" container">
-	<% @company.reviews.each do |review|%>
-		<div>
-			<% if review.anonymous %>
-				<%= "Anonymous" %> <br>
-			<% else %>
-				<%= review.reviewer.first_name%>
-			<% end %>
-		<%= link_to("#{review.body}", review_show_path(review) ) %>
-		Culture: <%= review.rating_for_user("culture" , {star: 5 , readonly: true })  %>
-		Inclusion: <%= review.rating_for_user( "inclusion", {star: 5 , readonly: true }) %>
-		Diversity: <%= review.rating_for_user( "diversity", {star: 5 , readonly: true}) %>
-		<% if (current_user && !review.liked?(current_user) ) %>
-		<%= button_to "Like", review_like_path(review), method: "get"  %>
-		<% elsif ( current_user && review.liked?(current_user) ) %>
-		<%= button_to "Unlike", review_unlike_path(review), method: "delete"  %>
-		<% end %>
-		<br>
-		Likes: <%= review.likes.length %>
+<div class="row company-information">
+	<!-- Company Profile Image -->
+	<div class="col m3">
+		<%= image_tag @company.profile_image_url %>
+	</div>
+	<!-- Company Information -->
+	<div class="col m9">
+		<h1><%= @company.name %></h1>
+		<!-- Company location -->
+		<div class="row company-location">
+			Located in <span class="location"><%= @company.city_name %>, <%= @company.region_name %>, <%= @company.country_code %></span>
 		</div>
+		<!-- Company description -->
+		<div class="row company-description">
+			<%= @company.short_description %>
+		</div>
+
+		<!-- Company rating -->
+		<div class="row">
+			<h3>Average Rating</h3>
+			<% if (@company.culture_average && @company.inclusion_average && @company.diversity_average)%>
+				Culture  : <%= @company.culture_average.avg %>
+				Inclusion : <%= @company.inclusion_average.avg %>
+				Diversity : <%= @company.diversity_average.avg %>
+			<% end %>
+		</div>
+	</div>
+
+</div>
+
+<div class="row divider"></div>
+
+<!-- Add a Review section -->
+<div class="row add-review">
+	<div class="col m9"><h3>Reviews</h3></div>
+	<div class="col m3">
+		<% if current_user && !@company.reviewed?(current_user) %>
+		<%= button_to "Add a Review", new_company_review_path(@company), method: "get", :class=>"btn btn-primary" %>
+		<% end %>
+	</div>
+</div>
+
+<!-- Comments Section -->
+<div class="company-comments">
+	<% @company.reviews.each do |review|%>
+		<div class="row">
+
+			<!-- Review Details -->
+			<div class="col m3">
+				<!-- Review Ratings -->
+				<div class="review-ratings">
+					<p>Culture: <%= review.rating_for_user("culture" , {star: 5 , readonly: true })  %></p>
+					<p>Inclusion: <%= review.rating_for_user( "inclusion", {star: 5 , readonly: true }) %></p>
+					<p>Diversity: <%= review.rating_for_user( "diversity", {star: 5 , readonly: true}) %></p>
+				</div>
+			</div>
+			<!-- End of review details -->
+
+			<!-- Review Body -->
+			<div class="col m9">
+				<div class="row review-body">
+					<%= link_to("#{review.body}", review_show_path(review) ) %>
+				</div>
+				<!-- Author Name  -->
+				<div class="row reviewed-by">
+					<% if review.anonymous %>
+						by <%= "Anonymous" %>
+					<% else %>
+						by <%= review.reviewer.first_name%>
+					<% end %>
+				</div>
+				<!-- Like Buttons -->
+				<div class="row review-like-buttons">
+					<div class="col m6">
+						<% if (current_user && !review.liked?(current_user) ) %>
+							<%= button_to "Like", review_like_path(review), method: "get"  %>
+						<% elsif ( current_user && review.liked?(current_user) ) %>
+							<%= button_to "Unlike", review_unlike_path(review), method: "delete"  %>
+						<% end %>
+					</div>
+					<div class="col m6">
+						Likes: <%= review.likes.length %>
+					</div>
+
+				</div>
+			</div>
+			<!-- End of review body  -->
+		</div>
+		<!-- end of overall review row -->
+		<div class="row divider"></div>
 	<% end %>
 </div>
+
 <div>
 	<% if current_user && current_user.admin == true %>
 		<%= link_to "Update Company", edit_company_path(@company) %>
 		<%= link_to "Delete Company", @company, method: "delete" %>
 	<% end %>
 </div>
+
 
 
 
