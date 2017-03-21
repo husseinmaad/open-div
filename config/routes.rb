@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  get 'submissions/new'
-  post 'submissions'
+  resources :submissions
 
   post '/rate' => 'rater#create', :as => 'rate'
   devise_for :users, :controllers => { registrations: 'registrations', :omniauth_callbacks => "callbacks", :users => "users"}

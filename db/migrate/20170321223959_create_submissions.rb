@@ -6,8 +6,7 @@ class CreateSubmissions < ActiveRecord::Migration[5.0]
       t.string :domain
       t.string :city_name
       t.string :region_name
-      t.string :country
-      t.string :code
+      t.string :country_code
       t.string :avatar
       t.references :user, foreign_key: true
 

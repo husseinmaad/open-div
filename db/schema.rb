@@ -127,8 +127,7 @@ ActiveRecord::Schema.define(version: 20170321223959) do
     t.string   "domain"
     t.string   "city_name"
     t.string   "region_name"
-    t.string   "country"
-    t.string   "code"
+    t.string   "country_code"
     t.string   "avatar"
     t.integer  "user_id"
     t.datetime "created_at",        null: false
