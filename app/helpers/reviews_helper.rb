@@ -8,7 +8,7 @@ module ReviewsHelper
 	  stars = @rating ? @rating.stars : 0
 
     star         = options[:star]         || 5
-    enable_half  = options[:enable_half]  || false
+    enable_half  = options[:enable_half]  || true
     half_show    = options[:half_show]    || true
     star_path    = options[:star_path]    || ''
     star_on      = options[:star_on]      || image_path('star-on.png')
@@ -60,7 +60,7 @@ module ReviewsHelper
                 "data-target-text" => targetText,
                 "data-target-format" => targetFormat,
                 "data-target-score" => targetScore
-end
+    end
 
 
 end

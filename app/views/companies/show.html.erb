@@ -19,9 +19,9 @@
 		<div class="row">
 			<h3>Average Rating</h3>
 			<% if (@company.culture_average && @company.inclusion_average && @company.diversity_average)%>
-				Culture  : <%= @company.culture_average.avg %>
-				Inclusion : <%= @company.inclusion_average.avg %>
-				Diversity : <%= @company.diversity_average.avg %>
+				Culture  : <%= custom_rating_generator @company.culture_average.avg %>
+				Inclusion : <%= custom_rating_generator @company.inclusion_average.avg %>
+				Diversity : <%= custom_rating_generator @company.diversity_average.avg %>
 			<% end %>
 		</div>
 	</div>
