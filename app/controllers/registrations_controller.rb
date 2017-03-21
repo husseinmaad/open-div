@@ -6,7 +6,6 @@ class RegistrationsController < Devise::RegistrationsController
   def create
       super
        UserNotifierMailer.send_signup_email(@user).deliver
-   
   end
 
   private
