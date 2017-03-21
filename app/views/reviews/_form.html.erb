@@ -1,0 +1,170 @@
+<div class="section rating-questions">
+  <h2>Inclusiveness</h2>
+
+  <div class="row divider"></div>
+  <!-- ................................................  Question 1 -->
+  <div class="row">
+    <!-- Questions -->
+    <div class="col m9">
+      <h3>Gender</h3>
+      <p>How inclusive is your company across ability, gender identity, age, sexual preference?</p>
+    </div>
+    <!-- Stars -->
+    <div class="star-ratings col m3">
+      <%= rating_for @company, 'gender', disable_after_rate: false %>
+    </div>
+  </div>
+
+  <div class="row divider"></div>
+  <!-- ................................................  Question 2 -->
+  <div class="row">
+    <!-- Questions -->
+    <div class="col m9">
+      <h3>Identity</h3>
+      <p>How inclusive is your company across skin color, race, ethnicity, cultures, political beliefs, religion or country of origin?</p>
+    </div>
+    <!-- Stars -->
+    <div class="star-ratings col m3">
+      <%= rating_for @company, 'identity', disable_after_rate: false %>
+    </div>
+  </div>
+
+  <h2>Culture</h2>
+  <div class="row divider"></div>
+
+  <!-- ................................................  Question 3 -->
+  <div class="row">
+    <!-- Questions -->
+    <div class="col m9">
+      <h3>Managment</h3>
+      <p>How respectful and trustful was your manager?</p>
+    </div>
+    <!-- Stars -->
+    <div class="star-ratings col m3">
+      <%= rating_for @company, 'management', disable_after_rate: false %>
+    </div>
+  </div>
+
+  <div class="row divider"></div>
+
+  <!-- ................................................  Question 4 -->
+  <div class="row">
+    <!-- Questions -->
+    <div class="col m9">
+      <h3>HR</h3>
+      <p>How responsive was the company when issues and concerns were brought up?</p>
+    </div>
+    <!-- Stars -->
+    <div class="star-ratings col m3">
+      <%= rating_for @company, 'hr', disable_after_rate: false %>
+    </div>
+  </div>
+
+  <div class="row divider"></div>
+
+  <!-- ................................................  Question 5 -->
+  <div class="row">
+    <!-- Questions -->
+    <div class="col m9">
+      <h3>Whole-Self</h3>
+      <p>How comfortable did you feel to bring your whole-self to work everyday?</p>
+    </div>
+    <!-- Stars -->
+    <div class="star-ratings col m3">
+      <%= rating_for @company, 'whole_self', disable_after_rate: false %>
+    </div>
+  </div>
+
+  <div class="row divider"></div>
+
+  <!-- ................................................  Question 6 -->
+  <div class="row">
+    <!-- Questions -->
+    <div class="col m9">
+      <h3>Community</h3>
+      <p>How welcomed did you feel when you first started?</p>
+    </div>
+    <!-- Stars -->
+    <div class="star-ratings col m3">
+      <%= rating_for @company, 'community', disable_after_rate: false %>
+    </div>
+  </div>
+
+  <h2>Diversity</h2>
+  <div class="row divider"></div>
+  <!-- ................................................  Question 7 -->
+  <div class="row">
+    <!-- Questions -->
+    <div class="col m9">
+      <h3>Diverse Leadership Team</h3>
+      <p>Was the leadership team diverse; were there any individuals who are usually underrepresented in tech?</p>
+    </div>
+    <!-- Stars -->
+    <div class="star-ratings col m3">
+      <%= rating_for @company, 'leadership', disable_after_rate: false %>
+    </div>
+  </div>
+
+  <div class="row divider"></div>
+  <!-- ................................................  Question 8 -->
+  <div class="row">
+    <!-- Questions -->
+    <div class="col m9">
+      <h3>Equal Opportunities</h3>
+      <p>Did you feel there were equal opportunities for you and team members?</p>
+    </div>
+    <!-- Stars -->
+    <div class="star-ratings col m3">
+      <%= rating_for @company, 'equal_opportunities', disable_after_rate: false %>
+    </div>
+  </div>
+
+  <div class="row divider"></div>
+  <!-- ................................................  Question 9 -->
+  <div class="row">
+    <!-- Questions -->
+    <div class="col m9">
+      <h3>Promotions & Raises</h3>
+      <p>Did you have opportunities to move up in the company?</p>
+    </div>
+    <!-- Stars -->
+    <div class="star-ratings col m3">
+      <%= rating_for @company, 'promotions', disable_after_rate: false %>
+    </div>
+  </div>
+
+  <div class="row divider"></div>
+  <!-- ................................................  Question 10 -->
+  <div class="row">
+    <!-- Questions -->
+    <div class="col m9">
+      <h3>Overall Satisfaction</h3>
+      <p>How satisfied are you with this company? How likely would you recommend it to a peer?</p>
+    </div>
+    <!-- Stars -->
+    <div class="star-ratings col m3">
+      <%= rating_for @company, 'overall', disable_after_rate: false %>
+    </div>
+  </div>
+  <div class="row divider"></div>
+</div>
+
+
+<!-- Review form -->
+<div class="section row">
+  <%= form_for [ @company , @review] do |f|%>
+    <h4>Write about your experience</h4>
+    <div class="input-field">
+      <%= f.label :body, "Please share any comments about your experience at the company" %>
+      <%= f.text_area :body, :class => "materialize-textarea" %>
+    </div>
+
+    <div class="input-field section">
+      <%= f.check_box :anonymous,{:checked => 'checked'}, checked_value = true, unchecked_value = false  %>
+      <%= f.label :anonymous, "Make your review anonymous?"  %>
+    </div>
+
+    <div class="input-field section">
+      <%= f.submit "Submit review" , :class => "btn btn-primary" %>
+    </div>
+  <% end %>
