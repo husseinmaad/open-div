@@ -17,7 +17,10 @@
 //= require materialize-sprockets
 //= require jquery.raty
 //= require ratyrate
+//= require Chart
 //= require_tree .
+
+
 $(document).on('turbolinks:load', function() {
     likeButton()
 });
@@ -54,17 +57,3 @@ var likeButton = function() {
 
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
