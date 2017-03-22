@@ -9,4 +9,5 @@ class WelcomeMailer < ApplicationMailer
     @user = user
      mail to: @user.email, subject:  'Welcome to Open Door'
   end
+
 end
