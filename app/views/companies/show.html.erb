@@ -79,8 +79,24 @@
 				</div>
 				<!-- Like Buttons -->
 					<%= render partial: "show", locals: {review: review} %>
-			
+
+				 <!-- Modal Trigger to add comment -->
+				 <% if current_user %>
+				 	<button class="waves-effect waves-light btn modal-trigger" data-target="modal1">+Add Comment</button>
+				 <% end %>
+  				 <!-- Modal Structure -->
+			  <div id="modal1" class="modal">
+			    <div class="modal-content">
+			      <h4>Add a Comment</h4>
+
+			      <div class="row">
+			      	<%= render  partial: "new_comment", locals: {review: review, comment: Comment.new} %>      
+			      </div>
+			    </div>
+			  </div>
 			</div>
+
+			<!-- end the modal -->
 			<!-- End of review body  -->
 		</div>
 		<!-- end of overall review row -->

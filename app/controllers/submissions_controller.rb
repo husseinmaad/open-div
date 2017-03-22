@@ -6,9 +6,6 @@ class SubmissionsController < ApplicationController
   def create
       @submission = Submission.new(submission_params)
     if @submission.save
-      p"*"*100
-      p current_user
-      p "*"*100
         #send email to the user
       CompanyMailer.submit_company_email(current_user).deliver
       redirect_to root_path 
