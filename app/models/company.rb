@@ -6,29 +6,8 @@ class Company < ApplicationRecord
   ratyrate_rateable "gender","identity", "management","hr",
   "whole_self","community","leadership","equal_opportunities",
   "promotions","job_description","responsiveness","onsite","overall"
-  # ,"culture", "inclusion", "diversity"
 
-  validates :name, :city_name, :region_name, :country_code, presence: true
-
-
-  # Returns the average rating for the whole company
-  # def avg_rating
-  #   if self.reviews.any?
-  #     sum = self.reviews.reduce(0){|sum,review| sum + review.culture_rating.to_f } / self.reviews.length
-  #     sum += self.reviews.reduce(0){|sum,review| sum + review.inclusion_rating.to_f } / self.reviews.length
-  #     sum += self.reviews.reduce(0){|sum,review| sum + review.diversity_rating.to_f } / self.reviews.length
-  #     return sum / 3
-  #   else
-  #     return 0
-  #   end
-  # end
-  
-  def multiple_dimension_avg_rating
-     ratings = Rate.where("rateable_type = ? and rateable_id = ?", "Company", self.id)
-     sum = ratings.reduce(0){|sum , r| sum+= r.stars} 
-     sum/ratings.length
-  end
-
+  validates :name,:city_name, :region_name, :country_code, presence: true
 
   # Return overall inclusive rating
   def inclusion_rating
@@ -76,8 +55,9 @@ class Company < ApplicationRecord
   end
 
   # Takes in search team and finds relevant companies in database
-  def self.search(search)
-    where("name LIKE ?", "%#{search}%")
+  def self.search(query)
+    q = "%#{query}%"
+    where("name like ? or short_description like ? or region_name like ? or city_name like ?", q, q, q, q)
   end
 
   # Return user if they have reviewed company
