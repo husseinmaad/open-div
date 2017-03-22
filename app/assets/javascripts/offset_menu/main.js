@@ -10,7 +10,8 @@
  */
 
  $( document ).on('turbolinks:load', function() {
-	 (function() {
+ 		if($(".home").length > 0){
+ 			(function() {
 
 	 	var bodyEl = document.body,
 	 		content = document.querySelector( '.home' ),
@@ -51,4 +52,6 @@
 
 	 })();
 
+ 		}
+	 
  });
