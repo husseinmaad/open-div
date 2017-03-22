@@ -79,7 +79,11 @@
 				</div>
 				<!-- Like Buttons -->
 					<%= render partial: "show", locals: {review: review} %>
-			
+
+				 <!-- Modal Trigger to add comment -->
+				<% if current_user %>
+  				<%= button_to "+Add Comment", review_comments_path(review),method: "get" %>
+				<% end %>
 			</div>
 			<!-- End of review body  -->
 		</div>
