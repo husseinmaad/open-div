@@ -55,8 +55,9 @@ class Company < ApplicationRecord
   end
 
   # Takes in search team and finds relevant companies in database
-  def self.search(search)
-    where("name LIKE ?", "%#{search}%")
+  def self.search(query)
+    q = "%#{query}%"
+    where("name like ? or short_description like ? or region_name like ? or city_name like ?", q, q, q, q)
   end
 
   # Return user if they have reviewed company
