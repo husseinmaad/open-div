@@ -7,6 +7,6 @@ class WelcomeMailer < ApplicationMailer
   #
   def signup_email(user)
     @user = user
-     mail to: @user.email
+     mail to: @user.email, subject:  'Welcome to Open Door'
   end
 end
