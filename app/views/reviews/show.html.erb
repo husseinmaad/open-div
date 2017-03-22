@@ -8,8 +8,9 @@
   <% if @review.comments.any? %>
     <% @review.comments.each do |comment| %>
       <li><%= comment.body %></li>
-
-      <%= render partial: "show", locals: {comment: comment} %>
+      <div class="comments-likes-button">
+        <%= render partial: "show", locals: {comment: comment} %>
+      </div>
     <div>
   <% if (current_user && (comment.commentor_id==current_user.id) )  %>
     <%=link_to  "Edit", edit_comment_path(@review,comment) %> 

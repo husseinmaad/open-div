@@ -41,6 +41,8 @@ class ReviewsController < ApplicationController
 	def like
 		@review = Review.find(params[:id])
 		@review.likes.create!(liker_id: current_user.id)
+
+		p Like.last
 		if request.xhr?
 			render partial: "companies/show", layout: false, locals: {review: @review}
 		else 
@@ -49,12 +51,15 @@ class ReviewsController < ApplicationController
 	end
 
 	def unlike
-		@review = Review.find(params[:review_id])
-		@like = Like.find(params[:id])
+		p @review = Review.find(params[:review_id])
+		p @like = Like.find(params[:id])
 		@like.delete
+		p "* " * 25
 		if request.xhr?
+			p "IN THE AJAX"
 			render partial: "companies/show", layout: false, locals: {review: @review}
 		else 
+			p "IN THE ELSE"
 			redirect_back(fallback_location: root_path)
 		end 
 	end
