@@ -1,0 +1,34 @@
+<h1>New Submission</h1>
+
+<div>
+	<%= form_for(@submission) do |f| %>
+
+	<%= f.label :name %><br />
+    <%= f.text_field :name %>
+
+    <%= f.label :short_description %><br />
+    <%= f.text_field :short_description %>
+
+    <%= f.label :domain %><br />
+    <%= f.text_field :domain %>
+
+    <%= f.label :city_name %><br />
+    <%= f.text_field :city_name %>
+
+    <%= f.label :region_name %><br />
+    <%= f.text_field :region_name %>
+
+    <%= f.label :country_code %><br />
+    <%= f.text_field :country_code %>
+
+    <div class="field">
+    <%= f.label :avatar do %><br />
+      <%= f.file_field :avatar %>
+      <%= f.hidden_field :avatar_cache %>
+    <% end %>
+		</div>
+
+    <%= f.submit "Submit Company" %>
+    <% end %>
+  
+</div>
