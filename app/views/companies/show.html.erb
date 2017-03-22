@@ -17,14 +17,21 @@
 
 		<!-- Company rating -->
 		<div class="row">
-			<h3>Average Rating</h3>
-			<% if (@company.culture_average && @company.inclusion_average && @company.diversity_average)%>
-				Culture  : <%= custom_rating_generator @company.culture_average.avg %>
-				Inclusion : <%= custom_rating_generator @company.inclusion_average.avg %>
-				Diversity : <%= custom_rating_generator @company.diversity_average.avg %>
-			<% else %>
-				  <p>No ratings have been made yet.</p>
-			<% end %>
+			<h3>Ratings</h3>
+			<!-- Chart JS -->
+			<div class="col m6">
+				<div class="company-chart-ratings" inclusion="<%= @company.inclusion_rating %>" diversity="<%= @company.diversity_rating %>" culture="<%= @company.culture_rating %>"></div>
+				<canvas id="canvas"></canvas>
+			</div>
+			<!-- Overall Rating -->
+			<div class="col m6">
+				<% if @company.avg_rating %>
+					Overall: <%= custom_rating_generator @company.avg_rating %>
+				<% else %>
+					  <p>No ratings have been made yet.</p>
+				<% end %>
+			</div>
+			<!-- End of Rating -->
 		</div>
 	</div>
 
@@ -71,19 +78,8 @@
 					<% end %>
 				</div>
 				<!-- Like Buttons -->
-				<div class="row review-like-buttons">
-					<div class="col m6">
-						<% if (current_user && !review.liked?(current_user) ) %>
-							<%= button_to "Like", review_like_path(review), method: "get"  %>
-						<% elsif ( current_user && review.liked?(current_user) ) %>
-							<%= button_to "Unlike", review_unlike_path(review), method: "delete"  %>
-						<% end %>
-					</div>
-					<div class="col m6">
-						Likes: <%= review.likes.length %>
-					</div>
-
-				</div>
+					<%= render partial: "show", locals: {review: review} %>
+			
 			</div>
 			<!-- End of review body  -->
 		</div>

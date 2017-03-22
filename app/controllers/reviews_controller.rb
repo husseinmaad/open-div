@@ -41,14 +41,22 @@ class ReviewsController < ApplicationController
 	def like
 		@review = Review.find(params[:id])
 		@review.likes.create!(liker_id: current_user.id)
-		redirect_back(fallback_location: root_path)
+		if request.xhr?
+			render partial: "companies/show", layout: false, locals: {review: @review}
+		else 
+			redirect_back(fallback_location: root_path)
+		end 
 	end
 
 	def unlike
 		@review = Review.find(params[:id])
 		@like = @review.likes.find_by(liker_id: current_user.id)
 		@like.delete
-		redirect_back(fallback_location: root_path)
+		if request.xhr?
+			render partial: "companies/show", layout: false, locals: {review: @review}
+		else 
+			redirect_back(fallback_location: root_path)
+		end 
 	end
 
 	def destroy

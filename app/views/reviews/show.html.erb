@@ -7,19 +7,17 @@
 <div> 
   <% if @review.comments.any? %>
     <% @review.comments.each do |comment| %>
-      <li><%= comment.body %></li> 
-      <% if (current_user && !comment.liked?(current_user) ) %>
-      <%= button_to "Like", comment_like_path(comment), method: "get"  %>
-      <% elsif ( current_user && comment.liked?(current_user) ) %>
-      <%= button_to "Unlike", comment_unlike_path(comment), method: "delete"  %>
+      <li><%= comment.body %></li>
+       
+      <%= render partial: "show", locals: {comment: comment} %>
+    <div>
+  <% if (current_user && (comment.commentor_id==current_user.id) )  %>
+    <%=link_to  "Edit", edit_comment_path(@review,comment) %> 
+    <%=link_to  "Delete",[@review,comment], method: 'delete'%>
       <% end %>
-      <% if (current_user && (comment.commentor_id==current_user.id) )  %>
-        <%=link_to  "Edit", edit_comment_path(@review,comment) %> 
-        <%=link_to  "Delete",[@review,comment], method: 'delete'%>
-      <% end %>
-      <hr>
-    <% end %>
   <% end %>
+  <% end %>
+	</div>
 </div>
 <% if current_user %>
   <%= button_to "+Add Comment", review_comments_path(@review),method: "get" %>

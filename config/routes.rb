@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :submissions
+
   post '/rate' => 'rater#create', :as => 'rate'
   devise_for :users, :controllers => { registrations: 'registrations', :omniauth_callbacks => "callbacks", :users => "users"}
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
