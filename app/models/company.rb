@@ -10,6 +10,26 @@ class Company < ApplicationRecord
 
   validates :name, :city_name, :region_name, :country_code, presence: true
 
+
+  # Returns the average rating for the whole company
+  # def avg_rating
+  #   if self.reviews.any?
+  #     sum = self.reviews.reduce(0){|sum,review| sum + review.culture_rating.to_f } / self.reviews.length
+  #     sum += self.reviews.reduce(0){|sum,review| sum + review.inclusion_rating.to_f } / self.reviews.length
+  #     sum += self.reviews.reduce(0){|sum,review| sum + review.diversity_rating.to_f } / self.reviews.length
+  #     return sum / 3
+  #   else
+  #     return 0
+  #   end
+  # end
+  
+  def multiple_dimension_avg_rating
+     ratings = Rate.where("rateable_type = ? and rateable_id = ?", "Company", self.id)
+     sum = ratings.reduce(0){|sum , r| sum+= r.stars} 
+     sum/ratings.length
+  end
+
+
   # Return overall inclusive rating
   def inclusion_rating
     if self.gender_average && self.identity_average
