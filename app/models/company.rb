@@ -22,6 +22,7 @@ class Company < ApplicationRecord
   #     return 0
   #   end
   # end
+  
   def multiple_dimension_avg_rating
      ratings = Rate.where("rateable_type = ? and rateable_id = ?", "Company", self.id)
      sum = ratings.reduce(0){|sum , r| sum+= r.stars} 
