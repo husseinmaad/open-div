@@ -1,9 +1,10 @@
 class CompanyMailer < ApplicationMailer
   default from: 'opendoorteam2017@gmail.com'
- 
-  def submit_company_email(user,company)
+ p"@"*100
+  def submit_company_email(user)
     @user = user
-    @company = company
-    mail to: user.email, subject: "Thank you for "
+    p "&"*200
+    p @user
+    mail to: user.email, subject: "Thank you for Submission "
   end 
 end
