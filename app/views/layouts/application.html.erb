@@ -9,7 +9,18 @@
   </head>
 
   <body>
-
+<div class="homepage-hero-module">
+    <div class="video-container">
+        <div class="filter"></div>
+        <video autoplay loop class="fillWidth">
+            <source src="<%= image_path("images/Very-Open-Space.mp4") %>" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
+            <source src="<%= image_path("images/Very-Open-Space.webm") %>" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
+        </video>
+        <div class="poster hidden">
+            <img src="<%= image_path("images/Very-Open-Space.jpg") %>" alt="">
+        </div>
+    </div>
+</div>
 
     <%= render 'layouts/navigation' %>
 
