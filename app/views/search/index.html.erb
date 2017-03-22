@@ -9,15 +9,16 @@
 </div>
 <div class="search-results ">
   <% @companies.each do |company| %>
-    <div class="row wow slideInLeft">
-      <div class="col m3">
-        <img class="company-img" src="<%= company.profile_image_url %>" alt="<%= company.name %>" />
+    <div class="row wow slideInLeft company" >
+      <div class="col m3 ">
+        <img class="company-img img_resize " src="<%= company.profile_image_url %>" alt="<%= company.name %>" />
       </div>
       <div class="col m9">
         <h5><%= link_to  company.name , company_path(company)%></h5>
-        <div class="rating"><%= company.avg_rating %></div>
+        <div class="rating"><strong>Rating Avg: </strong><%= company.avg_rating %></div>
       </div>
     </div>
+    <hr>
   <% end %>
 </div>
 
