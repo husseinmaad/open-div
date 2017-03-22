@@ -1,9 +1,9 @@
 <div class="row review-like-buttons">
 	<div class="col m6">
 		<% if (current_user && !review.liked?(current_user) ) %>
-			<div class="like-button"><%= button_to "Like", review_like_path(review), method: "get"  %></div>
+			<div class="like-button"><%= button_to "Like", review_like_path(review), method: "post"  %></div>
 				<% elsif ( current_user && review.liked?(current_user) ) %>
-			<div class="like-button"><%= button_to "Unlike", review_unlike_path(review), method: "delete"  %>	
+			<div class="like-button"><%= button_to "Unlike", review_unlike_path(review,find_like(review)), method: "delete"  %>	
 		<% end %>
 			</div>
 		</div>
