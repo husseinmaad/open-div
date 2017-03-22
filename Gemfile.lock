@@ -40,6 +40,8 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.5.0)
       public_suffix (~> 2.0, >= 2.0.2)
+    animate-rails (1.0.10)
+      rails
     arel (7.1.4)
     babel-source (5.8.35)
     babel-transpiler (0.7.0)
@@ -264,6 +266,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  animate-rails
   byebug
   capybara
   carrierwave (~> 1.0)
