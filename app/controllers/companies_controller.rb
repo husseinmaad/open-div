@@ -29,6 +29,8 @@ class CompaniesController < ApplicationController
     if current_user && current_user.admin == true
       @company = Company.new(company_params)
       if @company.save
+        #send email to the user
+        CompanyMailer.submit_company_email(current_user,@company)
         redirect_to @company 
       else
         render :new 

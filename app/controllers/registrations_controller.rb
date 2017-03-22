@@ -5,7 +5,6 @@ class RegistrationsController < Devise::RegistrationsController
     
   def create
       super
-      p @user
        WelcomeMailer.signup_email(@user).deliver
   end
 
