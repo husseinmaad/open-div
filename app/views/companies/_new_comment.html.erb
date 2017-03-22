@@ -1,7 +1,5 @@
 <div class = container>
 <%= form_for [review, comment]  do |f|%>
-
-
   <div class="field">
     <%= f.label :body %>
     <%= f.text_field :body %>
@@ -11,12 +9,8 @@
     <%= f.check_box :anonymous,{}, checked_value = true, unchecked_value = false %>
     <%= f.label :anonymous  %>
   </div>
-
-  <div class="actions">
+  <div class="modal-footer">        
     <%= f.submit "Submit Comment", :class =>" modal-action modal-close waves-effect waves-green btn-flat" %>
   </div>
-
-
 <% end %>
-
 </div>
