@@ -14,7 +14,8 @@ module CompaniesHelper
     companies = Company.all
     data = "{"
     companies.each_with_index do |company, index|
-      data += "'#{company.name}':'#{company.profile_image_url}'"
+      data += %Q["#{company.name}": "#{company.profile_image_url}"]
+      # data += "'#{company.name}':'#{company.profile_image_url}'"
       if index < companies.length-1
         data += ","
       end
