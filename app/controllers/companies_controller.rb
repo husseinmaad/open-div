@@ -1,7 +1,7 @@
 class CompaniesController < ApplicationController
   layout "home", only: [:index]
   def index
-    WelcomeMailer.signup_email.deliver
+    # WelcomeMailer.signup_email.deliver
     # WelcomeMailer.signup_email.deliver_now
     #@companies = sorted_companies # helper method
     # @companies = Company.all
