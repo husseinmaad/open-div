@@ -15,8 +15,8 @@
 
 //= require turbolinks
 //= require materialize-sprockets
-//= require wow
 //= require jquery.raty
 //= require ratyrate
 //= require Chart
+//= require wow
 //= require_tree .
