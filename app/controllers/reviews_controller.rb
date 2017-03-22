@@ -49,7 +49,7 @@ class ReviewsController < ApplicationController
 	end
 
 	def unlike
-		@review = Review.find(params[:id])
+		@review = Review.find(params[:review_id])
 		@like = @review.likes.find_by(liker_id: current_user.id)
 		@like.delete
 		if request.xhr?

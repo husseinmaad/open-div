@@ -8,7 +8,7 @@
   <% if @review.comments.any? %>
     <% @review.comments.each do |comment| %>
       <li><%= comment.body %></li>
-       
+
       <%= render partial: "show", locals: {comment: comment} %>
     <div>
   <% if (current_user && (comment.commentor_id==current_user.id) )  %>
@@ -27,4 +27,7 @@
 	<%= button_to "+Edit Review", edit_company_review_path(@company, @review), method: "get" %>
 	<%= button_to "Delete Review", [@company, @review], method: "delete" %>
 <% end %>
+</div>
+<div>
+  <%= link_to "Back", @company %>
 </div>

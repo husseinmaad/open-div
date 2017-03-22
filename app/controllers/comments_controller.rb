@@ -49,9 +49,9 @@ class CommentsController < ApplicationController
   end
 
   def unlike
-    @comment = Comment.find(params[:id])
+    @comment = Comment.find(params[:comment_id])
     @like = @comment.likes.find_by(liker_id: current_user.id)
-    @like.delete
+    @like.destroy
     if request.xhr? 
       render partial: "reviews/show", layout: false, locals: {comment: @comment}
     else 
@@ -65,5 +65,4 @@ class CommentsController < ApplicationController
   def comments_params
     params.require(:comment).permit(:body  ,:anonymous)
   end
-
 end
