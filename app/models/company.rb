@@ -7,8 +7,7 @@ class Company < ApplicationRecord
   "whole_self","community","leadership","equal_opportunities",
   "promotions","job_description","responsiveness","onsite","overall"
 
-  validates :name, :city_name, :region_name, :country_code, presence: true
-
+  validates :name,:city_name, :region_name, :country_code, presence: true
 
   # Return overall inclusive rating
   def inclusion_rating
