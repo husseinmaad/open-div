@@ -2,12 +2,17 @@
 	<div class="menu-wrap">
 		<nav class="menu">
 			<div class="icon-list">
-				<a href="#"><i class="fa fa-fw fa-star-o"></i><span>Favorites</span></a>
-				<a href="#"><i class="fa fa-fw fa-bell-o"></i><span>Alerts</span></a>
-				<a href="#"><i class="fa fa-fw fa-envelope-o"></i><span>Messages</span></a>
-				<a href="#"><i class="fa fa-fw fa-comment-o"></i><span>Comments</span></a>
-				<a href="#"><i class="fa fa-fw fa-bar-chart-o"></i><span>Analytics</span></a>
-				<a href="#"><i class="fa fa-fw fa-newspaper-o"></i><span>Reading List</span></a>
+				<a href="<%= root_path %>"><i class="fa fa-fw fa-star-o"></i><span>Home</span></a>
+				<a href="<%= search_path %>"><i class="fa fa-fw fa-bell-o"></i><span>Companies</span></a>
+				<% if current_user %>
+					<a href="<%= user_profile_path(current_user) %>"><i class="fa fa-fw fa-envelope-o"></i><span>Profile</span></a>
+					<a href="<%= destroy_user_session_path %>" rel="nofollow" data-method="delete"><i class="fa fa-fw fa-comment-o"></i><span>Sign Out</span></a>
+        <% else %>
+					<a href="<%= new_user_session_path %>"><i class="fa fa-fw fa-bar-chart-o"></i><span>Log In</span></a>
+					<a href="<%= new_user_registration_path %>"><i class="fa fa-fw fa-newspaper-o"></i><span>Sign Up</span></a>
+          <li><%= link_to "Log in", new_user_session_path %></li>
+          <li><%= link_to "Sign Up", new_user_registration_path %></li>
+        <% end %>
 			</div>
 		</nav>
 	</div>
