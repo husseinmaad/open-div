@@ -1,5 +1,5 @@
 class WelcomeMailer < ApplicationMailer
-  default from: 'husseinmaad90@gmail.com'
+  default from: 'opendoorteam2017@gmail.com'
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
   #
