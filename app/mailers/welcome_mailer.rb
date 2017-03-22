@@ -5,9 +5,9 @@ class WelcomeMailer < ApplicationMailer
   #
   #   en.welcome_mailer.signup_email.subject
   #
-  def signup_email()
+  def signup_email
     @greeting = "Hi"
-
-    # mail to: "lupita.dav@gmail.com"
+# lupita.dav@gmail.com
+     mail to: "hussein.maad@outlook.com"
   end
 end
