@@ -8,6 +8,6 @@ class WelcomeMailer < ApplicationMailer
   def signup_email()
     @greeting = "Hi"
 
-    mail to: "lupita.dav@gmail.com"
+    # mail to: "lupita.dav@gmail.com"
   end
 end
