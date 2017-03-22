@@ -2,14 +2,18 @@
     <div class="homepage-hero-module">
       <div class="video-container">
         <div class="filter">
+          <!-- Search Bar -->
           <div class="search-bar">
             <div class="container">
               <div class="row">
                 <div class="home-search-form col m6 offset-m3">
-                  <br>
-                  <br>
-                  <br>
-                  <%= image_tag "opendoor_logo_web.png" %>
+                  <!-- Logo Container -->
+                  <div class="row">
+                    <div class="logo-container wow fadeInDown" data-wow-duration="2s" data-wow-delay="1s">
+                      <%= image_tag "opendoor_logo_web.png" %>
+                    </div>
+                  </div>
+                  <!-- Search Form -->
                   <%= render 'search/form' %>
                 </div>
               </div>
@@ -22,7 +26,7 @@
         <source src="<%= image_path("Very-Open-Space.webm") %>" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
       </video>
       <div class="poster hidden">
-        <img src="<%= image_path("Very-Open-Space.png") %>" alt="">
+        <img src="<%= image_path("Very-Open-Space.jpg") %>" alt=""/>
       </div>
      </div>
   </div>
