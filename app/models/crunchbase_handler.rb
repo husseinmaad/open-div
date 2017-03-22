@@ -5,10 +5,11 @@ require 'dotenv'
 
 module CrunchbaseHandler
   @key = ENV["CB_KEY"]
-  url = "https://api.crunchbase.com/v/3/odm-organizations?user_key=#{@key}&locations=San Francisco&organization_types=company"
+  url = "https://api.crunchbase.com/v/3/odm-organizations?user_key=#{@key}"
   @url_uri = URI(url)
 
-  def self.get_all_sf_companies
+  def self.get_company_by_city(city)
+    url += "&locations=San Francisco&query=#{city}"
     http = Net::HTTP.new(@url_uri.host, @url_uri.port)
     p @url_uri
     http.use_ssl = true
