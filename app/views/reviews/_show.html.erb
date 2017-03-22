@@ -1,9 +1,9 @@
 <div class="likes-table">
 	<div class="like-button">
 	  <% if (current_user && !comment.liked?(current_user) ) %>
-	   <%= button_to "Like", comment_like_path(comment)  %>
+	   <%= button_to "Like", comment_like_path(comment), method: "post"  %>
 	  <% elsif ( current_user && comment.liked?(current_user) ) %>
-	    <%= button_to "Unlike", comment_unlike_path(comment), method: "delete"  %>
+	    <%= button_to "Unlike", comment_unlike_path(comment,find_like(comment)), method: "delete"  %>
 	  <% end %>
 	</div>
 	<div class="number-of-likes">

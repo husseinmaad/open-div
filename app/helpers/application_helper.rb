@@ -55,6 +55,9 @@ module ApplicationHelper
 	                "data-target-score" => targetScore
 	end
 
+  def find_like(obj)
+      obj.likes.find_by(liker_id: current_user.id)
+  end
 
 
 end

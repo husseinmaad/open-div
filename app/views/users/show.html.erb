@@ -16,3 +16,9 @@ Reviews:
 		<% end %>
 	</ul>
 </div>
+=======
+
+<% if current_user %>
+	<%= button_to "Submit a Company", new_submission_path, method: "get" %>
+<% end %>
+

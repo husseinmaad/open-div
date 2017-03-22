@@ -49,9 +49,11 @@ class CommentsController < ApplicationController
   end
 
   def unlike
+<<<<<<< HEAD
     @comment = Comment.find(params[:comment_id])
-    @like = @comment.likes.find_by(liker_id: current_user.id)
-    @like.destroy
+    @like = Like.find(params[:id])
+    @like.delete
+    @like.delete
     if request.xhr? 
       render partial: "reviews/show", layout: false, locals: {comment: @comment}
     else 

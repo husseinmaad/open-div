@@ -11,8 +11,10 @@
   <% end %>
 </div>
 
-<div>
+<div class="row section">
   <% if current_user && current_user.admin == true %>
     <%= link_to "Create Company", new_company_path %>
-  <% end %> 
+  <% end %>
 </div>
+
+<div class="company-data" data="<%= autocomplete_data %>"></div>
