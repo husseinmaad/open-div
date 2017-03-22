@@ -18,4 +18,5 @@
 //= require jquery.raty
 //= require ratyrate
 //= require Chart
+//= require wow
 //= require_tree .
