@@ -81,10 +81,26 @@
 					<%= render partial: "show", locals: {review: review} %>
 
 				 <!-- Modal Trigger to add comment -->
-				<% if current_user %>
-  				<%= button_to "+Add Comment", review_comments_path(review),method: "get" %>
-				<% end %>
+				 <% if current_user %>
+				 	<button class="waves-effect waves-light btn modal-trigger" data-target="modal1">+Add Comment</button>
+				 <% end %>
+  				 <!-- Modal Structure -->
+			  <div id="modal1" class="modal">
+			    <div class="modal-content">
+			      <h4>Add an Image</h4>
+
+			      <div class="row">
+
+			                
+			      </div>
+			    </div>
+			    <div class="modal-footer">
+			      <a class=" modal-action modal-close waves-effect waves-green btn-flat">Submit</a>
+			    </div>
+			  </div>
 			</div>
+
+			<!-- end the modal -->
 			<!-- End of review body  -->
 		</div>
 		<!-- end of overall review row -->
