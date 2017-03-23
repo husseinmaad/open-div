@@ -16,6 +16,8 @@
   }
 }
 
+
+
 //------------------- Typography
 body{
   font-family: $bodyFontFamily;
@@ -23,6 +25,8 @@ body{
 h1,h2,h3,h4,h5,h6{
   font-family: $headingFontFamily;
 }
+
+// ----------------------- HOME PAGE
 .home{
   background: $home-background;
   h2{
@@ -35,7 +39,7 @@ h1,h2,h3,h4,h5,h6{
   }
   h3{
     color: $home-h3-color;
-    margin-top: 20px;
+    margin-top: 40px;
     margin-bottom: 40px;
     text-align: center;
     text-transform: uppercase;
@@ -64,6 +68,24 @@ h1,h2,h3,h4,h5,h6{
       h5{
         margin-bottom: 25px;
       }
+    }
+  }
+
+  #about {
+    position: relative;
+    background: $about-background;
+    margin-top: 2%;
+    padding: 5% 0;
+    .about-text{
+      text-align: center;
+      padding: 1% 4%;
+      width: 60%;
+      margin: 0 auto;
+      color: $home-h3-color;
+      font-size: $about-text-font-size;
+      line-height: $about-text-font-size*1.7;
+      letter-spacing: .05em;
+      font-weight: 300;
     }
   }
 }
