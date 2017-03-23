@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>OpenDiv</title>
+    <%= csrf_meta_tags %>
+    <meta name="viewport" content="width=device-width" />
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://use.fontawesome.com/73cb1e5028.js"></script>
+    <link href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" rel="Stylesheet"></link>
+  </head>
+
+  <body class="search">
+
+    <%= render 'layouts/navigation' %>
+    <main class="content">
+      <div class="row">
+        <div id="left-image-search" class="col l5 hide-on-med-and-down">
+          <div class="filter">
+              <p class="tagline">Striving for workplaces that are welcoming & inclusive</p>
+          </div>
+        </div>
+        <div id="results" class="col l7"><%= yield %></div>
+      </div>
+    </div>
+
+   <script src='https://cdn.rawgit.com/pguso/jquery-plugin-circliful/master/js/jquery.circliful.min.js'></script>
+    <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js" ></script>
+  </body>
+</html>
