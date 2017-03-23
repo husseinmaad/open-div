@@ -18,9 +18,6 @@
   </div>
   <div class="col m3">
     <a href=<%= edit_user_registration_path %>><i class="small material-icons">edit</i></a>
-    <% if current_user %>
-      <%= button_to "Submit a New Company", new_submission_path, method: "get",:class => "btn btn-primary" %>
-    <% end %>
   </div>
 </div>
 
@@ -33,15 +30,26 @@
         <th>Review</th>
     </tr>
   </thead>
-
   <tbody>
-    <tr>
+    
     <% @reviews.each do |review| %>
+    <tr>
       <% comp_id = review.company_id  %>
       <td><%=Company.find(comp_id).name%></td>
       <td><%= link_to "#{review.body}", review_show_path(review) %></td>
-    <% end %>
     </tr>
+    <% end %>
+    
   </tbody>
 </table>
+<br>
 
+<div class="row">
+  <div class="col m9">
+  </div>
+  <div class="col m3">
+    <% if current_user %>
+      <%= button_to "Submit a New Company", new_submission_path, method: "get",:class => "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
