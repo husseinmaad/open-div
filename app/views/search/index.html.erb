@@ -1,5 +1,12 @@
-<div class="search-results-page-form"><%= render 'search/form' %></div>
-
+<div class="search-results-page-form">
+  <div class="row section">
+    <div class="col m1">
+      <p class="flow-text">Search</p>
+    </div>
+    <div class="col m11"><%= render 'search/form' %></div>
+  </div>
+</div>
+<div class="row divider"></div>
 <div class="row">
   <div class="col m12">
     <p class="no-results">
@@ -9,8 +16,8 @@
 </div>
 <div class="search-results ">
   <% @companies.each do |company| %>
-    <div class="row wow slideInLeft company" >
-      <div class="col m3 ">
+    <div class="row company" >
+      <div class="col m3">
         <img class="company-img img_resize " src="<%= company.profile_image_url %>" alt="<%= company.name %>" />
       </div>
       <div class="col m9">
@@ -18,7 +25,7 @@
         <div class="rating"><i class="small material-icons">insert_chart</i><strong>Rating Avg: </strong><%= custom_rating_generator company.avg_rating %></div>
       </div>
     </div>
-    <hr>
+    <div class="row divider"></div>
   <% end %>
 </div>
 
