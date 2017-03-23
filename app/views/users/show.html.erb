@@ -24,12 +24,9 @@
   </div>
 </div>
 
+<h3>Reviews</h3>
 
-<div class="reviews">
-Reviews:
-
-
-<table>
+<table class="highlight">
   <thead>
     <tr>
         <th>Company</th>
@@ -40,7 +37,8 @@ Reviews:
   <tbody>
     <tr>
     <% @reviews.each do |review| %>
-      <td>Eclair</td>
+      <% comp_id = review.company_id  %>
+      <td><%=Company.find(comp_id).name%></td>
       <td><%= link_to "#{review.body}", review_show_path(review) %></td>
     <% end %>
     </tr>
