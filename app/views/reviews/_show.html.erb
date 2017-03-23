@@ -1,9 +1,13 @@
 <div class="likes-table">
 	<div class="like-button">
 	  <% if (current_user && !comment.liked?(current_user) ) %>
-	   <div class="new-button-comments-like"><%= button_to "Like", comment_like_path(comment), method: "post"  %></div>
+	   <div class="new-button-comments-like">
+	   	<a rel="nofollow" data-method="post" href= <%= comment_like_path(comment)%>><i class="small material-icons">thumb_up</i></a>
+	   </div>
 	  <% elsif ( current_user && comment.liked?(current_user) ) %>
-	    <div class="new-button-comments-like"><%= button_to "Unlike", comment_unlike_path(comment,find_like(comment)), method: "delete"  %></div>
+	    <div class="new-button-comments-like">
+	    	<a rel="nofollow" data-method="delete" href= <%= comment_unlike_path(comment,find_like(comment))%>><i class="small material-icons">thumb_down</i></a>
+	    </div>
 	  <% end %>
 	</div>
 	<div class="number-of-likes">

@@ -15,7 +15,7 @@
       </div>
       <div class="col m9">
         <h5><%= link_to  company.name , company_path(company)%></h5>
-        <div class="rating"><strong>Rating Avg: </strong><%= company.avg_rating %></div>
+        <div class="rating"><i class="small material-icons">insert_chart</i><strong>Rating Avg: </strong><%= custom_rating_generator company.avg_rating %></div>
       </div>
     </div>
     <hr>

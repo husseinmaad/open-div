@@ -1,9 +1,12 @@
 <div class="row ">
 	<div class="col m6 new-review-like-buttons">
 		<% if (current_user && !review.liked?(current_user) ) %>
-			<div class="new-like-button"><%= button_to "Like", review_like_path(review), method: "post"  %></div>
+			<div class="new-like-button">
+				<a rel="nofollow" data-method="post" href=<%= review_like_path(review) %>><i class="medium material-icons">thumb_up</i></a>
+			</div>
 		<% elsif ( current_user && review.liked?(current_user) ) %>
-			<div class="new-like-button"><%= button_to "Unlike", review_unlike_path(review,find_like(review)), method: "delete"  %>	
+			<div class="new-like-button">
+			<a rel="nofollow" data-method="delete" href=<%= review_unlike_path(review,find_like(review)) %>><i class="medium material-icons">thumb_down</i></a></a>
 			</div>
 		<% end %>
 	</div>
@@ -11,3 +14,5 @@
 		Likes: <%= review.likes.length %>
 	</div>
 </div>
+
+
