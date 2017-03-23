@@ -1,9 +1,23 @@
-// ----------------------------------  MATERIALIZE VARIABLES
+//-------------- FONTS
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700|Old+Standard+TT|Roboto:300,400');
+
+$themeFont1:    'Montserrat', sans-serif;
+$themeFont2:    'Old Standard TT', serif;
+$themeFont3:    'Roboto', sans-serif;
+
 // ======= Off-Canvas menu
 $menu-icon-background: $primary-color;
 $offcanvas-menu-link-color: #555d7c;
 $offcanvas-menu-link-color-hover: #fffce1;
 
+// ======= Typography
+$headingFontFamily: $themeFont1;
+$homeH1FontFamily: $themeFont1;
+$homeH2FontFamily: $themeFont2;
+$bodyFontFamily: $themeFont3;
+
+
+// ----------------------------------  MATERIALIZE VARIABLES
 
 // ==========================================================================
 // Materialize variables
