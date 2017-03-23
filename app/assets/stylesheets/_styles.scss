@@ -93,6 +93,15 @@ h1,h2,h3,h4,h5,h6{
   }
 }
 
+// breadcrumbs
+
+.breadcrumb {
+    color: $theme-gray !important;
+}
+.breadcrumb:before {
+  color: rgb(199, 198, 197) !important;
+}
+
 //--------------------  FOOTER
 footer{
   img{
