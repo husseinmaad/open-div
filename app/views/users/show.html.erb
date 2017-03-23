@@ -1,4 +1,6 @@
 
+<h3>Profile</h3>
+<hr>
 <div class="row">
   <div class="col m2">
     <%= image_tag(@user.avatar_url) if @user.avatar? %>
@@ -6,19 +8,11 @@
 </div>
 
 <div class="row">
-  <div class="col m2">
-    <%= image_tag(@user.avatar_url) if @user.avatar? %>
+  <div class="col m9">
+  
+    
   </div>
-</div>
-
-<div class="row">
-  <div class="col m6">
-    <strong><%= @user.first_name %></strong>
-    <hr>
-    <strong><%= @user.last_name %></strong>
-    <hr>
-    <strong><%= @user.email %></strong>
-    <hr>
+  <div class="col m3">
     <%= link_to "Edit Profile", edit_user_registration_path %>
   </div>
 </div>
