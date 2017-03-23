@@ -1,5 +1,6 @@
 class SearchController < ApplicationController
-
+  layout "search", only: [:index]
+  
   def index
     if params[:search]
       @companies = Company.search(params[:search])
