@@ -32,6 +32,19 @@ h1,h2,h3,h4,h5,h6{
 // ----------------------- HOME PAGE
 .home{
   background: $home-background;
+  .inline{
+    li {
+      display: inline-block;
+      padding: 10px 15px;
+      a{
+        font-family: $themeFont1;
+        color: $white;
+        text-transform: uppercase;
+        font-weight: 700;
+        letter-spacing: .05em;
+      }
+    }
+  }
   h2{
     text-align: center;
     font-size: $h1-fontsize * .25;
