@@ -69,5 +69,5 @@ config.action_mailer.smtp_settings = {
  :enable_starttls_auto => true
 }
 
-Dotenv::Railtie.load
+
 end
