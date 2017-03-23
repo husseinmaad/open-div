@@ -16,7 +16,7 @@ $(document).on('turbolinks:load', function() {
                 backgroundColor: [
                     'rgba(255, 99, 132, .7)',
                     'rgba(54, 162, 235, .7)',
-                    'rgba(255, 159, 64, .7)',
+                    'rgba(255, 159, 64, .7)'
                 ],
                 // borderColor: [
                 //     'rgba(255,99,132,1)',
