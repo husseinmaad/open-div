@@ -139,7 +139,8 @@ $offcanvas-menu-link-color-hover: #fffce1;
 //
 // // Text Inputs + Textarea
 // $input-height: 3rem !default;
-// $input-border-color: color("grey", "base") !default;
+$input-border-color: color("grey", "base") !default;
+$input-search-background: #fff;
 // $input-border: 1px solid $input-border-color !default;
 // $input-background: #fff !default;
 // $input-error-color: $error-color !default;
@@ -154,7 +155,7 @@ $offcanvas-menu-link-color-hover: #fffce1;
 // $input-disabled-solid-color: #BDBDBD !default;
 // $input-disabled-border: 1px dotted $input-disabled-color !default;
 // $input-invalid-border: 1px solid $input-error-color !default;
-// $placeholder-text-color: lighten($input-border-color, 20%) !default;
+$placeholder-text-color: lighten($input-border-color, 10%);
 //
 // // Radio Buttons
 // $radio-fill-color: $secondary-color !default;
