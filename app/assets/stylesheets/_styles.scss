@@ -2,7 +2,7 @@
 .home-search-form{
   text-align: center;
   position: relative;
-  margin-top: 20%;
+  margin-top: 12%;
   z-index: 100;
 
   //--- Logo container
@@ -18,8 +18,9 @@
     background: $input-search-background;
   }
 }
-
-
+#login-sign-up-links{
+  margin-right: 2%;
+}
 
 //------------------- Typography
 body{
@@ -32,6 +33,19 @@ h1,h2,h3,h4,h5,h6{
 // ----------------------- HOME PAGE
 .home{
   background: $home-background;
+  .inline{
+    li {
+      display: inline-block;
+      padding: 10px 15px;
+      a{
+        font-family: $themeFont1;
+        color: $white;
+        text-transform: uppercase;
+        font-weight: 700;
+        letter-spacing: .05em;
+      }
+    }
+  }
   h2{
     text-align: center;
     font-size: $h1-fontsize * .25;
@@ -91,6 +105,15 @@ h1,h2,h3,h4,h5,h6{
       font-weight: 300;
     }
   }
+}
+
+// breadcrumbs
+
+.breadcrumb {
+    color: $theme-gray !important;
+}
+.breadcrumb:before {
+  color: rgb(199, 198, 197) !important;
 }
 
 //--------------------  FOOTER

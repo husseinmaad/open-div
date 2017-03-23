@@ -41,9 +41,15 @@
 	 	function toggleMenu() {
 	 		if( isOpen ) {
 	 			classie.remove( bodyEl, 'show-menu' );
+        if($('#login-sign-up-links').length > 0){
+          $('#login-sign-up-links').fadeTo( "slow", 1 );
+        }
 	 		}
 	 		else {
 	 			classie.add( bodyEl, 'show-menu' );
+        if($('#login-sign-up-links').length > 0){
+          $('#login-sign-up-links').fadeTo( "slow", 0 );
+        }
 	 		}
 	 		isOpen = !isOpen;
 	 	}
@@ -53,5 +59,5 @@
 	 })();
 
  		}
-	 
+
  });
