@@ -20,9 +20,29 @@
       <% end %>
 	</div>
 </div>
-<% if current_user %>
-  <%= button_to "+Add Comment", review_comments_path(@review),method: "get" , :class => "waves-effect waves-light btn modal-trigger "%>
-<% end %>
+
+<div class="row">
+  <div class="col m9">
+  </div>
+  <div class="col m3">
+<!-- Modal Trigger to add comment -->
+     <% if current_user %>
+      <button class="waves-effect waves-light btn modal-trigger" data-target="modal1">+Add Comment</button>
+     <% end %>
+  </div>
+</div>
+<!-- Modal Structure -->
+<div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>Add a Comment</h4>
+
+      <div class="row">
+        <%= render  partial: "new_comment", locals: {review: @review, comment: Comment.new} %>      
+      </div>
+    </div>
+  </div>
+</div>
+
 
 <% if @user == current_user %>
 	<%= button_to "+Edit Review", edit_company_review_path(@company, @review), method: "get" %>
@@ -33,6 +53,3 @@
   <%= link_to "Back", @company %>
 </div>
 
-
-
- 
