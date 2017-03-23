@@ -5,6 +5,12 @@ $themeFont1:    'Montserrat', sans-serif;
 $themeFont2:    'Old Standard TT', serif;
 $themeFont3:    'Roboto', sans-serif;
 
+$white: #fff;
+$black: #000;
+
+//======== Featured companies
+$featured-companies-background: $white;
+   
 // ======= Off-Canvas menu
 $menu-icon-background: $primary-color;
 $offcanvas-menu-link-color: #555d7c;
@@ -12,8 +18,8 @@ $offcanvas-menu-link-color-hover: #fffce1;
 
 // ======= Typography
 $headingFontFamily: $themeFont1;
-$homeH1FontFamily: $themeFont1;
-$homeH2FontFamily: $themeFont2;
+$homeH2FontFamily: $themeFont1;
+$homeH3FontFamily: $themeFont2;
 $bodyFontFamily: $themeFont3;
 
 
@@ -288,9 +294,9 @@ $placeholder-text-color: lighten($input-border-color, 10%);
 //
 // $off-black: rgba(0, 0, 0, 0.87) !default;
 // // Header Styles
-// $h1-fontsize: 4.2rem !default;
-// $h2-fontsize: 3.56rem !default;
-// $h3-fontsize: 2.92rem !default;
+$h1-fontsize: 4.2rem !default;
+$h2-fontsize: 3.56rem !default;
+$h3-fontsize: 2.92rem !default;
 // $h4-fontsize: 2.28rem !default;
 // $h5-fontsize: 1.64rem !default;
 // $h6-fontsize: 1rem !default;
