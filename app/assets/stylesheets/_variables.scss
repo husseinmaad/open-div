@@ -85,7 +85,7 @@ $bodyFontFamily: $themeFont3;
 // $button-font-size: 1.3rem !default;
 // $button-height: 36px !default;
 // $button-padding: 0 2rem !default;
-// $button-radius: 2px !default;
+$button-radius: 0px !default;
 //
 // // Disabled styles
 // $button-disabled-background: #DFDFDF !default;
@@ -245,7 +245,7 @@ $placeholder-text-color: lighten($input-border-color, 10%);
 // // 13. Navigation Bar
 // // ==========================================================================
 //
-// $navbar-height: 64px !default;
+// $navbar-height: 100px !default;
 // $navbar-line-height: $navbar-height !default;
 // $navbar-height-mobile: 56px !default;
 // $navbar-line-height-mobile: $navbar-height-mobile !default;

@@ -1,3 +1,35 @@
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+.btn{
+  box-shadow: none !important;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  // font-weight: 700 !important;
+  letter-spacing: 0.05em !important;
+}
+.navigation{
+  height: 100px;
+  .logo{
+    padding: 20px;
+    padding: 32px 20px 15px 20px;
+    max-height: 90px;
+  }
+  ul a {
+     padding-top: 20px;
+     max-height: 90px;
+     font-family: "Montserrat", sans-serif;
+     letter-spacing: .05em;
+     text-transform: uppercase;
+  }
+}
 //------------------- Home Search
 .home-search-form{
   text-align: center;
@@ -119,9 +151,14 @@ h1,h2,h3,h4,h5,h6{
 
 //--------------------  FOOTER
 footer{
+  #footer-team{
+    color: #a9a9a9;
+  }
   img{
-    width: 100%;
+    width: auto;
     height: auto;
+    max-height: 40px;
+    opacity: .7;
   }
   .flow-text{
     color: $white;
@@ -136,6 +173,7 @@ footer{
             text-transform: uppercase;
             letter-spacing: .05em;
             font-weight: 300;
+            color: #a9a9a9;
           }
           margin-bottom: 10px;
         }
@@ -146,6 +184,7 @@ footer{
   color: lighten($black, 15%);
   text-transform: uppercase;
   letter-spacing: .1em;
+  background: #383838;
 }
 .search{
   #left-image-search{
