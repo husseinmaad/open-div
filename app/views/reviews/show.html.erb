@@ -21,17 +21,6 @@
 	</div>
 </div>
 
-
-<% if @user == current_user %>
-	<%= button_to "+Edit Review", edit_company_review_path(@company, @review), method: "get" %>
-	<%= button_to "Delete Review", [@company, @review], method: "delete" %>
-<% end %>
-</div>
-<div>
-  <%= link_to "Back", @company %>
-</div>
-
-
 <div class="row">
   <div class="col m9">
   </div>
@@ -42,6 +31,25 @@
      <% end %>
   </div>
 </div>
+<!-- Modal Structure -->
+<div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>Add a Comment</h4>
+
+      <div class="row">
+        <%= render  partial: "new_comment", locals: {review: @review, comment: Comment.new} %>      
+      </div>
+    </div>
+  </div>
+</div>
 
 
- 
+<% if @user == current_user %>
+	<%= button_to "+Edit Review", edit_company_review_path(@company, @review), method: "get" %>
+	<%= button_to "Delete Review", [@company, @review], method: "delete" %>
+<% end %>
+</div>
+<div>
+  <%= link_to "Back", @company %>
+</div>
+
