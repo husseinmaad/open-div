@@ -1,0 +1,43 @@
+<footer>
+  <div class="page-footer">
+
+    <div class="container">
+
+      <div class="row">
+
+        <div class="col m3">
+          <%= image_tag "opendoor_logo_web.png" %>
+          <p class="flow-text">Promoting Diversity in Tech</p>
+        </div>
+
+        <div class="col m3">
+          <ul class="right">
+            <li><%= link_to "Home", root_path %></li>
+            <li><%= link_to "Companies", search_path %></li>
+            <% if current_user %>
+              <li><%= link_to "Profile", user_profile_path(current_user) %></li>
+              <li><%= link_to "Sign Out", destroy_user_session_path , method: "delete" %></li>
+            <% else %>
+              <li><%= link_to "Log in", new_user_session_path %></li>
+              <li><%= link_to "Sign Up", new_user_registration_path %></li>
+            <% end %>
+          </ul>
+        </div>
+
+        <div class="col m6">
+          <p class="flow-text">Created by <a href="http://devbootcamp.com">Dev Bootcamp</a> Students</p>
+          <p>View our code on <a href="https://github.com/husseinmaad/open-div">Github</a></p>
+        </div>
+      </div>
+      <!-- End of Row -->
+
+    </div>
+    <!-- End of Container -->
+  </div>
+  <!-- End of Page footer -->
+</footer>
+<div class="footer-copyright">
+  <div class="container">
+    <p class="center">© <%= Time.current.year %> Copyright. All Rights Reserved.</p>
+  </div>
+</div>

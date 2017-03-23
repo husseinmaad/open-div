@@ -316,7 +316,7 @@ $h3-fontsize: 2.92rem !default;
 // // 21. Footer
 // // ==========================================================================
 //
-// $footer-bg-color: $primary-color !default;
+$footer-bg-color: darken($theme-gray, 5%);
 //
 //
 // // 22. Flow Text

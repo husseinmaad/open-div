@@ -2,7 +2,7 @@
 .home-search-form{
   text-align: center;
   position: relative;
-  margin-top: 25%;
+  margin-top: 20%;
   z-index: 100;
 
   //--- Logo container
@@ -10,6 +10,9 @@
     width: 100%;
     height: auto;
     padding: 25px;
+    .flow-text{
+      color: $white;
+    }
   }
   #autocomplete{
     background: $input-search-background;
@@ -88,4 +91,35 @@ h1,h2,h3,h4,h5,h6{
       font-weight: 300;
     }
   }
+}
+
+//--------------------  FOOTER
+footer{
+  img{
+    width: 100%;
+    height: auto;
+  }
+  .flow-text{
+    color: $white;
+  }
+  .page-footer {
+      padding: 3% 0;
+      text-align: right;
+      ul{
+        text-align: left;
+        li{
+          a{
+            text-transform: uppercase;
+            letter-spacing: .05em;
+            font-weight: 300;
+          }
+          margin-bottom: 10px;
+        }
+      }
+  }
+}
+.footer-copyright{
+  color: lighten($black, 15%);
+  text-transform: uppercase;
+  letter-spacing: .1em;
 }
