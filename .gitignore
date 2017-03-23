@@ -11,6 +11,7 @@
 /tmp/
 /log/
 tmp/cache
+tmp/*
 
 # Used by dotenv library to load environment variables.
 .env
