@@ -1,13 +1,12 @@
-<%= @user.first_name %>
-<br>
-<%= @user.last_name %>
-<br>
-<%= @user.email %>
-<br>
-<%= link_to "Edit Profile", edit_user_registration_path %>
 
-<%= image_tag(@user.avatar_url) if @user.avatar? %>
-<hr>
+<div class="row">
+  <div class="col m2">
+    <%= image_tag(@user.avatar_url) if @user.avatar? %>
+  </div>
+</div>
+
+
+
 <div class="reviews">
 Reviews:
 	<ul>
