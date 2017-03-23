@@ -1,7 +1,7 @@
 <div class="row company-information">
 	<!-- Company Profile Image -->
 	<div class="col m3">
-		<%= image_tag @company.profile_image_url %>
+		<%= image_tag @company.profile_image_url, :class=>"responsive-img" %>
 	</div>
 	<!-- Company Information -->
 	<div class="col m9">
@@ -90,7 +90,7 @@
 			      <h4>Add a Comment</h4>
 
 			      <div class="row">
-			      	<%= render  partial: "new_comment", locals: {review: review, comment: Comment.new} %>      
+			      	<%= render  partial: "new_comment", locals: {review: review, comment: Comment.new} %>
 			      </div>
 			    </div>
 			  </div>
