@@ -2,24 +2,27 @@
 <h3>PROFILE</h3>
 <hr>
 <div class="row">
-  <div class="col m2">
+  <div class="col m4">
     <%= image_tag(@user.avatar_url) if @user.avatar? %>
+  </div>
+  <div class="col m8">
+    <div class="row">
+      <div class="col m9">
+        <strong>First Name:</strong> <p><%= @user.first_name %></p>
+        <hr>
+        <strong>Last Name:</strong> <p><%= @user.last_name %></p>
+        <hr>
+        <strong>Email:</strong> <p><%= @user.email %></p>
+        <hr>
+      </div>
+      <div class="col m3">
+        <a href=<%= edit_user_registration_path %>><i class="small material-icons">edit</i></a>
+      </div>
+</div>
   </div>
 </div>
 
-<div class="row">
-  <div class="col m9">
-    <strong>First Name:</strong> <p><%= @user.first_name %></p>
-    <hr>
-    <strong>Last Name:</strong> <p><%= @user.last_name %></p>
-    <hr>
-    <strong>Email:</strong> <p><%= @user.email %></p>
-    <hr>
-  </div>
-  <div class="col m3">
-    <a href=<%= edit_user_registration_path %>><i class="small material-icons">edit</i></a>
-  </div>
-</div>
+
 
 <h3>Reviews</h3>
 
