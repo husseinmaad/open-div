@@ -1,24 +1,55 @@
-<%= @user.first_name %>
-<br>
-<%= @user.last_name %>
-<br>
-<%= @user.email %>
-<br>
-<%= link_to "Edit Profile", edit_user_registration_path %>
 
-<%= image_tag(@user.avatar_url) if @user.avatar? %>
+<h3>PROFILE</h3>
 <hr>
-<div class="reviews">
-Reviews:
-	<ul>
-		<% @reviews.each do |review| %>
-			<li><%= link_to "#{review.body}", review_show_path(review) %></li>
-		<% end %>
-	</ul>
+<div class="row">
+  <div class="col m5">
+    <%= image_tag(@user.avatar_url) if @user.avatar? %>
+  </div>
+  <div class="col m7">
+    <div class="row">
+      <div class="col m9">
+        <strong>First Name:</strong> <p><%= @user.first_name %></p>
+        <hr>
+        <strong>Last Name:</strong> <p><%= @user.last_name %></p>
+        <hr>
+        <strong>Email:</strong> <p><%= @user.email %></p>
+        <hr>
+      </div>
+      <div class="col m3">
+        <a href=<%= edit_user_registration_path %>><i class="small material-icons">edit</i></a>
+      </div>
 </div>
-=======
+  </div>
+</div>
 
-<% if current_user %>
-	<%= button_to "Submit a Company", new_submission_path, method: "get" %>
-<% end %>
+<h3>Reviews</h3>
 
+<table class="highlight">
+  <thead>
+    <tr>
+        <th>Company</th>
+        <th>Review</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <% @reviews.each do |review| %>
+    <tr>
+      <% comp_id = review.company_id  %>
+      <td><%=Company.find(comp_id).name%></td>
+      <td><%= link_to "#{review.body}", review_show_path(review) %></td>
+    </tr>
+    <% end %>
+    
+  </tbody>
+</table>
+<br>
+<div class="row">
+  <div class="col m9">
+  </div>
+  <div class="col m3">
+    <% if current_user %>
+      <%= button_to "Submit a New Company", new_submission_path, method: "get",:class => "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

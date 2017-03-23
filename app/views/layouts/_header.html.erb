@@ -2,14 +2,29 @@
     <div class="homepage-hero-module">
       <div class="video-container">
         <div class="filter">
+          <!-- Search Bar -->
           <div class="search-bar">
+            <div class="container-fluid">
+              <div class="row">
+                <ul id="login-sign-up-links" class="inline right">
+                  <% unless current_user %>
+                    <li><%= link_to "Login", new_user_session_path %></li>
+                    <li><%= link_to "Sign Up", new_user_registration_path, :class=>"btn btn-large" %></li>
+                  <% end %>
+                </ul>
+              </div>
+            </div>
             <div class="container">
               <div class="row">
                 <div class="home-search-form col m6 offset-m3">
-                  <br>
-                  <br>
-                  <br>
-                  <%= image_tag "opendoor_logo_web.png" %>
+                  <!-- Logo Container -->
+                  <div class="row">
+                    <div class="logo-container wow fadeInDown" data-wow-duration="2s" data-wow-delay="1s">
+                      <%= image_tag "opendoor_logo_web.png" %>
+                      <p class="flow-text">Promoting Diversity in Tech</p>
+                    </div>
+                  </div>
+                  <!-- Search Form -->
                   <%= render 'search/form' %>
                 </div>
               </div>
@@ -18,11 +33,11 @@
         </div>
 
       <video autoplay loop class="fillWidth">
-        <source src="<%= image_path("Very-Open-Space.mp4") %>" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
-        <source src="<%= image_path("Very-Open-Space.webm") %>" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
+        <source src="<%= image_path("dbc-space.mp4") %>" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
+        <source src="<%= image_path("dbc-space.webm") %>" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
       </video>
       <div class="poster hidden">
-        <img src="<%= image_path("Very-Open-Space.png") %>" alt="">
+        <img src="<%= image_path("Very-Open-Space.jpg") %>" alt=""/>
       </div>
      </div>
   </div>

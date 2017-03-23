@@ -1,11 +1,12 @@
-<div class="row">
+<div id="featured-companies" class="row section wow fadeInUp" data-wow-duration="2s" data-wow-delay="1s">
   <h2>Featured Companies</h2>
+  <h3>Champions of Diversity</h3>
   <% if @companies.any? %>
-    <% @companies.each do |company| %>
-      <div class="col m3 top-company">
+    <% @companies.each_with_index do |company, index| %>
+      <div class="col m3 top-company wow fadeIn" data-wow-duration="2s" data-wow-delay="<%= index*0.7 %>s">
         <h5><%= link_to  company.name , company_path(company)%></h5>
         <img class="company-img" src="<%= company.profile_image_url %>" alt="<%= company.name %>" />
-        <span class="rating"><%= company.avg_rating %></span>
+        <span class="rating"><%= custom_rating_generator company.avg_rating %></span>
       </div>
     <% end %>
   <% end %>
