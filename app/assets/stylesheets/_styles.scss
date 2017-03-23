@@ -24,6 +24,7 @@ h1,h2,h3,h4,h5,h6{
   font-family: $headingFontFamily;
 }
 .home{
+  background: $home-background;
   h2{
     text-align: center;
     font-size: $h1-fontsize * .25;
@@ -33,16 +34,20 @@ h1,h2,h3,h4,h5,h6{
     font-family: $homeH2FontFamily;
   }
   h3{
-    margin-top: 40px;
+    color: $home-h3-color;
+    margin-top: 20px;
     margin-bottom: 40px;
     text-align: center;
     text-transform: uppercase;
-    letter-spacing: .2em;
+    letter-spacing: .1em;
     font-family: $homeH3FontFamily;
   }
 
   #featured-companies {
+    background: $featured-companies-background;
     margin-top: -20%;
+    padding-top: 50px;
+    padding-bottom: 50px;
     position: relative;
     z-index: 100;
     background: $featured-companies-background;

@@ -5,12 +5,18 @@ $themeFont1:    'Montserrat', sans-serif;
 $themeFont2:    'Old Standard TT', serif;
 $themeFont3:    'Roboto', sans-serif;
 
+$theme-gray: #3d3c3a;
+$theme-light-gray: #eeedeb;
+$theme-md-gray: #85807c;
+
+
 $white: #fff;
 $black: #000;
-
+//======== Home Page
+$home-background: $theme-gray;
 //======== Featured companies
 $featured-companies-background: $white;
-   
+
 // ======= Off-Canvas menu
 $menu-icon-background: $primary-color;
 $offcanvas-menu-link-color: #555d7c;
@@ -20,6 +26,7 @@ $offcanvas-menu-link-color-hover: #fffce1;
 $headingFontFamily: $themeFont1;
 $homeH2FontFamily: $themeFont1;
 $homeH3FontFamily: $themeFont2;
+$home-h3-color: $theme-md-gray;
 $bodyFontFamily: $themeFont3;
 
 
