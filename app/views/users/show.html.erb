@@ -2,10 +2,10 @@
 <h3>PROFILE</h3>
 <hr>
 <div class="row">
-  <div class="col m4">
+  <div class="col m5">
     <%= image_tag(@user.avatar_url) if @user.avatar? %>
   </div>
-  <div class="col m8">
+  <div class="col m7">
     <div class="row">
       <div class="col m9">
         <strong>First Name:</strong> <p><%= @user.first_name %></p>
@@ -21,8 +21,6 @@
 </div>
   </div>
 </div>
-
-
 
 <h3>Reviews</h3>
 
@@ -46,7 +44,6 @@
   </tbody>
 </table>
 <br>
-
 <div class="row">
   <div class="col m9">
   </div>

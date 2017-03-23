@@ -2,7 +2,7 @@ class RegistrationsController < Devise::RegistrationsController
     
   def create
       super
-       # WelcomeMailer.signup_email(@user).deliver
+       WelcomeMailer.signup_email(@user).deliver
   end
 
   private
