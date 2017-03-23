@@ -1,4 +1,8 @@
-<h2>Sign up</h2>
+<div class="row">
+  <div class="col s4"></div>
+  <div class="col s4">
+
+<h3>Sign Up</h3>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { multipart: :true }) do |f| %>
   <%= devise_error_messages! %>
@@ -33,15 +37,25 @@
   </div>
 
   <div class="field">
+    <label>*Upload Profile Picture <em>(*Not Required)</em></label>
     <%= f.label :avatar do %><br />
       <%= f.file_field :avatar %>
       <%= f.hidden_field :avatar_cache %>
     <% end %>
   </div>
+
+  <br />
   
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "Sign up", class: "btn" %>
   </div>
 <% end %>
 
+<br />
+
 <%= render "devise/shared/links" %>
+
+  </div>
+  <div class="col s4"></div>
+</div>
+
