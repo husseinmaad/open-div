@@ -15,12 +15,12 @@
     <hr>
     <strong>Email:</strong> <p><%= @user.email %></p>
     <hr>
-    
   </div>
   <div class="col m3">
-    <%= link_to "Edit Profile", edit_user_registration_path %>
+    <a href=<%= edit_user_registration_path %>><i class="small material-icons">edit</i></a>
   </div>
 </div>
+
 
 <div class="reviews">
 Reviews:
