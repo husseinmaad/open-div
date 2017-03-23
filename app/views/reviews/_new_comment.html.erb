@@ -4,7 +4,7 @@
 
 
   <div class="field">
-    <%= f.label :body %>
+    <%= f.label :body, "Comment"%>
     <%= f.text_field :body %>
   </div>
 
@@ -13,8 +13,8 @@
     <%= f.label :anonymous  %>
   </div>
 
-  <div class="actions">
-    <%= f.submit "Submit Comment" %>
+  <div class="actions right">
+    <%= f.submit "Submit Comment", :class =>" modal-action modal-close waves-effect waves-green btn-flat" %>
   </div>
 
 
