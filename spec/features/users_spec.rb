@@ -24,6 +24,24 @@ RSpec.feature "Users", type: :feature do
       expect(page).to have_content 'Your Ratings for'
     end
 
+
+    # it "user can view and rate the company after signed in" do
+    # visit '/users/sign_in'
+    # fill_in "Email", with: "admin@admin.com"
+    # fill_in "Password",with: "123456"
+    # click_button 'Log in'
+    # visit new_company_review_path(company)
+    # binding.pry
+    #   within(".rating_questions") do
+    #     find('div[data-dimension="gender"] img[alt="3"]').click
+
+
+
+    #   end
+    #   expect(page.find('div[data-dimension="gender"] input[name="score"]') ).to have_field ('input[value = "4"]')
+
+    # end
+
   end
 
 
