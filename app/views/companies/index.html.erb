@@ -6,7 +6,7 @@
       <div class="col m3 top-company wow fadeIn" data-wow-duration="2s" data-wow-delay="<%= index*0.7 %>s">
         <h5><%= link_to  company.name , company_path(company)%></h5>
         <img class="company-img" src="<%= company.profile_image_url %>" alt="<%= company.name %>" />
-        <span class="rating"><%= custom_rating_generator company.avg_rating %></span>
+        <span class="rating"><%= custom_rating_generator company.avg_rating , star_path: '/images'%></span>
       </div>
     <% end %>
   <% end %>
