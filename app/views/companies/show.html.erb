@@ -4,9 +4,9 @@
 		<%= image_tag @company.profile_image_url, :class=>"wow fadeIn company-profile-img responsive-img card" %>
 		<div class="section">
 			<% if @company.avg_rating %>
-				Overall: <%= custom_rating_generator @company.avg_rating %>
+				<%= custom_rating_generator @company.avg_rating %>
 			<% else %>
-					<p>No ratings have been made yet.</p>
+				<p>No ratings have been made yet.</p>
 			<% end %>
 		</div>
 		<div class="section">
@@ -19,6 +19,10 @@
 		<div class="row company-location">
 			<p class="flow-text"><span class="location"><%= @company.city_name %>, <%= @company.region_name %>, <%= @company.country_code %></span></p>
 			<p class="flow-text"><small><%= @company.short_description %></small></p>
+			<% if @company.domain %>
+			  <p><a href="http://<%= @company.domain %>" target="blank">Website</a></p>
+			<% end %>
+
 		</div>
 
 		<!-- Company rating -->
