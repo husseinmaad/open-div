@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>OpenDoor</title>
+    <%= csrf_meta_tags %>
+    <meta name="viewport" content="width=device-width" />
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= render 'layouts/navigation' %>
+    <%= render 'layouts/company_header' %>
+    <main class="content">
+      <div class="container">
+        <%= render 'layouts/alerts' %>
+        <%= yield %>
+      </div>
+    </main>
+    <%= render 'layouts/footer' %>
+  </body>
+</html>
