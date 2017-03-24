@@ -1,7 +1,7 @@
 <div class="row company-information">
 	<!-- Company Profile Image -->
 	<div class="col m3">
-		<%= image_tag @company.profile_image_url, :class=>"company-profile-img responsive-img card" %>
+		<%= image_tag @company.profile_image_url, :class=>"wow fadeIn company-profile-img responsive-img card" %>
 		<div class="section">
 			<% if @company.avg_rating %>
 				Overall: <%= custom_rating_generator @company.avg_rating %>
@@ -50,7 +50,7 @@
 <!-- Comments Section -->
 <div class="company-comments">
 	<% @company.reviews.each do |review|%>
-		<div class="row">
+		<div class="row wow fadeIn">
 
 			<!-- Review Details -->
 			<div class="col m3">
