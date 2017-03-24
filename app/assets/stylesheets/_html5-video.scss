@@ -22,6 +22,12 @@
     width: 100%;
     overflow: hidden;
     background: #000;
+    @media screen and (min-width: 2500px) {
+      padding-bottom: 40% !important;
+    }
+    @media screen and (min-width: 4000px) {
+      padding-bottom: 25% !important;
+    }
 }
 .video-container .poster img {
     width: 100%;

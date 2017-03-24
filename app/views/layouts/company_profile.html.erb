@@ -8,10 +8,10 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body class="company-profile">
     <%= render 'layouts/navigation' %>
-
-    <main class="content">
+    <%= render 'companies/company_header' %>
+    <main class="content z-depth-2">
       <div class="container">
         <%= render 'layouts/alerts' %>
         <%= yield %>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>OpenDiv</title>
+    <title>OpenDoor</title>
     <%= csrf_meta_tags %>
     <meta name="viewport" content="width=device-width" />
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -17,10 +17,10 @@
       <div class="row">
         <div id="left-image-search" class="col l5 hide-on-med-and-down">
           <div class="filter">
-              <p class="tagline">Striving for workplaces that are welcoming & inclusive</p>
+              <p class="tagline wow fadeIn" data-wow-duration="2s" data-wow-delay="1s">Striving for workplaces that are welcoming & inclusive</p>
           </div>
         </div>
-        <div id="results" class="col l7"><%= yield %></div>
+        <div id="results" class="col l7 wow fadeIn" data-wow-duration="2s" data-wow-delay="1s"><%= yield %></div>
       </div>
     </div>
 
