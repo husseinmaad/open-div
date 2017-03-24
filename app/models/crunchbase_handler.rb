@@ -1,7 +1,7 @@
 require 'uri'
 require 'net/http'
 require 'openssl'
-require 'dotenv'
+
 
 module CrunchbaseHandler
   @key = ENV["CB_KEY"]
