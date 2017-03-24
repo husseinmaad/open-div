@@ -1,0 +1,13 @@
+sudo: false
+language: ruby
+cache: bundler
+rvm:
+- 2.3.1
+services:
+- postgresql
+before_script: psql -c 'create database open_div_test;' -U postgres
+deploy:
+  provider: heroku
+  app: open-door2017
+  api_key:
+    secure: QRZBuq3P6//Apeu3XoQAI6CwHuxbzwDjNW8J7Dcf6UTTUSYBP1roo0ZA4TzEf88Pt2utp97CXY3Tu46VRGbzJnRv6C0CvlYFLEfK9VjXQrCpkYIYY0/M9YL926qu+tGJDnCW0O9UhQt78NMzgj5eiutGylgQth7PRkE5zGFSP+F3MxgcBCRI1uik1RoeHj519g0OcMPWIQkLEgz8ETQSPzisznwPXC0twquN2zhy/z5xsc0jZYqfhEIGBDZ/5Kflzh4oF7vh6BbKyzyhIW8XmfBGmvo2DkCiXlFnGNzV8Pa7No0GLCLrYkxT2FyZK84PsIfwMn4YD79NmYS/ezWjGnj1BLzDE74ybys01yDr5V6xT3npgpQtZiGtVamjTpiH2ePIEZAKGkVe4VJWbDvven6o3uuCO8jFasoOvoilppi7D0xtv/0msNFlIVFzNOvfx5J3+o78CNMnp22WPUFRxkiuyOnEnElhsIpBFy1awV9pOBO9bXikmzB4/9RtAuLOYKGeOaK84I/gFjl2r98C5cYbr1LkC09doPL7vbSK4jOnXwyaZ0s/lZShoDdiJ+K9DEapfYOYeTU+y7evEo5QFyzhsHGHKEM+Cz9MT1fDErEyZJcwyl4Az3YA4qQ58/NEOMHU361gcTW57apSwS3h7vEW1MPHyRJU82C8YnCotzw=
