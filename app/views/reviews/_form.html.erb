@@ -14,7 +14,7 @@
       </div>
       <p class="flow-text">How inclusive is your company across ability, gender identity, age, sexual preference?</p>
       <div class="star-ratings">
-        <%= rating_for @company, 'gender', disable_after_rate: false %>
+        <%= rating_for @company, 'gender', disable_after_rate: false , star_path: '/images'%>
       </div>
     </div>
     <!-- Stars -->
@@ -29,7 +29,7 @@
       <p class="flow-text">How inclusive is your company across skin color, race, ethnicity, cultures, political beliefs, religion or country of origin?</p>
       <!-- Stars -->
       <div class="star-ratings">
-        <%= rating_for @company, 'identity', disable_after_rate: false %>
+        <%= rating_for @company, 'identity', disable_after_rate: false , star_path: '/images'%>
       </div>
     </div>
   </div>
@@ -47,7 +47,7 @@
       <p class="flow-text">How respectful and trustful was your manager?</p>
       <!-- Stars -->
       <div class="star-ratings">
-        <%= rating_for @company, 'management', disable_after_rate: false %>
+        <%= rating_for @company, 'management', disable_after_rate: false , star_path: '/images' %>
       </div>
     </div>
 
@@ -64,7 +64,7 @@
       <p class="flow-text">How responsive was the company when issues and concerns were brought up?</p>
       <!-- Stars -->
       <div class="star-ratings">
-        <%= rating_for @company, 'hr', disable_after_rate: false %>
+        <%= rating_for @company, 'hr', disable_after_rate: false , star_path: '/images'%>
       </div>
     </div>
 
@@ -81,7 +81,7 @@
       <p class="flow-text">How comfortable did you feel to bring your whole-self to work everyday?</p>
       <!-- Stars -->
       <div class="star-ratings">
-        <%= rating_for @company, 'whole_self', disable_after_rate: false %>
+        <%= rating_for @company, 'whole_self', disable_after_rate: false , star_path: '/images'%>
       </div>
     </div>
   </div>
@@ -98,7 +98,7 @@
       <p class="flow-text">How welcomed did you feel when you first started?</p>
       <!-- Stars -->
       <div class="star-ratings">
-        <%= rating_for @company, 'community', disable_after_rate: false %>
+        <%= rating_for @company, 'community', disable_after_rate: false , star_path: '/images'%>
       </div>
     </div>
   </div>
@@ -115,7 +115,7 @@
       <p class="flow-text" >Was the leadership team diverse; were there any individuals who are usually underrepresented in tech?</p>
       <!-- Stars -->
       <div class="star-ratings">
-        <%= rating_for @company, 'leadership', disable_after_rate: false %>
+        <%= rating_for @company, 'leadership', disable_after_rate: false , star_path: '/images' %>
       </div>
     </div>
   </div>
@@ -131,7 +131,7 @@
       <p class="flow-text">Did you feel there were equal opportunities for you and team members?</p>
       <!-- Stars -->
       <div class="star-ratings">
-        <%= rating_for @company, 'equal_opportunities', disable_after_rate: false %>
+        <%= rating_for @company, 'equal_opportunities', disable_after_rate: false , star_path: '/images'%>
       </div>
     </div>
   </div>
@@ -148,7 +148,7 @@
       <p class="flow-text">Did you have opportunities to move up in the company?</p>
       <!-- Stars -->
       <div class="star-ratings">
-        <%= rating_for @company, 'promotions', disable_after_rate: false %>
+        <%= rating_for @company, 'promotions', disable_after_rate: false , star_path: '/images' %>
       </div>
     </div>
 
@@ -164,7 +164,7 @@
       <p class="flow-text">How satisfied are you with this company? How likely would you recommend it to a peer?</p>
       <!-- Stars -->
       <div class="star-ratings">
-        <%= rating_for @company, 'overall', disable_after_rate: false %>
+        <%= rating_for @company, 'overall', disable_after_rate: false , star_path: '/images'%>
       </div>
     </div>
 
