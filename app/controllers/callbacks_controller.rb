@@ -3,7 +3,7 @@ class CallbacksController < Devise::OmniauthCallbacksController
 
   def github
   @user = User.find_by(email: request.env["omniauth.auth"]["info"]["email"] )
-  binding.pry
+
      if @user
          sign_in(@user)
          redirect_to user_profile_path @user
