@@ -1,23 +1,33 @@
 <div class="row company-information">
 	<!-- Company Profile Image -->
 	<div class="col m3">
-		<%= image_tag @company.profile_image_url, :class=>"responsive-img" %>
+		<%= image_tag @company.profile_image_url, :class=>"wow fadeIn company-profile-img responsive-img card" %>
+		<div class="section">
+			<% if @company.avg_rating %>
+				<%= custom_rating_generator @company.avg_rating %>
+			<% else %>
+				<p>No ratings have been made yet.</p>
+			<% end %>
+		</div>
+		<div class="section">
+			<%= button_to "Add a Review", new_company_review_path(@company), method: "get", :class=>"btn btn-primary" %>
+		</div>
 	</div>
 	<!-- Company Information -->
 	<div class="col m9">
-		<h1><%= @company.name %></h1>
 		<!-- Company location -->
 		<div class="row company-location">
-			Located in <span class="location"><%= @company.city_name %>, <%= @company.region_name %>, <%= @company.country_code %></span>
-		</div>
-		<!-- Company description -->
-		<div class="row company-description">
-			<%= @company.short_description %>
+			<p class="flow-text"><span class="location"><%= @company.city_name %>, <%= @company.region_name %>, <%= @company.country_code %></span></p>
+			<p class="flow-text"><small><%= @company.short_description %></small></p>
+			<% if @company.domain %>
+			  <p><a href="http://<%= @company.domain %>" target="blank">Website</a></p>
+			<% end %>
+
 		</div>
 
 		<!-- Company rating -->
 		<div class="row">
-			<h3>Ratings</h3>
+			<h3>Ratings</h3><br>
 			<!-- Chart JS -->
 			<div class="col m6">
 				<div class="company-chart-ratings" inclusion="<%= @company.inclusion_rating %>" diversity="<%= @company.diversity_rating %>" culture="<%= @company.culture_rating %>"></div>
@@ -25,11 +35,6 @@
 			</div>
 			<!-- Overall Rating -->
 			<div class="col m6">
-				<% if @company.avg_rating %>
-					Overall: <%= custom_rating_generator @company.avg_rating %>
-				<% else %>
-					  <p>No ratings have been made yet.</p>
-				<% end %>
 			</div>
 			<!-- End of Rating -->
 		</div>
@@ -43,16 +48,13 @@
 <div class="row add-review">
 	<div class="col m9"><h3>Reviews</h3></div>
 	<div class="col m3">
-		<% if current_user && !@company.reviewed?(current_user) %>
-		<%= button_to "Add a Review", new_company_review_path(@company), method: "get", :class=>"btn btn-primary" %>
-		<% end %>
 	</div>
 </div>
 
 <!-- Comments Section -->
 <div class="company-comments">
 	<% @company.reviews.each do |review|%>
-		<div class="row">
+		<div class="row wow fadeIn">
 
 			<!-- Review Details -->
 			<div class="col m3">

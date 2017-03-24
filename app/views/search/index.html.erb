@@ -17,7 +17,7 @@
 <div class="search-results ">
   <% @companies.each do |company| %>
     <div class="row company" >
-      <div class="col m3">
+      <div class="col m3 company-img-holder">
         <img class="company-img img_resize " src="<%= company.profile_image_url %>" alt="<%= company.name %>" />
       </div>
       <div class="col m9">
