@@ -10,7 +10,7 @@ module ReviewsHelper
     star         = options[:star]         || 5
     enable_half  = options[:enable_half]  || true
     half_show    = options[:half_show]    || true
-    star_path    = options[:star_path]    || ''
+    star_path    = options[:star_path]    || '/images'
     star_on      = options[:star_on]      || image_path('star-on.png')
     star_off     = options[:star_off]     || image_path('star-off.png')
     star_half    = options[:star_half]    || image_path('star-half.png')
