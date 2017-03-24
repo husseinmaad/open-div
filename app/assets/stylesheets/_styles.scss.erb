@@ -2,10 +2,37 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  font-size: 16px;
+  font-weight: 400;
 }
 
 main {
   flex: 1 0 auto;
+}
+.review-heading{
+  line-height: 100px;
+  font-family: "Roboto", sans-serif;
+  // margin-left: 20px;
+  font-weight: 200;
+  text-align: center
+}
+.rating-questions{
+  text-align: center;
+  .review-icon{
+    padding: 15px;
+    i{
+      font-size: 55px;
+      color: lighten($theme-gray, 50%);
+    }
+  }
+  .flow-text {
+      max-width: 65%;
+      font-size: 1.4rem;
+      margin: 0 auto;
+  }
+  .star-ratings{
+    margin: 40px 0 20px 2px;
+  }
 }
 
 .btn{
@@ -60,10 +87,14 @@ body{
 }
 h1,h2,h3,h4,h5,h6{
   font-family: $headingFontFamily;
+  font-weight: 200;
 }
 
 // ----------------------- HOME PAGE
 .home{
+  .footer-copyright {
+    background: transparent;
+  }
   background: $home-background;
   .inline{
     li {
@@ -208,10 +239,40 @@ footer{
       font-style: italic;
       width: 58%;
       left: 12%;
+      @media screen and (max-width: 1400px) {
+        font-size: 40px;
+        top: 25%;
+      }
     }
   }
   #results {
       overflow-y: scroll;
       // height: 600px;
+  .company-img-holder{
+    text-align: center;
+    .img_resize {
+      max-width: 150px;
+      height: auto;
+      }
+    }
+  }
+}
+
+.company-profile{
+  .company-header{
+    background: $theme-light-gray;
+    min-height: 150px;
+    h1 {
+      line-height: 100px;
+      font-family: "Roboto", sans-serif;
+      // margin-left: 20px;
+      font-weight: 200;
+    }
+  }
+  .company-profile-img {
+    margin-top: -120px;
+    @media screen and (max-width: 500px) {
+      margin-top: 0;
+    }
   }
 }
