@@ -1,11 +1,14 @@
+
 <div class="section rating-questions">
-  <h2>Inclusiveness</h2>
+  <!-- <h2>Inclusiveness</h2> -->
 
   <div class="row divider"></div>
   <!-- ................................................  Question 1 -->
-  <div class="row">
-    <!-- Questions -->
+  <h3 class="wow fadeIn" data-wow-duration="1.5s" data-wow-delay="1s">Identity</h3>
 
+  <div class="row section wow fadeIn" data-wow-duration="1.5s" data-wow-delay="1s">
+    <!-- Questions -->
+    <div class="col m12">
       <div class="review-icon">
         <i class="material-icons">wc</i>
       </div>
@@ -13,21 +16,13 @@
       <div class="star-ratings">
         <%= rating_for @company, 'gender', disable_after_rate: false , star_path: '/images'%>
       </div>
-
     </div>
     <!-- Stars -->
-    <div class="star-ratings col m3">
-      <%= rating_for @company, 'gender', disable_after_rate: false, star_path: '/images' %>
-    </div>
   </div>
-
-  <br />
-
-  <div class="row divider"></div>
   <!-- ................................................  Question 2 -->
-  <div class="row">
+  <div class="row section wow fadeIn" data-wow-duration="1.5s" data-wow-delay="1s">
     <!-- Questions -->
-
+    <div class="col m12">
       <div class="review-icon">
         <i class="material-icons">public</i>
       </div>
@@ -36,43 +31,33 @@
       <div class="star-ratings">
         <%= rating_for @company, 'identity', disable_after_rate: false , star_path: '/images'%>
       </div>
-
     </div>
   </div>
 
-  <h2>Culture</h2>
   <div class="row divider"></div>
 
   <!-- ................................................  Question 3 -->
-  <div class="row">
+  <div class="row section wow fadeIn" data-wow-duration="1.5s" data-wow-delay="1s">
     <!-- Questions -->
-    <div class="col m9">
+    <div class="col m12">
       <h3>Managment</h3>
-
       <div class="review-icon">
         <i class="material-icons">group</i>
       </div>
       <p class="flow-text">How respectful and trustful was your manager?</p>
       <!-- Stars -->
       <div class="star-ratings">
-<<<<<<< HEAD
         <%= rating_for @company, 'management', disable_after_rate: false , star_path: '/images' %>
-=======
-        <%= rating_for @company, 'management', disable_after_rate: false, star_path: '/images' %>
->>>>>>> 8bf8874c12f5158b21c0f9a522fd9b414b2de26e
       </div>
-
     </div>
+
   </div>
 
-  <div class="row divider"></div>
-
   <!-- ................................................  Question 4 -->
-  <div class="row">
+  <div class="row section wow fadeIn" data-wow-duration="1.5s" data-wow-delay="1s">
     <!-- Questions -->
-    <div class="col m9">
+    <div class="col m12">
       <h3>HR</h3>
-
       <div class="review-icon">
         <i class="material-icons">question_answer</i>
       </div>
@@ -81,18 +66,15 @@
       <div class="star-ratings">
         <%= rating_for @company, 'hr', disable_after_rate: false , star_path: '/images'%>
       </div>
-
     </div>
+
   </div>
 
-  <div class="row divider"></div>
-
   <!-- ................................................  Question 5 -->
-  <div class="row">
+  <div class="row section wow fadeIn" data-wow-duration="1.5s" data-wow-delay="1s">
     <!-- Questions -->
-    <div class="col m9">
+    <div class="col m12">
       <h3>Whole-Self</h3>
-
       <div class="review-icon">
         <i class="material-icons">face</i>
       </div>
@@ -101,18 +83,15 @@
       <div class="star-ratings">
         <%= rating_for @company, 'whole_self', disable_after_rate: false , star_path: '/images'%>
       </div>
-
     </div>
   </div>
 
-  <div class="row divider"></div>
 
   <!-- ................................................  Question 6 -->
-  <div class="row">
+  <div class="row section wow fadeIn" data-wow-duration="1.5s" data-wow-delay="1s">
     <!-- Questions -->
-    <div class="col m9">
+    <div class="col m12">
       <h3>Community</h3>
-
       <div class="review-icon">
         <i class="material-icons">mood</i>
       </div>
@@ -121,16 +100,13 @@
       <div class="star-ratings">
         <%= rating_for @company, 'community', disable_after_rate: false , star_path: '/images'%>
       </div>
-
     </div>
   </div>
 
-  <h2>Diversity</h2>
   <div class="row divider"></div>
   <!-- ................................................  Question 7 -->
-  <div class="row">
+  <div class="row section wow fadeIn" data-wow-duration="1.5s" data-wow-delay="1s">
     <!-- Questions -->
-
     <div class="col m12">
       <h3>Leadership</h3>
       <div class="review-icon">
@@ -139,69 +115,49 @@
       <p class="flow-text" >Was the leadership team diverse; were there any individuals who are usually underrepresented in tech?</p>
       <!-- Stars -->
       <div class="star-ratings">
-<<<<<<< HEAD
         <%= rating_for @company, 'leadership', disable_after_rate: false , star_path: '/images' %>
-=======
-        <%= rating_for @company, 'leadership', disable_after_rate: false, star_path: '/images' %>
->>>>>>> 8bf8874c12f5158b21c0f9a522fd9b414b2de26e
       </div>
-
     </div>
   </div>
 
-  <div class="row divider"></div>
   <!-- ................................................  Question 8 -->
-  <div class="row">
+  <div class="row section wow fadeIn" data-wow-duration="1.5s" data-wow-delay="1s">
     <!-- Questions -->
-    <div class="col m9">
+    <div class="col m12">
       <h3>Equal Opportunities</h3>
-
       <div class="review-icon">
         <i class="material-icons">merge_type</i>
       </div>
       <p class="flow-text">Did you feel there were equal opportunities for you and team members?</p>
       <!-- Stars -->
       <div class="star-ratings">
-<<<<<<< HEAD
         <%= rating_for @company, 'equal_opportunities', disable_after_rate: false , star_path: '/images'%>
-=======
-        <%= rating_for @company, 'equal_opportunities', disable_after_rate: false, star_path: '/images' %>
->>>>>>> 8bf8874c12f5158b21c0f9a522fd9b414b2de26e
       </div>
-
     </div>
   </div>
 
-  <div class="row divider"></div>
   <!-- ................................................  Question 9 -->
-  <div class="row">
+  <div class="row section wow fadeIn" data-wow-duration="1.5s" data-wow-delay="1s">
     <!-- Questions -->
-    <div class="col m9">
-      <h3>Promotions & Raises</h3>
+    <div class="col m12">
 
+      <h3>Promotions & Raises</h3>
       <div class="review-icon">
         <i class="material-icons">trending_up</i>
       </div>
       <p class="flow-text">Did you have opportunities to move up in the company?</p>
       <!-- Stars -->
       <div class="star-ratings">
-<<<<<<< HEAD
         <%= rating_for @company, 'promotions', disable_after_rate: false , star_path: '/images' %>
-=======
-        <%= rating_for @company, 'promotions', disable_after_rate: false, star_path: '/images' %>
->>>>>>> 8bf8874c12f5158b21c0f9a522fd9b414b2de26e
       </div>
-
     </div>
+
   </div>
-
-  <div class="row divider"></div>
   <!-- ................................................  Question 10 -->
-  <div class="row">
+  <div class="row section wow fadeIn" data-wow-duration="1.5s" data-wow-delay="1s">
     <!-- Questions -->
-    <div class="col m9">
+    <div class="col m12">
       <h3>Overall Satisfaction</h3>
-
       <div class="review-icon">
         <i class="material-icons">star</i>
       </div>
@@ -210,12 +166,12 @@
       <div class="star-ratings">
         <%= rating_for @company, 'overall', disable_after_rate: false , star_path: '/images'%>
       </div>
-
     </div>
+
   </div>
-  <div class="row divider"></div>
 </div>
 
+<div class="row divider section"></div>
 
 <!-- Review form -->
 <div class="section row">
@@ -234,4 +190,4 @@
     <div class="input-field section">
       <%= f.submit "Submit review" , :class => "btn btn-primary" %>
     </div>
-<% end %>
+  <% end %>
