@@ -9,6 +9,31 @@ body {
 main {
   flex: 1 0 auto;
 }
+.review-heading{
+  line-height: 100px;
+  font-family: "Roboto", sans-serif;
+  // margin-left: 20px;
+  font-weight: 200;
+  text-align: center
+}
+.rating-questions{
+  text-align: center;
+  .review-icon{
+    padding: 15px;
+    i{
+      font-size: 55px;
+      color: lighten($theme-gray, 50%);
+    }
+  }
+  .flow-text {
+      max-width: 65%;
+      font-size: 1.4rem;
+      margin: 0 auto;
+  }
+  .star-ratings{
+    margin: 40px 0 20px 2px;
+  }
+}
 
 .btn{
   box-shadow: none !important;
