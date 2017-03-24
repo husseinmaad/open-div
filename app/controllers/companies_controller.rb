@@ -1,6 +1,6 @@
 class CompaniesController < ApplicationController
   layout "home", only: [:index]
-  layout "company_profile", only: [:show]
+  # layout "company_profile", only: [:show]
   def index
     # WelcomeMailer.signup_email.deliver
     # WelcomeMailer.signup_email.deliver_now
@@ -16,6 +16,9 @@ class CompaniesController < ApplicationController
 
   def show
     @company = Company.find(params[:id])
+    respond_to do |format|
+      format.html {render :layout => 'company_profile'}
+    end
   end
 
   def new
