@@ -51,7 +51,7 @@ dimensions = ["gender","identity", "management","hr",
 
 companies.each_with_index do |company, index|
   if index <= 40
-  	users.each do
+  	users.each do |user|
   		company.reviews.create!(body: review_array.sample , reviewer_id: user.id, anonymous: true)
   		dimensions.each do |dimension|
 
