@@ -208,10 +208,19 @@ footer{
       font-style: italic;
       width: 58%;
       left: 12%;
+      @media screen and (max-width: 1400px) {
+        font-size: 40px;
+        top: 25%;
+      }
     }
   }
   #results {
       overflow-y: scroll;
       // height: 600px;
+
+    .img_resize {
+      max-width: 150px;
+      height: auto;
+    }
   }
 }
