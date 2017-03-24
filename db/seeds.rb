@@ -13,11 +13,11 @@ Rate.destroy_all
 # CrunchbaseHandler::save_companies_to_db("Mountain View",1)
 
 admin = User.create first_name: "Admin", last_name: "Admin", email: "admin@admin.com", password: "password", admin: true
-users =[ User.create first_name: "Zaw", last_name: "Lwin", email: "zaw@zaw.com", password: "password", admin: false ,
-User.create first_name: "Hussein", last_name: "al-sammaraie", email: "huss@huss.com", password: "password", admin: false ,
-User.create first_name: "Lupita", last_name: "davila", email: "lupita@lupita.com", password: "password", admin: false ,
-User.create first_name: "Alex", last_name: "Gonzalez", email: "alex@alex.com", password: "password", admin: false ,
-User.create first_name: "Raul", last_name: "Fm", email: "raul@raul.com", password: "password", admin: false 
+users =[ (User.create first_name: "Zaw", last_name: "Lwin", email: "zaw@zaw.com", password: "password", admin: false) ,
+(User.create first_name: "Hussein", last_name: "al-sammaraie", email: "huss@huss.com", password: "password", admin: false) ,
+(User.create first_name: "Lupita", last_name: "davila", email: "lupita@lupita.com", password: "password", admin: false) ,
+(User.create first_name: "Alex", last_name: "Gonzalez", email: "alex@alex.com", password: "password", admin: false) ,
+(User.create first_name: "Raul", last_name: "Fm", email: "raul@raul.com", password: "password", admin: false )
 ]
 
 review_array = [ 
