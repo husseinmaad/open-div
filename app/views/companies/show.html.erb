@@ -4,7 +4,7 @@
 		<%= image_tag @company.profile_image_url, :class=>"wow fadeIn company-profile-img responsive-img card" %>
 		<div class="section">
 			<% if @company.avg_rating %>
-				<%= custom_rating_generator @company.avg_rating %>
+				<%= custom_rating_generator @company.avg_rating , star_path: '/images'%>
 			<% else %>
 				<p>No ratings have been made yet.</p>
 			<% end %>
