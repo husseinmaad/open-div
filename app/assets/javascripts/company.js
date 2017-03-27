@@ -1,5 +1,7 @@
 $( document ).on('turbolinks:load', function() {
   $('.modal-trigger').on('click',function(){
-    $('#modal1').modal();
+    var modalNode = $(this).attr('data-target');
+    // console.log($(this).attr('data-target'));
+    $(modalNode).modal();
   })
 })
