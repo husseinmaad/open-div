@@ -54,7 +54,7 @@
 <!-- Comments Section -->
 <div class="company-comments">
 	<% @company.reviews.each_with_index do |review, index|%>
-		<div class="row wow fadeIn">
+		<div class="row">
 
 			<!-- Review Details -->
 			<div class="col m3">
@@ -91,7 +91,7 @@
 			<!-- End of review body  -->
 		</div>
 		<!-- end of overall review row -->
-		
+
 		<!-- Modal Structure -->
 		<div id=<%= "modal#{index}" %> class="modal">
 			<div class="modal-content">
