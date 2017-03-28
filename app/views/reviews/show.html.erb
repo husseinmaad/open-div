@@ -62,7 +62,8 @@
 </div>
 
 <% if @user == current_user %>
-    <%= button_to "+Edit Review", edit_company_review_path(@company, @review), method: "get" %>
-    <%= button_to "Delete Review", [@company, @review], method: "delete" %>
+    <%= button_to "+Edit Review", edit_company_review_path(@company, @review), method: "get",:class => "waves-effect waves-light btn modal-trigger" %>
+    <br>
+    <%= button_to "Delete Review", [@company, @review], method: "delete",:class => "waves-effect waves-light btn modal-trigger" %>
   <% end %>
 </div>
