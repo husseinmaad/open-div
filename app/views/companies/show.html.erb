@@ -61,7 +61,7 @@
 				<!-- Review Ratings -->
 				<div class="review-ratings">
 					<p>Overall Rating</p>
-					<p><%= custom_rating_for_review( review, "overall" , star_path: '/images') %></p>
+					<p><%= custom_rating_generator (custom_rating_for_review( review )) %></p>
 				</div>
 			</div>
 			<!-- End of review details -->
