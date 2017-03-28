@@ -1,11 +1,34 @@
 module ReviewsHelper
 
+    def multiple_dimension_avg_rating
+
+     ratings = Rate.where("rateable_type = ? and rateable_id = ?", "Company", self.id)
+
+     sum = ratings.reduce(0){|sum , r| sum+= r.stars}
+
+     sum/ratings.length
+
+    end
+
 	def custom_rating_for_review ( review , dimension = nil, options = {})
     @object = review.company
     @user   = review.reviewer
-	  @rating = Rate.find_by_rater_id_and_rateable_id_and_dimension(@user.id, @object.id, dimension)
 
-	  stars = @rating ? @rating.stars : 0
+
+    @ratings =  Rate.where("rateable_type = ? and rateable_id = ?", "Company", @object.id)
+    @user_ratings = []
+
+    @ratings.each do |rate|
+        if rate.rater_id == @user.id
+            @user_ratings<< rate
+        end
+    end
+    sum = @user_ratings.reduce(0){|sum , r| sum+= r.stars}
+    average = sum/@user_ratings.length
+
+
+
+	  stars = average
 
     star         = options[:star]         || 5
     enable_half  = options[:enable_half]  || true
